@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="./dining/diningcss/dining.css">
 <link rel="stylesheet" href="js/rolling.css" media="screen">
 <link rel="stylesheet" href="css/slide.css" media="screen">
 <script type="text/javascript">
@@ -83,7 +84,7 @@ function popup(){
 		</div>
 </div>
 <div align="center">
-	<button onclick="javascript:popup()">예약하기</button>
+	<button class="resBtn" onclick="javascript:popup()">예약하기</button>
 </div>
 </body>
 </html>

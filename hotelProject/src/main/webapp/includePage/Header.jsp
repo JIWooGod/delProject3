@@ -41,6 +41,8 @@
                         <li class='navmenu_ul_ul_li3'><a href='dining4'>보나베띠</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining5'>슈크르 앤 미엘</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining6'>더 블루</a></li>
+                        <li class='navmenu_ul_ul_li3'><a href='tblInsert'>좌석추가</a></li>
+                        <li class='navmenu_ul_ul_li3'><a href='menuInsert'>메뉴등록</a></li>
                      </ul>
                   </li><li class='navmenu_ul_li4'>
                      <a href='./reservation_1.html'>RESERVATION</a>
