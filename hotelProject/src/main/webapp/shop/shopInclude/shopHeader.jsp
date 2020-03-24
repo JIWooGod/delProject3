@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
-                    <a href="delshop"><img src="/hotelProject/shop/img/logo.png" alt=""></a>
+                    <a href="main"><img src="/hotelProject/shop/img/logo.png" alt=""></a>
                 </div>
                 <div class="header-right">
                     <img src="/hotelProject/shop/img/icons/search.png" alt="" class="search-trigger">
@@ -35,7 +35,7 @@
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a class="active" href="delshop">Home</a></li>
+                        <li><a class="active" href="main">Home</a></li>
                         <li><a href="./categories.html">Shop</a>
                             <ul class="sub-menu">
                                 <li><a href="product">Product Page</a></li>

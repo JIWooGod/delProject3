@@ -6,7 +6,7 @@
 
 
 	<sql id="basecolumn">
-		goods_code, goods_name, goods_price, goods_pic, goods_opt, goods_gategory, goods_incode, goods_qty
+		goods_code, goods_name, goods_price, goods_pic, goods_opt, goods_category
 	</sql>
 	
 	<resultMap type="shopdto" id="shopmap">
@@ -15,19 +15,13 @@
 		<result column="goods_price" jdbcType="BIGINT" property="goodsPrice"/>
 		<result column="goods_pic" jdbcType="VARCHAR" property="goodsPic"/>
 		<result column="goods_opt" jdbcType="VARCHAR" property="goodsOpt"/>
-		<result column="goods_gategory" jdbcType="VARCHAR" property="goodsCategory"/>
-		<result column="goods_incode" jdbcType="VARCHAR" property="goodsIncode"/>
-		<result column="goods_qty" jdbcType="BIGINT" property="goodsQty"/>
+		<result column="goods_category" jdbcType="VARCHAR" property="goodsCategory"/>
+		
 	</resultMap>
 
 
-
-
-
-
 	<insert id="insertGoods" parameterType="shopdto" >
-		insert into goods (<include refid="basecolumn"/>) values(#{goodsCode},#{goodsName},#{goodsPrice},#{goodsPic},#{goodsOpt},
-		#{goodsCategory},#{goodsIncode},#{goodsQty})
+		insert into goods (<include refid="basecolumn"/>) values(#{goodsCode},#{goodsName},#{goodsPrice},#{goodsPic},#{goodsOpt},#{goodsCategory})
 	</insert>
 	
 
