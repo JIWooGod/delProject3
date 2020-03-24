@@ -11,6 +11,7 @@ import command.dining.MenuCommand;
 import command.dining.ResTblCommand;
 import service.dining.DiningReservationService;
 import service.dining.MenuInsertService;
+import service.dining.MenuSelectService;
 import service.dining.TblInsertService;
 
 @Controller
@@ -23,6 +24,9 @@ public class DiningController {
 	
 	@Autowired
 	private MenuInsertService menuInsertService;
+	
+	@Autowired
+	private MenuSelectService menuSelectService;
 	
 	@RequestMapping("/dining1")
 	public String dining1() {
@@ -55,7 +59,8 @@ public class DiningController {
 	}
 	
 	@RequestMapping("/dining1_detail")
-	public String dining1_detail() {
+	public String dining1_detail(Model model) {
+		menuSelectService.execute(model);
 		return "dining/dining1_detail";
 	}
 	
@@ -91,4 +96,6 @@ public class DiningController {
 		menuInsertService.execute(menuCommand, request);
 		return "/main/main";
 	}
+	
+	
 }

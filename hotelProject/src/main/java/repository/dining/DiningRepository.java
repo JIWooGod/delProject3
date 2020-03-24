@@ -27,6 +27,11 @@ public class DiningRepository {
 		String statement = namespace + ".menuInsert";
 		sqlSession.insert(statement, dto);
 	}
+
+	public List<MenuDTO> menuSelect() {
+		String statement = namespace + ".menuSelect";
+		return sqlSession.selectList(statement);
+	}
 }
 
 

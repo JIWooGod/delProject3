@@ -29,7 +29,8 @@
   			classpath:spring-jdbc.xml
   			classpath:spring-diningBeans.xml
   			classpath:spring-lecController.xml
-  			
+  			classpath:spring-lecService.xml
+			classpath:spring-lecRepository.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

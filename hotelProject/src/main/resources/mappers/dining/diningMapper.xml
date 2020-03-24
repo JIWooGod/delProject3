@@ -7,7 +7,6 @@
 		<id column="rst_no" jdbcType="BIGINT" property="rstNo" />
 		<id column="rst_tbl" jdbcType="BIGINT" property="rstTbl" />
 		<result column="rst_seat" jdbcType="BIGINT" property="rstSeat" />
-		<result column="tbl_kind" jdbcType="VARCHAR" property="tblKind" />
 	</resultMap>
 	
 	<!-- 궁궐 좌석리스트 -->
@@ -26,6 +25,21 @@
 		INSERT INTO MENU(MENU_NO, RST_NO, MENU_NAME, MENU_PRICE, MENU_CNT, MENU_IMG)
 		VALUES(#{menuNo}, #{rstNo}, #{menuName}, #{menuPrice}, #{menuCnt}, #{menuImg})
 	</insert>
+	
+	<resultMap type="menu" id="menuBaseMap">
+		<id column="MENU_NO" jdbcType="BIGINT" property="menuNo" />
+		<id column="RST_NO" jdbcType="BIGINT" property="rstNo" />
+		<result column="MENU_NAME" jdbcType="VARCHAR" property="menuName" />
+		<result column="MENU_PRICE" jdbcType="BIGINT" property="menuPrice" />
+		<result column="MENU_CNT" jdbcType="VARCHAR" property="menuCnt" />
+		<result column="MENU_IMG" jdbcType="VARCHAR" property="menuImg" />
+	</resultMap>
+	
+	<select id="menuSelect" resultMap="menuBaseMap" parameterType="long">
+		SELECT *
+		FROM MENU
+		WHERE RST_NO=1 ORDER BY MENU_NO ASC
+	</select>
 	
 	
 	
