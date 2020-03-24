@@ -20,12 +20,11 @@ public class goodsInsertService {
 
 	public void execute(shopCommand shopcommand, HttpServletRequest request) {
 		shopDTO dto = new shopDTO();
-		dto.setGoodsIncode(shopcommand.getGoodsIncode());
 		dto.setGoodsPrice(shopcommand.getGoodsPrice());
 		dto.setGoodsCategory(shopcommand.getGoodsCategory());
 		dto.setGoodsCode(shopcommand.getGoodsCode());
-		dto.setGoodsQty(shopcommand.getGoodsQty());
 		dto.setGoodsOpt(shopcommand.getGoodsOpt());
+		dto.setGoodsName(shopcommand.getGoodsName());
 		
 		String storeTotal = "";
 		

@@ -1,6 +1,10 @@
 package Controller.shop;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +16,7 @@ import command.shop.shopCommand;
 import service.shop.goodsInsertService;
 
 @Controller
-@RequestMapping(value = "/delshop/sa")
+@RequestMapping(value = "/delshop/InsertPro")
 public class shopInsertController {
 	@Autowired
 	goodsInsertService goodsInsertService;
@@ -26,7 +30,8 @@ public class shopInsertController {
 	public String insertPro(shopCommand shopcommand , HttpServletRequest request) {
 		System.out.println("들어옴");
 		goodsInsertService.execute(shopcommand, request);
-		return "redirect:delshop/product";
+		
+		return "redirect:main";
 	}
 
 }
