@@ -9,4 +9,5 @@
 	
 	<bean id = "diningReservationService" class = "service.dining.DiningReservationService" />
 	<bean id = "tblInsertService" class = "service.dining.TblInsertService" />
+	<bean id = "MenuInsertService" class = "service.dining.MenuInsertService" />
 </beans>
