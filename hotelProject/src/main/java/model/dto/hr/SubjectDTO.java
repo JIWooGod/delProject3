@@ -10,7 +10,28 @@ public class SubjectDTO implements Serializable {
 	Long subjGroup;
 	Long subjDay;
 	Long subjTime;
+	String subjOrigin;
+	String subjExtend;
+	String subjStore;
 	
+	public String getSubjOrigin() {
+		return subjOrigin;
+	}
+	public void setSubjOrigin(String subjOrigin) {
+		this.subjOrigin = subjOrigin;
+	}
+	public String getSubjExtend() {
+		return subjExtend;
+	}
+	public void setSubjExtend(String subjExtend) {
+		this.subjExtend = subjExtend;
+	}
+	public String getSubjStore() {
+		return subjStore;
+	}
+	public void setSubjStore(String subjStore) {
+		this.subjStore = subjStore;
+	}
 	public Long getSubjNo() {
 		return subjNo;
 	}

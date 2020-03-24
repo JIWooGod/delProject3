@@ -20,15 +20,15 @@
 		</tr>
 		<tr>
 			<td>강의명</td>
-			<td><input type="text" name="lecName" placeholder="강의명을 입력하시오"></td>
+			<td><input type="text" name="subjName" placeholder="강의명을 입력하시오"></td>
 		</tr>
 		<tr>
 			<td>강좌 업로드</td>
-			<td><input type="file" name="lecFile"></td>
+			<td><input type="file" accept="video/*" name="subjVideo"></td>
 		</tr>
 		<tr>
 			<td>강의내용</td>
-			<td><textarea>강의 목차 및 간략한 소개를 입력하시오</textarea></td>
+			<td><textarea name="subjCnt">강의 목차 및 간략한 소개를 입력하시오</textarea></td>
 		</tr>
 	</table>
 	<input type="submit" value="등록하기">
