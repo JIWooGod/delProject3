@@ -1,12 +1,16 @@
 package Controller.DiningController;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import command.dining.MenuCommand;
 import command.dining.ResTblCommand;
 import service.dining.DiningReservationService;
+import service.dining.MenuInsertService;
 import service.dining.TblInsertService;
 
 @Controller
@@ -16,6 +20,9 @@ public class DiningController {
 	
 	@Autowired
 	private TblInsertService tblInsertService;
+	
+	@Autowired
+	private MenuInsertService menuInsertService;
 	
 	@RequestMapping("/dining1")
 	public String dining1() {
@@ -80,7 +87,8 @@ public class DiningController {
 	}
 	
 	@RequestMapping("/menuInsertAction")
-	public String menuInsertAction() {
+	public String menuInsertAction(MenuCommand menuCommand, HttpServletRequest request) {
+		menuInsertService.execute(menuCommand, request);
 		return "/main/main";
 	}
 }

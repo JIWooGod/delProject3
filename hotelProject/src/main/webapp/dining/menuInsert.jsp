@@ -92,7 +92,7 @@ function menuInsert(){
 </script>
 <div class="hs_reservation">
   <div class="hs_reservation_section hs_reservation_box1">
-
+<form action="menuInsertAction" method="POST" id="menuFrm" name="menuFrm">
     <div class="hs_reservation_left">
     
       	<h3 class="hs_reservation_title">레스토랑	<!-- 레스토랑번호, 메뉴이름, 메뉴가격, 메뉴설명, 메뉴사진 -->
@@ -106,6 +106,7 @@ function menuInsert(){
       	</h3>
       	
       	<h3 class="hs_reservation_title">메뉴사진
+      	
       	<input type='file' id="imgInput"/>
       	<div id="div2">
       		<img id="image_section" src="#" alt="" style="width: 500px; height: 500px" />
@@ -113,12 +114,16 @@ function menuInsert(){
       	</h3>
       	
     </div>
-    <form action="menuInsertAction" method="POST" id="menuFrm" name="menuFrm">
+    
       <div class="hs_reservation_right">
         <ul class="hs_reservation_litt">
           <li>
             <strong style="width: 600px;">레스토랑 번호</strong>
             <input type="text" id="rstNo" name="rstNo" readonly>
+          </li>
+          <li>
+            <strong style="width: 600px;">메뉴 번호</strong>
+            <input type="text" id="" name="">
           </li>
           <li>
             <strong style="width: 600px;">메뉴이름</strong>
@@ -138,10 +143,13 @@ function menuInsert(){
     <div class="hs_reservation_btn_set">
       <a href="javascript:menuInsert();" class="hs_reservation_btn_poin" style="color:#FFFFFF;">등록</a>
     </div>
+    
   </div>
+  
       </div>
 </form>
   </div>
+  
 </div>
 </div>
 	<div class='line_height50'></div>
