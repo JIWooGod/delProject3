@@ -14,21 +14,33 @@
 </head>
 <body>
 <h2>계약서</h2>
-<form action="#">
+<form action="signing" method="post">
 <table id="tableForm">
 	<tr>
 		<td>분류</td>
 		<td>
 			<select>
-				<option value="">선택하시오</option>
-				<option value="200">필수강좌</option>
-				<option value="300">선택강좌</option>
+				<option value="">분류 선택</option>
+				<option value="2000">필수강좌</option>
+				<option value="3000">선택강좌</option>
 			</select>
 		</td>
 	</tr>
 	<tr>
-		<td>강좌명</td>
-		<td><input type="text" name="lecName" placeholder="강좌명을 입력하시오"/></td>
+		<td>과목분류</td>
+		<td>
+			<select>
+				<option value="">과목 선택</option>
+				<option value="2100">고객응대교육</option>
+				<option value="2200">안전대처훈련</option>
+				
+				<option value="3100">영어</option>
+				<option value="3200">중국어</option>
+				<option value="3300">일본어</option>
+				<option value="3400">스피치</option>
+				<option value="3500">자기PR</option>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<td>강사번호</td>

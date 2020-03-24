@@ -49,7 +49,7 @@
 	<tr>
 		<td>연락처 *</td>
 		<td>
-			<form:input path="tel" placeholder="전화번호를 입력하시오"/>
+			<form:input path="tel" placeholder="-를 제외한 숫자를 입력하시오"/>
 			<form:errors path="tel" class="error"/>
 			<br/>* '-'를 제외한 숫자만 입력하시오.
 		</td>

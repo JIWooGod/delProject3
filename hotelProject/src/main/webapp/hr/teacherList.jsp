@@ -33,7 +33,7 @@
 		<td id="pass">${emp.passState } 
 		<c:choose>
 			<c:when test='${empty emp.passState == "서류합격자" }'>
-				<button id="interviewBtn">면접표</button>
+				<button id="interviewBtn" onclick="location.href='#'">면접표</button>
 			</c:when>
 			<c:when test='${emp.passState == "면접합격자" }'>
 				<button id="contractBtn">계약서</button>

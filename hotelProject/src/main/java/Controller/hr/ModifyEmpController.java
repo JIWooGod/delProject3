@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import command.hr.ApplyCommand;
-import model.dto.hr.AuthInfoHR;
 import service.hr.EmpModifyService;
 
 @Controller
