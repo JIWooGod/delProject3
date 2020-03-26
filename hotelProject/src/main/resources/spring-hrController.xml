@@ -12,4 +12,8 @@
 	   <bean class="Controller.hr.FormEmpController"/>
 	   <bean class="Controller.hr.ModifyEmpController"/>
 	   
+	   <!-- promote controller -->
+	   
+	   <!-- teacher controller -->
+	   
 </beans>

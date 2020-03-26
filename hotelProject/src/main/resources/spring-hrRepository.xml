@@ -10,4 +10,8 @@
 	<bean id="empDetailRepository" class="repository.hr.EmpDetailRepository"/>
 	<bean id="empModifyRepository" class="repository.hr.EmpModifyRepository"/>
 
+	<!-- promote repository -->
+	
+	<!-- teacher repository -->
+	
 </beans>

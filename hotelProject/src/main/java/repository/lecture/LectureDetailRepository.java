@@ -7,13 +7,15 @@ import org.springframework.stereotype.Repository;
 import model.dto.hr.SubjectDTO;
 
 @Repository
-public class LectureUploadingRepository {
+public class LectureDetailRepository {
 	String namespace = "lectureMapper";
+	String statement = null;
 	@Autowired
 	private SqlSession sqlSession;
-
+	
 	public void reposit(SubjectDTO dto) {
-		String statement = namespace + ".addVideo1";
-		sqlSession.insert(statement, dto);
+		statement = namespace + ".videoView";
+		sqlSession.selectOne(statement, dto);
 	}
+
 }

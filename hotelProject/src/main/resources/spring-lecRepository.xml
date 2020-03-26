@@ -6,5 +6,9 @@
 
 	<!-- lecture repository -->
 	<bean id="lectureUploadingRepository" class="repository.lecture.LectureUploadingRepository"/>
+	<bean id="lectureListRepository" class="repository.lecture.LectureListRepository"/>
+	<bean id="lectureDetailRepository" class="repository.lecture.LectureDetailRepository"/>
 
+	<!-- exam repository -->
+	
 </beans>

@@ -6,5 +6,11 @@
 	   
 	<!-- lecture service -->
 	<bean id="lectureUploadingService" class="service.lecture.LectureUploadingService"/>
+	<bean id="lectureListService" class="service.lecture.LectureListService"/>
+	<bean id="lectureDetailService" class="service.lecture.LectureDetailService"/>
+	<bean id="lectureDeletingSerivce" class="service.lecture.LectureDeletingSerivce"/>
+	<bean id="lectureModifyService" class="service.lecture.LectureModifyService"/>
+	
+	<!-- exam service -->
 
 </beans> 
