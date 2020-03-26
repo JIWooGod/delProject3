@@ -7,24 +7,31 @@ public class SubjectDTO implements Serializable {
 	Long subjNo;
 	String subjName;
 	String subjCnt;
-	Long subjGroup;
+	String subjGroup;
 	Long subjDay;
 	Long subjTime;
 	String subjOrigin;
-	String subjExtend;
+	String subjFileSize;
 	String subjStore;
+	String subjRegDate;
 	
+	public String getSubjRegDate() {
+		return subjRegDate;
+	}
+	public void setSubjRegDate(String subjRegDate) {
+		this.subjRegDate = subjRegDate;
+	}
 	public String getSubjOrigin() {
 		return subjOrigin;
 	}
 	public void setSubjOrigin(String subjOrigin) {
 		this.subjOrigin = subjOrigin;
 	}
-	public String getSubjExtend() {
-		return subjExtend;
+	public String getSubjFileSize() {
+		return subjFileSize;
 	}
-	public void setSubjExtend(String subjExtend) {
-		this.subjExtend = subjExtend;
+	public void setSubjFileSize(String subjFileSize) {
+		this.subjFileSize = subjFileSize;
 	}
 	public String getSubjStore() {
 		return subjStore;
@@ -50,10 +57,10 @@ public class SubjectDTO implements Serializable {
 	public void setSubjCnt(String subjCnt) {
 		this.subjCnt = subjCnt;
 	}
-	public Long getSubjGroup() {
+	public String getSubjGroup() {
 		return subjGroup;
 	}
-	public void setSubjGroup(Long subjGroup) {
+	public void setSubjGroup(String subjGroup) {
 		this.subjGroup = subjGroup;
 	}
 	public Long getSubjDay() {

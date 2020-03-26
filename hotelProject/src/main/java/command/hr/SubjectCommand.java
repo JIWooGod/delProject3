@@ -1,11 +1,27 @@
 package command.hr;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class SubjectCommand {
 	Long tchNo;
 	String subjName;
-	String subjVideo;
+	MultipartFile subjVideo;
 	String subjCnt;
+	String subjGroup;
+	Long subjDay;
 	
+	public Long getSubjDay() {
+		return subjDay;
+	}
+	public void setSubjDay(Long subjDay) {
+		this.subjDay = subjDay;
+	}
+	public String getSubjGroup() {
+		return subjGroup;
+	}
+	public void setSubjGroup(String subjGroup) {
+		this.subjGroup = subjGroup;
+	}
 	public Long getTchNo() {
 		return tchNo;
 	}
@@ -18,10 +34,10 @@ public class SubjectCommand {
 	public void setSubjName(String subjName) {
 		this.subjName = subjName;
 	}
-	public String getSubjVideo() {
+	public MultipartFile getSubjVideo() {
 		return subjVideo;
 	}
-	public void setSubjVideo(String subjVideo) {
+	public void setSubjVideo(MultipartFile subjVideo) {
 		this.subjVideo = subjVideo;
 	}
 	public String getSubjCnt() {

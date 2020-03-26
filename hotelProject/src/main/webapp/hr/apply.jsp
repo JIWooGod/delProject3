@@ -51,7 +51,6 @@
 		<td>
 			<form:input path="tel" placeholder="-를 제외한 숫자를 입력하시오"/>
 			<form:errors path="tel" class="error"/>
-			<br/>* '-'를 제외한 숫자만 입력하시오.
 		</td>
 	</tr>
 	<tr>

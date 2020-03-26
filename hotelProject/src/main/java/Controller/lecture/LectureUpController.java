@@ -1,5 +1,6 @@
 package Controller.lecture;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,16 @@ public class LectureUpController {
 	@Autowired
 	private LectureUploadingService lectureUploadingService;
 	
-	@RequestMapping("/lecture/upload")
-	public String upload() {
+	@RequestMapping(value="/lecture/upload", method=RequestMethod.GET)
+	public String upload(Model model) {
+		model.addAttribute("subjectCommand", new SubjectCommand());
 		return "lec/lectureUp";
 	}
-	@RequestMapping(value="/lecture/admin/uploading", method=RequestMethod.POST)
-	public String upload2(SubjectCommand subjectCommand, Model model) {
-		lectureUploadingService.action(subjectCommand, model);
+	@RequestMapping(value="/lecture/uploading", method=RequestMethod.POST)
+	public String upload2(HttpServletRequest request, Model model,
+			SubjectCommand subjectCommand) {
+		model.addAttribute("subjectCommand", subjectCommand);
+		lectureUploadingService.action(request, subjectCommand);
 		return "redirect:/lecture";
 	}
 }
