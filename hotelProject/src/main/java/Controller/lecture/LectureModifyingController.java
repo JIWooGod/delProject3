@@ -21,7 +21,7 @@ public class LectureModifyingController {
 	@RequestMapping(value="/lecture/modifying", method=RequestMethod.POST)
 	public String modifying(@RequestParam(value="num") Long num, Model model,
 			SubjectCommand subjectCommand, HttpServletRequest request) {
-		lectureModifyService.action(request,subjectCommand,model);
+		lectureModifyService.action(request,subjectCommand,model,num);
 		return "redirect:/lecture/"+num;
 	}
 }

@@ -1,6 +1,7 @@
 package model.dto.hr;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class SubjectDTO implements Serializable {
@@ -13,12 +14,12 @@ public class SubjectDTO implements Serializable {
 	String subjOrigin;
 	String subjFileSize;
 	String subjStore;
-	String subjRegDate;
+	Timestamp subjRegDate;
 	
-	public String getSubjRegDate() {
+	public Timestamp getSubjRegDate() {
 		return subjRegDate;
 	}
-	public void setSubjRegDate(String subjRegDate) {
+	public void setSubjRegDate(Timestamp subjRegDate) {
 		this.subjRegDate = subjRegDate;
 	}
 	public String getSubjOrigin() {

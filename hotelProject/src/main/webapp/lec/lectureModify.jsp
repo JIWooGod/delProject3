@@ -13,26 +13,27 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript">
 $(document).ready(function(){
-   $(function(){
-      $("#delBtn").click(function(){
-         if($("#delBtn").attr("value")=="삭제"){
-            $("#delBtn").attr("value","삭제취소");
-            $("#subjVideo").val("${list.subjOrigin}");
-            $("#original_file").html("");
-         }else{
-            $("#delBtn").attr("value","삭제");
-            $("#subjVideo").val("");
-            $("#original_file").html("<video src='/hotelProject/lec/video/${list.subjStore }' width='300px' height='auto'></video>");
-         }
-      });
-   });
+	$(function(){
+		$("#delBtn").click(function(){
+			if($("#delBtn").attr("value")=="삭제"){
+	           $("#delBtn").attr("value","삭제취소");
+	           $("#subjVideo").val("${list.subjOrigin}");
+	         //$("#view").html("새 동영상파일: <input type="file" id="subjVideo" accept="video/*" name="subjVideo"/>");
+	           $("#original_file").html("");
+	        }else{
+	           $("#delBtn").attr("value","삭제");
+	           $("#subjVideo").val("");
+	          //$("#view").html("");
+	           $("#original_file").html("<video src='/hotelProject/lec/video/${list.subjStore }' width='300px' height='auto'></video>");
+       		}
+		});
+	});
 });
 </script>
 </head>
 <body>
 <h2>강의 내용 수정</h2>
-<form:form action="modifying" method="post"
-	enctype="multipart/form-data" commandName="subjectCommand">
+<form action="modifying" method="post" enctype="multipart/form-data">
 	<table id="tableForm">
 		<tr>
 			<td>과목분류</td>
@@ -60,20 +61,22 @@ $(document).ready(function(){
 						name="subjVideo"/>
 				</c:when>
 			</c:choose>
+			<div id="view"></div>
+			
 			</td>
 		</tr>
 		<tr>
 			<td>수강기간</td>
-			<td><input type="number" name="subjDay" id="dayLong" min="7" max="30">일<div id="error"></div></td>
+			<td><input type="number" name="subjDay" id="dayLong" min="7" max="30" value="${list.subj }">일<div id="error"></div></td>
 		</tr>
 		<tr>
 			<td>강의내용</td>
-			<td><form:textarea path="subjCnt"/></td>
+			<td><textarea name="subjCnt">${list.subjCnt }</textarea></td>
 		</tr>
 	</table>
 	<input type="submit" value="수정하기">
 	<input type="reset" value="초기화">
-</form:form>
+</form>
 <button onclick="location.href='../lecture/deleting?num=${list.subjNo}'">삭제</button>
 <button onclick="location.href='../lecture/${list.subjNo}'">취소</button>
 </body>

@@ -1,6 +1,6 @@
 package command.hr;
 
-public class ApplyCommand {
+public class Apply2Command {
 	String id;
 	String pw;
 	String rePw;
@@ -10,8 +10,15 @@ public class ApplyCommand {
 	String addr;
 	String certi;
 	String career;
+	String violate;
 	Long deptNo;
 	
+	public Long getDeptNo() {
+		return deptNo;
+	}
+	public void setDeptNo(Long deptNo) {
+		this.deptNo = deptNo;
+	}
 	public String getId() {
 		return id;
 	}
@@ -54,22 +61,22 @@ public class ApplyCommand {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getCerti() {
-		return certi;
-	}
-	public void setCerti(String certi) {
-		this.certi = certi;
-	}
 	public String getCareer() {
 		return career;
 	}
 	public void setCareer(String career) {
 		this.career = career;
 	}
-	public Long getDeptNo() {
-		return deptNo;
+	public String getViolate() {
+		return violate;
 	}
-	public void setDeptNo(Long deptNo) {
-		this.deptNo = deptNo;
+	public void setViolate(String violate) {
+		this.violate = violate;
+	}
+	public String getCerti() {
+		return certi;
+	}
+	public void setCerti(String certi) {
+		this.certi = certi;
 	}
 }

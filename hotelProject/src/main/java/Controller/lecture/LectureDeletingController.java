@@ -1,5 +1,7 @@
 package Controller.lecture;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +15,9 @@ public class LectureDeletingController {
 	private LectureDeletingSerivce lectureDeletingSerivce;
 	
 	@RequestMapping("lecture/deleting")
-	public String delete(@RequestParam(value="num") Long num) {
-		lectureDeletingSerivce.action(num);
+	public String delete(@RequestParam(value="num") Long num,
+			HttpServletRequest request) {
+		lectureDeletingSerivce.action(request, num);
 		return "redirect:/lecture";
 	}
 }

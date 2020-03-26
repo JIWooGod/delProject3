@@ -10,26 +10,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import command.hr.ApplyCommand;
-import service.hr.ApplyService;
+import command.hr.Apply2Command;
+import service.hr.Apply2Service;
 
 @Controller
-public class ApplyEmpController {
+public class ApplyTchController {
 	@Autowired
-	private ApplyService applyService;
+	private Apply2Service apply2Service;
 	
-	@RequestMapping("/personnel/staff/apply")
+	@RequestMapping("/personnel/teacher/apply")
 	public String empApply(@RequestParam(value="job") String job, Model model) {
 		model.addAttribute("job",job);
-		model.addAttribute("applyCommand",new ApplyCommand());
-		return "hr/apply";
+		model.addAttribute("apply2Command",new Apply2Command());
+		return "hr/apply2";
 	}
 
-	@RequestMapping(value="/personnel/staff/appling", method=RequestMethod.POST)
-	public String empApplying(HttpServletRequest request,ApplyCommand applyCommand,
+	@RequestMapping(value="/personnel/teacher/appling", method=RequestMethod.POST)
+	public String empApplying(HttpServletRequest request,Apply2Command apply2Command,
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
-		applyService.action(request,applyCommand,errors,job);
-		return "redirect:/personnel/list";
+		apply2Service.action(request,apply2Command,errors,job);
+		return "redirect:/teacher/list";
 	}
 }

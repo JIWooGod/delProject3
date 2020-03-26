@@ -15,8 +15,9 @@ public class LectureDetailService {
 	public void action(Long subjNo, Model model) {
 		SubjectDTO dto = new SubjectDTO();
 		dto.setSubjNo(subjNo);
-		lectureDetailRepository.reposit(dto);
+		dto = lectureDetailRepository.reposit(dto);
 		
+		System.out.println("상세보기 페이지 파일명: "+dto.getSubjStore());
 		//재생시간 insert
 		model.addAttribute("list", dto);
 	}

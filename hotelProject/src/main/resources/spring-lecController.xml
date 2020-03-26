@@ -10,6 +10,7 @@
 	<bean class="Controller.lecture.LectureDetailController"/>
 	<bean class="Controller.lecture.LectureModifyController"/>
 	<bean class="Controller.lecture.LectureModifyingController"/>
+	<bean class="Controller.lecture.LectureDeletingController"/>
 	
 	<!-- lecture student controller -->
 	<bean class="Controller.lecture.LecStudentController"/>

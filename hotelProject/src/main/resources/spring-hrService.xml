@@ -13,5 +13,6 @@
 	<!-- promote service -->
 
 	<!-- teacher service -->
-	
+	<bean id="apply2Service" class="service.hr.Apply2Service"/>
+	<bean id="tchModifyService" class="service.hr.TchModifyService"/>
 </beans> 

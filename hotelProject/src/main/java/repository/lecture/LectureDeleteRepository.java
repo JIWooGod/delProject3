@@ -4,18 +4,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.dto.hr.SubjectDTO;
-
 @Repository
-public class LectureDetailRepository {
+public class LectureDeleteRepository {
 	String namespace = "lectureMapper";
-	String statement = null;
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public SubjectDTO reposit(SubjectDTO dto) {
-		statement = namespace + ".videoView";
-		return sqlSession.selectOne(statement, dto);
+	public void reposit(Long num) {
+		String statement = namespace + ".deleteLec";
+		sqlSession.delete(statement, num);
 	}
-
 }

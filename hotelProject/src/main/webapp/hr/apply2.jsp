@@ -15,8 +15,8 @@
 </style>
 </head>
 <body>
-<h2>직원 채용 신청</h2>
-<form:form action="appling" commandName="applyCommand">
+<h2>강사 채용 신청</h2>
+<form:form action="appling2" commandName="apply2Command">
 <table class="tableForm">
 	<tr>
 		<td>아이디 *</td>
@@ -67,32 +67,38 @@
 		</td>
 	</tr>
 	<tr>
-		<td>지원 부서</td>
+		<td>지원 과목</td>
 		<td>
-			<input type="hidden" name="job" value="staff"/>
-			<form:select path="deptNo">
-				<option value="100">인사</option>
-				<option value="110">교육</option>
-				<option value="120">객실관리</option>
-				<option value="130">레스토랑</option>
-				<option value="140">쇼핑몰</option>
+			<input type="hidden" name="job" value="teacher"/>
+			<!-- foreach문으로 강의명만큼 가져오기 -->
+			<form:select path="subjNo">
+				<option value="300">영어</option>
+				<option value="310">응대기술</option>
+				<option value="320">상황대처</option>
 			</form:select>
 		</td>
 	</tr>
 	<tr>
 		<td>자격증</td>
 		<td>
-			<form:textarea path="certi" placeholder="직군 관련 자격증을 입력하시오"/>
+			<form:textarea path="certi" placeholder="강사 자격증을 입력하시오"/>
 		</td>
 	</tr>
 	<tr>
 		<td>경력사항</td>
 		<td><form:textarea path="career" placeholder="경력사항을 자세히 입력하시오"/></td>
 	</tr>
+	<tr>
+		<td>법적결함사항</td>
+		<td>
+			<form:radiobutton path="violate" value="no" label="없음"/>
+			<form:radiobutton path="violate" value="yes" label="있음"/>
+		</td>
+	</tr>
 </table>
 <input type="submit" value="지원하기">
 <input type="reset" value="초기화">
 </form:form>
-<button onclick="location.href='../personnel'">취소</button>
+<button onclick="location.href='../teacher'">취소</button>
 </body>
 </html>

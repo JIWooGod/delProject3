@@ -47,12 +47,11 @@ function moved(){
 	current = event.currentTime;
 	document.getElementById("mineLoc").value = current;
 }
+//videoUp.addEventListener("play",setTime,false);
+//videoUp.addEventListener("load",getTime,false);
+//videoUp.addEventListener("ended",finished,false);
 
-videoUp.addEventListener("play",setTime,false);
-videoUp.addEventListener("load",getTime,false);
-videoUp.addEventListener("ended",finished,false);
-
-window.addEventListener("close",check,false);
+//window.addEventListener("close",check,false);
 </script>
 </head>
 

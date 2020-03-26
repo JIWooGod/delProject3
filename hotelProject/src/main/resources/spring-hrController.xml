@@ -11,9 +11,10 @@
 	   <bean class="Controller.hr.DetailEmpController"/>
 	   <bean class="Controller.hr.FormEmpController"/>
 	   <bean class="Controller.hr.ModifyEmpController"/>
+	   <bean class="Controller.hr.EmpInterviewController"/>
 	   
 	   <!-- promote controller -->
 	   
 	   <!-- teacher controller -->
-	   
+	   <bean class="Controller.hr.ApplyTchController"/>
 </beans>
