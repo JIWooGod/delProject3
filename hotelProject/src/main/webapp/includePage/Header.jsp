@@ -49,7 +49,7 @@
                      <ul class='navmenu_ul_ul4'><li class='navmenu_ul_ul_li4'><a href=''>실시간 예약</a></li></ul>
                   </li><li class='navmenu_ul_li5'>
                      <a href='delshop'>Shopping Mall</a>
-                     <ul class='navmenu_ul_ul5'><li class='navmenu_ul_ul_li5'><a href='delshop'>쇼핑몰</a></li></ul>
+                     <ul class='navmenu_ul_ul5'><li class='navmenu_ul_ul_li5'><a href='delshop/main'>쇼핑몰</a></li></ul>
                   </li>         </ul>
                   
       

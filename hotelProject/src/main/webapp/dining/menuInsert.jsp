@@ -92,7 +92,7 @@ function menuInsert(){
 </script>
 <div class="hs_reservation">
   <div class="hs_reservation_section hs_reservation_box1">
-
+<form action="menuInsertAction" method="POST" id="menuFrm" name="menuFrm" enctype="multipart/form-data">
     <div class="hs_reservation_left">
     
       	<h3 class="hs_reservation_title">레스토랑	<!-- 레스토랑번호, 메뉴이름, 메뉴가격, 메뉴설명, 메뉴사진 -->
@@ -106,14 +106,15 @@ function menuInsert(){
       	</h3>
       	
       	<h3 class="hs_reservation_title">메뉴사진
-      	<input type='file' id="imgInput"/>
+      	
+      	<input type='file' id="imgInput" name="menuImg"/>
       	<div id="div2">
       		<img id="image_section" src="#" alt="" style="width: 500px; height: 500px" />
       	</div>
       	</h3>
       	
     </div>
-    <form action="menuInsertAction" method="POST" id="menuFrm" name="menuFrm">
+    
       <div class="hs_reservation_right">
         <ul class="hs_reservation_litt">
           <li>
@@ -121,27 +122,34 @@ function menuInsert(){
             <input type="text" id="rstNo" name="rstNo" readonly>
           </li>
           <li>
+            <strong style="width: 600px;">메뉴 번호</strong>
+            <input type="text" id="" name="menuNo">
+          </li>
+          <li>
             <strong style="width: 600px;">메뉴이름</strong>
-            <input type="text" id="" name="">
+            <input type="text" id="" name="menuName">
           </li>
           <li>
             <strong style="width: 600px;">메뉴가격</strong>
-            <input type="text" id="" name=""
+            <input type="text" id="" name="menuPrice"
             onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
           </li>
           <li>
             <strong style="width: 600px;">메뉴설명</strong>
-            <textarea style="resize: none;" cols="40" rows="5"></textarea>
+            <textarea style="resize: none;" cols="40" rows="5" name="menuCnt"></textarea>
           </li>
         </ul>
           <div class="hs_reservation_section hs_reservation_bottom">
     <div class="hs_reservation_btn_set">
       <a href="javascript:menuInsert();" class="hs_reservation_btn_poin" style="color:#FFFFFF;">등록</a>
     </div>
+    
   </div>
+  
       </div>
 </form>
   </div>
+  
 </div>
 </div>
 	<div class='line_height50'></div>

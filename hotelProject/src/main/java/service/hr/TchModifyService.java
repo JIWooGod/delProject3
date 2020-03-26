@@ -4,11 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import command.hr.ApplyCommand;
 import model.dto.hr.TeacherDTO;
 import repository.hr.ApplyRepository;
 
+@Service
 public class TchModifyService {
 	@Autowired
 	private BCryptPasswordEncoder bcryptPasswordEncoder;
