@@ -29,14 +29,14 @@
 	
 	
 	<select id="reservation" parameterType="roomdto" resultMap="roommap">
-		select <include refid="basecolumn"/> from room 
+		select <include refid="basecolumn"/> from(SELECT *FROM room ORDER BY rm_no DESC)
 			<where>
 			<if test="value != null">
-			 rm_grade = #{roomGrade} 
+			 rm_grade = #{roomGrade} and rownum = 1
 			</if>
 		</where>
 	</select>
-	
+
 	<select id="selectRoom" parameterType="reservationdto" resultMap="roommap">
 		select <include refid="basecolumn"/> from room where	
 			 rm_grade = #{roomGrade} and rm_view = #{roomView} and rm_bed = #{roomBed}

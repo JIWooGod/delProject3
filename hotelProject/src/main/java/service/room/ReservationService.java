@@ -53,11 +53,7 @@ public class ReservationService {
 		dto.setRoomDays(reservationCommand.getDays());
 		dto.setRoomCount(reservationCommand.getRoomCount());
 		session.setAttribute("reservation",dto);
-		
 		RoomDTO room = roomRepository.selectRoom(dto);
-		
 		model.addAttribute("room",room);
-		
-		
 	}
 }

@@ -190,13 +190,16 @@ $(window).load(function() {
 								</li>
 									
 								</ul>
-							
-								
+								<br/>
+								<h3 class="hs_reservation_title">총 예약 금액 </h3><strong>KRW ${room.roomPrice }</strong>
+								<br/>
+								<br/>
 							</div>
-					<div class="hs_reservat" style="padding: 0 20px 0 50px;">
+							
+				<div class="hs_reservat" style="padding: 0 20px 0 50px;">
 					
 					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;객실 선택</h3>
-				<div id = "selectRomm" align =center>
+						<div id = "selectRomm" align =center>
 							
 						<label for="male">101</label><input type="radio" id="roomSelect" name="roomSelect" value="101">&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="radio" id="roomSelect" name="roomSelect" value="102"><label for="male">102</label><br/><br/>
@@ -207,7 +210,7 @@ $(window).load(function() {
 						<input type="radio" id="roomSelect" name="roomSelect" value="102"><label for="male">106</label><br/><br/>
 						<label for="male">107</label><input type="radio" id="roomSelect" name="roomSelect" value="103">&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="radio" id="roomSelect" name="roomSelect" value="104"><label for="male">108</label><br/><br/>
-							</div>
+					</div>
 				</div>
 							
 						
@@ -221,7 +224,7 @@ $(window).load(function() {
 				</div>
 				<div class="hs_reservation">
 				
-					${room.roomPrice }
+				
 						
 					</div>
 				</div>
