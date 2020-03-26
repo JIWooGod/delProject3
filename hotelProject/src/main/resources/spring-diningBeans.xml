@@ -11,5 +11,8 @@
 	<bean id = "tblInsertService" class = "service.dining.TblInsertService" />
 	<bean id = "MenuInsertService" class = "service.dining.MenuInsertService" />
 	<bean id = "menuSelectService" class = "service.dining.MenuSelectService" />
+	<bean id = "menuUpdateService" class = "service.dining.MenuUpdateService" />
+	<bean id = "menuUpdateActionService" class = "service.dining.MenuUpdateActionService" />
+	<bean id = "menuDeleteService" class = "service.dining.MenuDeleteService" />
 	
 </beans>

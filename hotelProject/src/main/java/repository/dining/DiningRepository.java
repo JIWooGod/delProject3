@@ -32,6 +32,23 @@ public class DiningRepository {
 		String statement = namespace + ".menuSelect";
 		return sqlSession.selectList(statement);
 	}
+
+	public MenuDTO menuOneSelect(Long menuNo) {
+		String statement = namespace + ".menuOneSelect";
+		return sqlSession.selectOne(statement, menuNo);
+	}
+
+	public void menuUpdate(MenuDTO dto) {
+		String statement = namespace + ".menuUpdate";
+		sqlSession.update(statement, dto);
+	}
+
+	public void d1menuDelete(Long menuNo) {
+		String statement = namespace + ".menuDelete";
+		sqlSession.delete(statement, menuNo);
+	}
+
+	
 }
 
 

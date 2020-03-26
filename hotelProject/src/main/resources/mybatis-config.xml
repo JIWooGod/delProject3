@@ -12,6 +12,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="model.dto.room.RoomDTO" alias="roomdto" />
+		<typeAlias type="model.dto.room.ReservationDTO" alias="reservationdto" />
 
 		<typeAlias type="model.dto.shop.shopDTO" alias="shopdto" />
 

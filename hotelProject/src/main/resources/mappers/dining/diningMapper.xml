@@ -41,11 +41,34 @@
 		WHERE RST_NO=1 ORDER BY MENU_NO ASC
 	</select>
 	
+	<select id="menuOneSelect" resultMap="menuBaseMap" parameterType="long">
+		SELECT *
+		FROM MENU
+		WHERE RST_NO=1 AND MENU_NO=#{menuNo}
+	</select>
 	
+	<!-- 1번 레스토랑 메뉴 수정 -->
+	<update id="menuUpdate" parameterType="menu">
+		UPDATE MENU
+		SET MENU_NAME=#{menuName}, MENU_PRICE=#{menuPrice}, MENU_CNT=#{menuCnt}, MENU_IMG=#{menuImg}
+		WHERE RST_NO=1 AND MENU_NO=#{menuNo}
+	</update>
 	
-	
-	
+	<delete id="menuDelete">
+		DELETE
+		FROM MENU
+		WHERE MENU_NO=#{menuNo} AND RST_NO=1
+	</delete>
 	
 	
 	
 </mapper>
+
+
+
+
+
+
+
+
+

@@ -270,7 +270,7 @@ ul,li {list-style:none}
 
 /*서브내용*/
 #content_wrapper .content_box{position:relative;width:1200px;margin:0 auto;min-height:300px;}
-#content_wrapper .content_box .sub_detail{text-align:center;font-size:18px;line-height:160%;color:#fff;padding:0 0 60px 0;letter-spacing:-1px}
+#content_wrapper .content_box .sub_detail2{text-align:center;font-size:18px;line-height:160%;color:#fff;padding:0 0 20px 0;letter-spacing:-1px}
 #content_wrapper .content_box .sub_detail span{font-weight:bold;font-size:24px}
 
 /*about*/
@@ -377,13 +377,13 @@ ul,li {list-style:none}
 .hs_reservation .ui-datepicker-prev{background:url(..img/icon_left.gif);left:0;}
 .hs_reservation .ui-datepicker-next{background:url(..img/icon_right.gif);right:0;}
 
-.hs_reservation_section:first-child{margin-top:0;}
-.hs_reservation_section{zoom:1;margin-top:30px;padding-top:20px;}
-.hs_reservation_section:after{content:'';display:block;clear:both;}
+.hs_reservation_section2:first-child{margin-top:0;}
+.hs_reservation_section2{zoom:1;padding-top:20px;}
+.hs_reservation_section2:after{content:'';display:block;clear:both;}
 
 .hs_reservation_box1{}
-.hs_reservation_box1 .hs_reservation_left{float:left;width:550px;}
-.hs_reservation_box1 .hs_reservation_right{float:left;border-left:1px solid #616161;padding-left:30px;width:419px;min-height:260px}
+.hs_reservation_box1 .hs_reservation_left2{float:left;width:550px;}
+.hs_reservation_box1 .hs_reservation_right2{float:left;padding-left:30px;width:419px;min-height:260px}
 
 .hs_reservation_box1 .hs_reservation_left{zoom:1;}
 .hs_reservation_box1 .hs_reservation_left:after{content:'';display:block;clear:both;}
@@ -392,11 +392,11 @@ ul,li {list-style:none}
 
 .hs_reservation_box1 .hs_reservation_litt strong{display:inline-block;width:62px;}
 
-.hs_reservation_litt{}
-.hs_reservation_litt, .hs_reservation_litt li{margin:0;padding:0;list-style:none;}
-.hs_reservation_litt li{padding:9px 0;border-top:1px dotted #cecece;}
-.hs_reservation_litt li b{color:#e27825;}
-.hs_reservation_litt li:first-child{border-top:0;}
+.hs_reservation_litt2{}
+.hs_reservation_litt2, .hs_reservation_litt li{margin:0;padding:0;list-style:none;}
+.hs_reservation_litt2 li{padding:9px 0;border-bottom:1px dotted #cecece;}
+.hs_reservation_litt2 li b{color:#e27825;}
+.hs_reservation_litt2 li:first-child{border-top:0;}
 
 
 

@@ -14,8 +14,6 @@
          <img src='/hotelProject/img/t_logo.png'>
       </div>
       </a>
-      
-
       <div id="navmenu">
          <ul id="navmenu_ul">
             <li class='navmenu_ul_li1'>
@@ -41,14 +39,14 @@
                         <li class='navmenu_ul_ul_li3'><a href='dining4'>보나베띠</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining5'>슈크르 앤 미엘</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining6'>더 블루</a></li>
-                        <li class='navmenu_ul_ul_li3'><a href='tblInsert'>좌석추가</a></li>
-                        <li class='navmenu_ul_ul_li3'><a href='menuInsert'>메뉴등록</a></li>
+                        <li class='navmenu_ul_ul_li3'><a href='d1tblList'>좌석관리</a></li>
+                        <li class='navmenu_ul_ul_li3'><a href='d1menuList'>메뉴관리</a></li>
                      </ul>
                   </li><li class='navmenu_ul_li4'>
                      <a href='./reservation_1.html'>RESERVATION</a>
                      <ul class='navmenu_ul_ul4'><li class='navmenu_ul_ul_li4'><a href=''>실시간 예약</a></li></ul>
                   </li><li class='navmenu_ul_li5'>
-                     <a href='delshop'>Shopping Mall</a>
+                     <a href='delshop/main'>Shopping Mall</a>
                      <ul class='navmenu_ul_ul5'><li class='navmenu_ul_ul_li5'><a href='delshop/main'>쇼핑몰</a></li></ul>
                   </li>         </ul>
                   
