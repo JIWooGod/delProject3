@@ -21,8 +21,8 @@
 		<td>
 			<select>
 				<option value="">분류 선택</option>
-				<option value="2000">필수강좌</option>
-				<option value="3000">선택강좌</option>
+				<option value="5100">필수강좌</option>
+				<option value="5500">선택강좌</option>
 			</select>
 		</td>
 	</tr>

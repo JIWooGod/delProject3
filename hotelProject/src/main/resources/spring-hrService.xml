@@ -9,5 +9,9 @@
 	<bean id="empListService" class="service.hr.EmpListService"/>
 	<bean id="empDetailService" class="service.hr.EmpDetailService"/>
 	<bean id="empModifyService" class="service.hr.EmpModifyService"/>
+	
+	<!-- promote service -->
 
+	<!-- teacher service -->
+	
 </beans> 
