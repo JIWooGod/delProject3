@@ -16,13 +16,16 @@
 		<result column="goods_pic" jdbcType="VARCHAR" property="goodsPic"/>
 		<result column="goods_opt" jdbcType="VARCHAR" property="goodsOpt"/>
 		<result column="goods_category" jdbcType="VARCHAR" property="goodsCategory"/>
-		
 	</resultMap>
 
 
 	<insert id="insertGoods" parameterType="shopdto" >
 		insert into goods (<include refid="basecolumn"/>) values(#{goodsCode},#{goodsName},#{goodsPrice},#{goodsPic},#{goodsOpt},#{goodsCategory})
 	</insert>
+	
+	<select id="goodsList" resultMap="shopmap" parameterType="long">
+	select <include refid="basecolumn" /> from goods
+	</select>
 	
 
 </mapper>

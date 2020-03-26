@@ -7,4 +7,5 @@
 >
 	<bean class="Controller.shop.shopMainController"/>
 	<bean class="Controller.shop.shopInsertController"/>
+	<bean class="Controller.shop.shopListController"/>
 </beans>

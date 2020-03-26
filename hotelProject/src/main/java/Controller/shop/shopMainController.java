@@ -1,3 +1,4 @@
+
 package Controller.shop;
 
 import org.springframework.stereotype.Controller;
@@ -21,4 +22,6 @@ public class shopMainController {
 	public String goodsInsert() {
 		return "shop/goodsInsert";
 	}
+	
+	
 }

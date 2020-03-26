@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DelLuna OnlineShop</title>
 </head>
 <body>
 	<link rel="stylesheet" href="/hotelProject/shop/css/bootstrap.min.css" type="text/css">
@@ -36,7 +36,7 @@
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a class="active" href="main">Home</a></li>
-                        <li><a href="./categories.html">Shop</a>
+                        <li><a href="categories">Shop</a>
                             <ul class="sub-menu">
                                 <li><a href="product">Product Page</a></li>
                                 <li><a href="cart">Shopping Card</a></li>
@@ -45,7 +45,7 @@
                         </li>
                         <li><a href="./product-page.html">About</a></li>
                         <li><a href="./check-out.html">Contact</a></li>
-                        <li><a href="main">Hotel</a></li>
+                        <li><a href="/hotelProject/main">Hotel</a></li>
                     </ul>
                 </nav>
             </div>
