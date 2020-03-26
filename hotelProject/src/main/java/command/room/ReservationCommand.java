@@ -13,8 +13,79 @@ public class ReservationCommand {
 	private String people;
 	private String days;
 	private String roomGrade;
+	private String userName;
+	private String userPh1;
+	private String userPh2;
+	private String userPh3;
+	private String roomView;
+	private String roomBed;
+	private String dndMode;
+	private String noFeader;
+	private String uncomfort;
+	private String rmbkContent;
 	
 	
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserPh1() {
+		return userPh1;
+	}
+	public void setUserPh1(String userPh1) {
+		this.userPh1 = userPh1;
+	}
+	public String getUserPh2() {
+		return userPh2;
+	}
+	public void setUserPh2(String userPh2) {
+		this.userPh2 = userPh2;
+	}
+	public String getUserPh3() {
+		return userPh3;
+	}
+	public void setUserPh3(String userPh3) {
+		this.userPh3 = userPh3;
+	}
+	public String getRoomView() {
+		return roomView;
+	}
+	public void setRoomView(String roomView) {
+		this.roomView = roomView;
+	}
+	public String getRoomBed() {
+		return roomBed;
+	}
+	public void setRoomBed(String roomBed) {
+		this.roomBed = roomBed;
+	}
+	public String getDndMode() {
+		return dndMode;
+	}
+	public void setDndMode(String dndMode) {
+		this.dndMode = dndMode;
+	}
+	public String getNoFeader() {
+		return noFeader;
+	}
+	public void setNoFeader(String noFeader) {
+		this.noFeader = noFeader;
+	}
+	public String getUncomfort() {
+		return uncomfort;
+	}
+	public void setUncomfort(String uncomfort) {
+		this.uncomfort = uncomfort;
+	}
+	public String getRmbkContent() {
+		return rmbkContent;
+	}
+	public void setRmbkContent(String rmbkContent) {
+		this.rmbkContent = rmbkContent;
+	}
 	public String getRoomGrade() {
 		return roomGrade;
 	}

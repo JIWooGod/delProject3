@@ -36,4 +36,10 @@
 			</if>
 		</where>
 	</select>
+	
+	<select id="selectRoom" parameterType="reservationdto" resultMap="roommap">
+		select <include refid="basecolumn"/> from room where	
+			 rm_grade = #{roomGrade} and rm_view = #{roomView} and rm_bed = #{roomBed}
+	</select>
+	
 </mapper>

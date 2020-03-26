@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="room/css/room.css">
 <link rel="stylesheet" href="./css/roomStyle.css">
 <link rel="stylesheet" href="./js/rolling.css" media="screen">
 <link rel="stylesheet" href="./css/slide.css" media="screen">
 <script src="./js/jquery-1.8.3.min.js"></script>
 <script src="./js/jquery.rolling.js"></script>
 <script src="./js/jquery.flexslider.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 $(window).load(function() {
   $('.flexslider').flexslider({
@@ -22,6 +23,23 @@ $(window).load(function() {
 	slideshowSpeed :4000
   });
 });
+
+$(function(){
+	   $(document).ready(function readURL(input){
+	      if (input.files && input.files[0]) {
+	           var reader = new FileReader();
+	           
+	           reader.onload = function (e) {
+	            $('#image_section').attr('src', e.target.result);  
+	           }
+	           
+	           reader.readAsDataURL(input.files[0]);
+	           }
+	      $("#imgInput").change(function(){
+	            readURL(this);
+	         });
+	   });
+	});
 </script>
 <body>
 <jsp:include page="../includePage/Header.jsp" flush="true" /> 
@@ -108,16 +126,7 @@ $(window).load(function() {
                        <option value='15f'>15 층 </option>
              </select>
           </li>
-        </ul>
-    </div>
-  
-      <div class="hs_reservation_right">
-        <ul class="hs_reservation_litt">
-          <li>
-            <strong>이미지</strong>
-            <input type="file" id="roomPic" name="roomPic" class="hs_input hs_disabled" >	
-          </li>
-   			<li>
+          	<li>
           <strong>침대 옵션</strong>
             <select class="select" name="roomBed" id="roomBed">
              <option value=''>--선택--</option> 
@@ -127,6 +136,17 @@ $(window).load(function() {
               
              </select>
           </li>
+        </ul>
+    </div>
+  
+      <div class="hs_reservation_right">
+        <ul class="hs_reservation_litt">
+          <li>
+            <strong>이미지</strong>
+            <input type="file" id="imgInput" name="roomPic" class="hs_input hs_disabled" >	
+          	<img id="image_section" src="#" alt="" style="width: 400px; height: 300px" />
+          </li>
+   		
         </ul>
       </div>
 	</form>

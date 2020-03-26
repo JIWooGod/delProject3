@@ -28,6 +28,12 @@ public class ReservationController {
 		reservationService.execute2(reservationCommand,model,session);
 		return"room/reservation_2";
 	}
+	@RequestMapping("/reservationStep3")
+	public String reservation3(ReservationCommand reservationCommand,Model model,HttpSession session)
+	{
+		reservationService.execute3(reservationCommand,model,session);
+		return"room/roomSelect";
+	}
 	
 
 }

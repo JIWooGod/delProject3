@@ -13,8 +13,6 @@ public class ReservationDTO implements Serializable {
 	private Integer roomGrade;
 	private Integer payNo;
 	private Timestamp rmbkDate;
-	private String rmbkOption;
-	private String rmbkDnd;
 	private String rmbkPeople;
 	private String rmbkPrice;
 	private String rmbkAdd;
@@ -24,8 +22,59 @@ public class ReservationDTO implements Serializable {
 	private String realOut;
 	private String roomCount;
 	private String roomDays;
+	private String userName;
+	private String userPh;
+	private String dndMode;
+	private String noFeader;
+	private String uncomFort;
+	private String rmbkOption;
+	private String roomView;
+	private String roomBed;
 	
 	
+	
+	public String getRoomView() {
+		return roomView;
+	}
+	public void setRoomView(String roomView) {
+		this.roomView = roomView;
+	}
+	public String getRoomBed() {
+		return roomBed;
+	}
+	public void setRoomBed(String roomBed) {
+		this.roomBed = roomBed;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserPh() {
+		return userPh;
+	}
+	public void setUserPh(String userPh) {
+		this.userPh = userPh;
+	}
+	public String getDndMode() {
+		return dndMode;
+	}
+	public void setDndMode(String dndMode) {
+		this.dndMode = dndMode;
+	}
+	public String getNoFeader() {
+		return noFeader;
+	}
+	public void setNoFeader(String noFeader) {
+		this.noFeader = noFeader;
+	}
+	public String getUncomFort() {
+		return uncomFort;
+	}
+	public void setUncomFort(String uncomFort) {
+		this.uncomFort = uncomFort;
+	}
 	public String getRoomDays() {
 		return roomDays;
 	}
@@ -80,12 +129,7 @@ public class ReservationDTO implements Serializable {
 	public void setRmbkOption(String rmbkOption) {
 		this.rmbkOption = rmbkOption;
 	}
-	public String getRmbkDnd() {
-		return rmbkDnd;
-	}
-	public void setRmbkDnd(String rmbkDnd) {
-		this.rmbkDnd = rmbkDnd;
-	}
+
 	public String getRmbkPeople() {
 		return rmbkPeople;
 	}

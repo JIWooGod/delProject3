@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import model.dto.room.ReservationDTO;
 import model.dto.room.RoomDTO;
 
 
@@ -23,5 +24,11 @@ public class RoomRepository {
 	{
 		String statement = namespace+".reservation";
 		return sqlSession.selectOne(statement,roomGrade);
+	}
+	
+	public RoomDTO selectRoom(ReservationDTO dto)
+	{
+		String statement = namespace+".selectRoom";
+		return sqlSession.selectOne(statement,dto);
 	}
 }
