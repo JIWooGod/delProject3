@@ -16,6 +16,7 @@ import service.dining.MenuInsertService;
 import service.dining.MenuSelectService;
 import service.dining.MenuUpdateActionService;
 import service.dining.MenuUpdateService;
+import service.dining.TblDeleteService;
 import service.dining.TblInsertService;
 
 @Controller
@@ -40,6 +41,9 @@ public class DiningController {
 	
 	@Autowired
 	private MenuDeleteService menuDeleteService;
+	
+	@Autowired
+	private TblDeleteService tblDeleteService;
 	
 	@RequestMapping("/dining1")
 	public String dining1() {
@@ -87,6 +91,23 @@ public class DiningController {
 	public String d1tblList(Model model) {
 		diningreservationService.execute(model);
 		return "dining/d1tblList";
+	}
+	
+	@RequestMapping("/d1tblDetail")
+	public String d1tblDetail(@RequestParam(value="no") Long rstTbl) {
+		return "dining/d1tblDetail";
+	}
+	
+	@RequestMapping("/d1tblDelete")
+	public String d1tblDelete(Model model) {
+		diningreservationService.execute(model);
+		return "dining/d1tblDelete";
+	}
+	
+	@RequestMapping("/d1tblDeleteAction")
+	public String d1tblDeleteAction(@RequestParam(value="no") Long rstTbl) {
+		tblDeleteService.execute(rstTbl);
+		return "redirect:/d1tblList";
 	}
 	
 	@RequestMapping("/tblInsert")

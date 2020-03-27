@@ -48,6 +48,11 @@ public class DiningRepository {
 		sqlSession.delete(statement, menuNo);
 	}
 
+	public void d1tblDelete(Long rstTbl) {
+		String statement = namespace + ".tblDelete";
+		sqlSession.delete(statement, rstTbl);
+	}
+
 	
 }
 

@@ -60,7 +60,11 @@
 		WHERE MENU_NO=#{menuNo} AND RST_NO=1
 	</delete>
 	
-	
+	<delete id="tblDelete">
+		DELETE
+		FROM SEATPLACE
+		WHERE RST_NO=1 AND RST_TBL=#{rstTbl}
+	</delete>
 	
 </mapper>
 

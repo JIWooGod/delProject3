@@ -17,9 +17,20 @@
 <script src="./js/jquery.flexslider.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-function tblInsert(){
-	location.href="tblInsert";
-}
+	function tblInsert() {
+		location.href = "tblInsert";
+	}
+	
+	function tblDelete(){
+		$.ajax({
+			type : "POST",
+			url : "d1tblDelete",
+			datatype : "html",
+			success : function(data1){
+				$("#div1").html(data1);
+			}
+		});
+	}
 </script>
 <body>
 	<jsp:include page="../includePage/Header.jsp" flush="true" />
@@ -55,29 +66,35 @@ function tblInsert(){
 			<div class='line_height30'></div>
 			<div class='sub_reservation'>
 				<div class='line_box'></div>
-				<div>
-				<table>
-	<tr>
-	<c:forEach items="${ seats }" var="seat" varStatus="status">
-			<td>
-				<button id="tblBtn" value="0" style="margin: 5px;">
-					<img alt='' src='dining/img/tbl2p.png' style="width: 30px; height: 30px">
-				</button><br/><p align="center" style="font-size: 9px; color: ">${ seat.rstTbl }번좌석(${ seat.tblKind })</p>
-			</td>
-			
-			<c:if test="${ status.count%5 eq 0 }" >
-				<tr></tr>
-			</c:if>
-	
-	
-	</c:forEach>
-	</tr>
-	</table>
-					<div class="hs_reservation_btn_set">
+				<div align="center">
+					<table>
+						<tr>
+							<c:forEach items="${ seats }" var="seat" varStatus="status">
+								<td>
+										<img alt='' src='dining/img/table-icon.png'
+											style="width: 60px; height: 60px; margin: 5px">
+									<br />
+								<p align="center" style="font-size: 11px; color: #8f8f8f">
+									<a href="d1tblDetail?no=${ seat.rstTbl }">${ seat.rstTbl }번 좌석</a>
+								</p>
+								</td>
+
+								<c:if test="${ status.count%5 eq 0 }">
+									<tr></tr>
+								</c:if>
+
+
+							</c:forEach>
+						</tr>
+					</table>
+					<div class="hs_reservation_btn_set" align="center">
 						<a href="javascript:tblInsert();" class="hs_reservation_btn_poin"
 							style="color: #FFFFFF; margin-top: 10px;">테이블 등록</a>
+							<a href="javascript:tblDelete();" class="hs_reservation_btn_poin"
+							style="color: #FFFFFF; margin-top: 10px;">테이블 삭제</a>
 					</div>
 				</div>
+				<div align="center" id="div1" style="margin-left: 300px; margin-top: 30px"></div>
 			</div>
 		</div>
 	</div>
