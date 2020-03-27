@@ -29,7 +29,7 @@ public class ApplyEmpController {
 	public String empApplying(HttpServletRequest request,ApplyCommand applyCommand,
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
-		applyService.action(request,applyCommand,errors,job);
-		return "redirect:/personnel/list";
+		applyService.action(request,applyCommand,errors);
+		return "redirect:/personnel";
 	}
 }

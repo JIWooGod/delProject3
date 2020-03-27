@@ -12,14 +12,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>사원목록</h2>
+<h2>강사목록</h2>
 <table class="tableList">
 	<tr>
-		<th>사원번호</th>
-		<th>사원명</th>
+		<th>강사번호</th>
+		<th>강사명</th>
 		<th>연락처</th>
 		<th>이메일</th>
-		<th>소속부서</th>
+		<th>과목</th>
 		<th>채용상태</th>
 		<th>입사일</th>
 	</tr>

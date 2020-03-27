@@ -16,7 +16,7 @@
 </head>
 <body>
 <h2>내 정보 수정</h2>
-<form:form action="modifying" commandName="applyCommand">
+<form:form action="modifying2" commandName="apply2Command">
 <table class="tableForm">
 	<tr>
 		<td>아이디 *</td>
@@ -68,9 +68,9 @@
 		</td>
 	</tr>
 	<tr>
-		<td>지원 부서</td>
+		<td>담당 과목</td>
 		<td>
-			<form:select path="deptNo">
+			<form:select path="subjNo">
 				<option value="100">인사</option>
 				<option value="110">교육</option>
 				<option value="120">객실관리</option>
@@ -82,12 +82,19 @@
 	<tr>
 		<td>자격증</td>
 		<td>
-			<form:textarea path="certi" placeholder="직군 관련 자격증을 입력하시오"/>
+			<form:textarea path="certi" placeholder="강사 자격증을 입력하시오"/>
 		</td>
 	</tr>
 	<tr>
 		<td>경력사항</td>
 		<td><form:textarea path="career" placeholder="경력사항을 자세히 입력하시오"/></td>
+	</tr>
+	<tr>
+		<td>법적결함사항</td>
+		<td>
+			<form:radiobutton path="violate" value="no" label="없음"/>
+			<form:radiobutton path="violate" value="yes" label="있음"/>
+		</td>
 	</tr>
 </table>
 <input type="submit" value="수정하기">

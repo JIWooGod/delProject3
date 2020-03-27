@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import command.hr.Apply2Command;
+import command.hr.ApplyCommand;
 import service.hr.EmpDetailService;
 
 @Controller

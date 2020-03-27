@@ -53,12 +53,6 @@
 		where
 			SUBJ_NO = #{subjNo}
 	</select>
-	<select id="findFile" resultMap="subRs" parameterType="Long">
-		select
-			SUBJ_STORE
-		from SUBJECT
-		where SUBJ_NO = #{num}
-	</select>
 	<update id="modifyLec">
 		update
 			SUBJECT

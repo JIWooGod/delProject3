@@ -25,11 +25,11 @@ public class ApplyTchController {
 		return "hr/apply2";
 	}
 
-	@RequestMapping(value="/personnel/teacher/appling", method=RequestMethod.POST)
+	@RequestMapping(value="/personnel/teacher/appling2", method=RequestMethod.POST)
 	public String empApplying(HttpServletRequest request,Apply2Command apply2Command,
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
-		apply2Service.action(request,apply2Command,errors,job);
-		return "redirect:/teacher/list";
+		apply2Service.action(request,apply2Command,errors);
+		return "redirect:/teacher";
 	}
 }

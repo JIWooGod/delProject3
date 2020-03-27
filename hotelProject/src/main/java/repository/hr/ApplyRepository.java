@@ -17,12 +17,10 @@ public class ApplyRepository {
 	public void applyPut(EmployeeDTO dto) {
 		String statement = namespace + ".applyInsert";
 		sqlSession.insert(statement,dto);
-		System.out.println("직원 등록 완료");
 	}
 
 	public void applyPut2(TeacherDTO dto) {
-		String statement = namespace + ".applyInsert";
+		String statement = namespace + ".applyInsert2";
 		sqlSession.insert(statement,dto);
-		System.out.println("강사 등록 완료");
 	}
 }

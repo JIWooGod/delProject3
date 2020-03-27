@@ -32,11 +32,14 @@
 		<td>${emp.deptNo }</td>
 		<td id="pass">${emp.passState } 
 		<c:choose>
-			<c:when test='${empty emp.passState == "서류합격자" }'>
-				<button id="interviewBtn" onclick="location.href='./interview?num=100'">면접표</button>
+			<c:when test="${empty emp.passState }">
+				<button id="applierBtn" onclick="location.href='detail/${emp.empNo }'">지원서 조회</button>
+			</c:when>
+			<c:when test='${emp.passState == "서류합격자" }'>
+				<button id="interviewBtn" onclick="location.href='./interview?num=${emp.empNo }'">면접표 조회</button>
 			</c:when>
 			<c:when test='${emp.passState == "면접합격자" }'>
-				<button id="contractBtn" onnclick="location.href='./contract?num=100'">계약서</button>
+				<button id="contractBtn" onclick="location.href='./contract?num=${emp.empNo }'">계약서 조회</button>
 			</c:when>
 		</c:choose>
 		</td>
@@ -44,5 +47,7 @@
 	</tr>
 	</c:forEach>
 </table>
+<br/>
+<button onclick="location.href='#'">메인으로</button>
 </body>
 </html>

@@ -11,13 +11,13 @@ public class Apply2Command {
 	String certi;
 	String career;
 	String violate;
-	Long deptNo;
+	String subjNo;
 	
-	public Long getDeptNo() {
-		return deptNo;
+	public String getSubjNo() {
+		return subjNo;
 	}
-	public void setDeptNo(Long deptNo) {
-		this.deptNo = deptNo;
+	public void setSubjNo(String subjNo) {
+		this.subjNo = subjNo;
 	}
 	public String getId() {
 		return id;

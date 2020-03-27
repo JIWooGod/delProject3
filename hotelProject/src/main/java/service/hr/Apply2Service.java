@@ -23,7 +23,7 @@ public class Apply2Service {
 	private ApplyRepository applyRepository;
 
 	public void action(HttpServletRequest request, Apply2Command applyCommand,
-			Errors errors, String job) {
+			Errors errors) {
 		String password = bcryptPasswordEncoder.encode(applyCommand.getPw());
 		TeacherDTO dto = new TeacherDTO();
 

@@ -12,13 +12,13 @@ public class ListEmpController {
 	@Autowired
 	private EmpListService empListService;
 	
-	@RequestMapping("/personnel/list")
+	@RequestMapping("/personnel")
 	public String list(Model model) {
 		empListService.view(model);
 		return "hr/personList";
 	}
 	
-	@RequestMapping("/teacher/list")
+	@RequestMapping("/teacher")
 	public String list2(Model model) {
 		empListService.view(model);
 		return "hr/teacherList";
