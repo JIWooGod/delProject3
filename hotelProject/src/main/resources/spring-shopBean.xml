@@ -9,8 +9,8 @@
     <!-- service -->
 	<bean id = "goodsInsertService" class = "service.shop.goodsInsertService" />
 	<bean id = "goodsListService" class = "service.shop.goodsListService" />
+	<bean id = "goodsDetailService" class = "service.shop.goodsDetailService" />
 
    <!-- repository -->
-    <bean id = "shopInsertRepository" class = "repository.shop.ShopInsertRepository" />
     <bean id = "shopRepository" class = "repository.shop.ShopRepository" />
 </beans>

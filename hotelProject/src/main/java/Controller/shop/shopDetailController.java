@@ -1,5 +1,7 @@
 package Controller.shop;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +15,10 @@ import service.shop.goodsDetailService;
 public class shopDetailController {
 	@Autowired
 	goodsDetailService goodsDetailService;
-	@RequestMapping("goods/goodsDetail")
-	public String goodsDetail(@RequestParam(value = "product") Long GOODS_SEQ,
-			Model model) {
-		goodsDetailService.goodsDetail(model, GOODS_SEQ);
+	@RequestMapping("/delshop/product")
+	public String goodsDetail(@RequestParam(value = "code")String goodsCode ,Model model, HttpSession session) {
+		System.out.println("goodsDetail : " + goodsCode);
+		goodsDetailService.goodsDetail(model, session, goodsCode);
 		return "shop/product-page";
 	}
 }

@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="zxx">
-<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Yoga Studio Template">
@@ -120,10 +120,10 @@
                             </div>
                         </figure>
                         <div class="product-text">
-                            <a href="product=${goods.goodsCode }">
+                            <a href="product?code=${goods.goodsCode }">
                                 <h6>${goods.goodsName }</h6>
                             </a>
-                            <p>${goods.goodsPrice } </p>
+                            <p><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${goods.goodsPrice }" /> </p>
                         </div>
                     </div>
                 </div>

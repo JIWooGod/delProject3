@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="zxx">
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +12,7 @@
     <meta name="keywords" content="Yoga, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Violet | Template</title>
+    <title>DelLuna OnlineShop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
@@ -67,33 +70,36 @@
 
     <section class="product-page">
         <div class="container">
-            <div class="product-control">
-                <a href="#">Previous</a>
-                <a href="#">Next</a>
-            </div>
+            
             <div class="row">
                 <div class="col-lg-6">
                     <div class="product-slider owl-carousel">
-                        <div class="product-img">
-                            <figure>
-                                <img src="/hotelProject/shop/img/product/product-1.jpg" alt="">
-                                <div class="p-status">new</div>
-                            </figure>
-                        </div>
-                        <div class="product-img">
-                            <figure>
-                                <img src="/hotelProject/shop/img/product/product-1.jpg" alt="">
-                                <div class="p-status">new</div>
-                            </figure>
-                        </div>
+                          <c:forTokens items="${goodsD.goodsPic }" var="goodsPic"  delims="-"  varStatus="status">
+									<c:if test="${status.index == 0}">
+										<div class="product-img">
+											<figure>
+												<img src="../shop/img/product/${goodsPic }" />
+										  		<div class="p-status">new</div>
+                           				 	</figure>
+                           				</div> 
+									</c:if>
+									<c:if test="${status.index == 1}">
+										<div class="product-img">
+											<figure>
+												<img src="../shop/img/product/${goodsPic }" />
+										  		<div class="p-status">new</div>
+                           				 	</figure>
+                           				</div> 
+									</c:if>
+							</c:forTokens>
                     </div>
-                    
-                </div>
+                  </div>  
+               
                 <div class="col-lg-6">
                     <div class="product-content">
-                        <h2>Dotted Blue Shirt</h2>
+                        <h2>${goodsD.goodsName }</h2>
                         <div class="pc-meta">
-                            <h5>$22.90</h5>
+                            <h5><fmt:setLocale value="ko_KR"/><fmt:formatNumber type="currency" value="${goodsD.goodsPrice }" /></h5>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -102,19 +108,19 @@
                                 <i class="fa fa-star"></i>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>${goodsD.goodsOpt }</p>
                         <ul class="tags">
-                            <li><span>Category :</span> Men’s Wear</li>
+                            <li><span>Category :</span> ${goodsD.goodsCategory }</li>
                             <li><span>Tags :</span> man, shirt, dotted, elegant, cool</li>
                         </ul>
+                 
                         <div class="product-quantity">
                             <div class="pro-qty">
                                 <input type="text" value="1">
                             </div>
                         </div>
-                        <a href="#" class="primary-btn pc-btn">Add to cart</a>
+                        <a href="#" class="primary-btn pc-btn">구매하기</a> &nbsp;&nbsp;
+                        <a href="#" class="primary-btn pc-btn">장바구니</a>
                         <ul class="p-info">
                             <li>Product Information</li>
                             <li>Reviews</li>

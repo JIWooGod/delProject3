@@ -791,6 +791,8 @@ ol {
 
 .single-product-item figure img {
 	min-width: 100%;
+	width: 242.5px;
+	height: 282.3px;
 }
 
 .single-product-item figure .p-status {

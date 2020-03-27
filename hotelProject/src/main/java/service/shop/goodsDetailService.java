@@ -1,12 +1,23 @@
 package service.shop;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-public class goodsDetailService {
+import model.dto.room.RoomDTO;
+import model.dto.shop.shopDTO;
+import repository.shop.ShopRepository;
 
-	public void goodsDetail(Model model, Long gOODS_SEQ) {
-		// TODO Auto-generated method stub
-		
+@Service
+public class goodsDetailService {
+	@Autowired
+	private ShopRepository  shopRepository;
+	public void goodsDetail(Model model, HttpSession session, String goodsCode) {
+		shopDTO dto = shopRepository.goodsDetail(goodsCode);
+		session.setAttribute("goodsD", dto);
+		System.out.println("디테일 서비스로 들어옴");
 	}
 
 }

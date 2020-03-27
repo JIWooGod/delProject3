@@ -11,12 +11,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import command.shop.shopCommand;
 import model.dto.shop.shopDTO;
-import repository.shop.ShopInsertRepository;
+
+import repository.shop.ShopRepository;
 
 @Service
 public class goodsInsertService {
 	@Autowired
-	ShopInsertRepository shopInsertRepository;
+	ShopRepository shopRepository;
 
 	public void execute(shopCommand shopcommand, HttpServletRequest request) {
 		shopDTO dto = new shopDTO();
@@ -53,7 +54,7 @@ public class goodsInsertService {
 		}
 		dto.setGoodsPic(storeTotal);
 		
-		shopInsertRepository.insertShop(dto);
+		shopRepository.insertShop(dto);
 	}
 	
 }

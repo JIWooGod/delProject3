@@ -10,10 +10,7 @@ public class shopMainController {
 	public String shopMain() {
 		return "shop/shopIndex";
 	}
-	@RequestMapping("delshop/product")
-	public String productMain() {
-		return "shop/product-page";
-	}
+
 	@RequestMapping("delshop/cart")
 	public String cartMain() {
 		return "shop/shop-Cart";
