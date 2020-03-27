@@ -23,9 +23,24 @@ public class ReservationCommand {
 	private String noFeader;
 	private String uncomfort;
 	private String rmbkContent;
+	private String roomSelect;
+	private String roomPrice;
 	
 	
 	
+	
+	public String getRoomPrice() {
+		return roomPrice;
+	}
+	public void setRoomPrice(String roomPrice) {
+		this.roomPrice = roomPrice;
+	}
+	public String getRoomSelect() {
+		return roomSelect;
+	}
+	public void setRoomSelect(String roomSelect) {
+		this.roomSelect = roomSelect;
+	}
 	public String getUserName() {
 		return userName;
 	}

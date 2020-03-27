@@ -34,6 +34,13 @@ public class ReservationController {
 		reservationService.execute3(reservationCommand,model,session);
 		return"room/roomSelect";
 	}
+	@RequestMapping("/kakaoPay")
+	public String reservation4(ReservationCommand reservationCommand,Model model,HttpSession session)
+	{
+		reservationService.execute4(reservationCommand,model,session);
+		
+		return"room/kakao";
+	}
 	
 
 }

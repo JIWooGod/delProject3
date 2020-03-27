@@ -85,7 +85,7 @@ $(window).load(function() {
 						</tr>
 					</table>
 					</div>
-						<div class="hs_reservation_left">
+						<div class="hs_reservation_left"style="padding: 0 20px 0 50px;width:30%">
 							<ul class="hs_reservation_litt">
 									<li><strong>체크인</strong> 
 										 &nbsp;  <fmt:formatDate value="${ reservation.rmbkChkIn }" type = "date" pattern="yyyy년MM월dd일"/>
@@ -123,7 +123,7 @@ $(window).load(function() {
 							<input type="hidden" name="days" value="${reservation.roomDays}"> 
 							<input type="hidden" name="roomGrade" value="${room.roomGrade}">
 							
-							<!-- 객실전망 선택 -->
+							
 							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;">
 							<h3 class="hs_reservation_title">고객 정보</h3>
 								<ul class="hs_reservation_room_select">

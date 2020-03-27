@@ -24,6 +24,79 @@ $(window).load(function() {
 	slideshowSpeed :4000
   });
 });
+function kakaopay(){
+	writeF.submit();
+}
+function selectRoom(n){
+	if(n ==4){
+		selectroom.style.display = "none";
+		room4.style.display = "";
+		room5.style.display = "none";
+		room6.style.display = "none";
+		room7.style.display = "none";
+		room8.style.display = "none";
+		room9.style.display = "none";
+		room10.style.display = "none";
+	}else if(n ==5){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "";
+		room6.style.display = "none";
+		room7.style.display = "none";
+		room8.style.display = "none";
+		room9.style.display = "none";
+		room10.style.display = "none";
+	}else if(n ==6){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "none";
+		room6.style.display = "";
+		room7.style.display = "none";
+		room8.style.display = "none";
+		room9.style.display = "none";
+		room10.style.display = "none";
+	}
+	else if(n ==7){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "none";
+		room6.style.display = "none";
+		room7.style.display = "";
+		room8.style.display = "none";
+		room9.style.display = "none";
+		room10.style.display = "none";
+	}
+	else if(n ==8){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "none";
+		room6.style.display = "none";
+		room7.style.display = "none";
+		room8.style.display = "";
+		room9.style.display = "none";
+		room10.style.display = "none";
+	}
+	else if(n ==9){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "none";
+		room6.style.display = "none";
+		room7.style.display = "none";
+		room8.style.display = "none";
+		room9.style.display = "";
+		room10.style.display = "none";
+	}
+	else if(n ==10){
+		selectroom.style.display = "none";
+		room4.style.display = "none";
+		room5.style.display = "none";
+		room6.style.display = "none";
+		room7.style.display = "none";
+		room8.style.display = "none";
+		room9.style.display = "none";
+		room10.style.display = "";
+	}
+}
 </script>
 <body>
 	<jsp:include page="../includePage/Header.jsp" flush="true" />
@@ -85,7 +158,7 @@ $(window).load(function() {
 						</tr>
 					</table>
 					</div>
-						<div class="hs_reservation_left">
+						<div class="hs_reservation_left"style="padding: 0 20px 0 50px;width:30%">
 							<ul class="hs_reservation_litt">
 									<li>
 										<strong>체크인</strong> &nbsp;  <fmt:formatDate value="${ reservation.rmbkChkIn }" type = "date" pattern="yyyy년MM월dd일"/>
@@ -117,16 +190,23 @@ $(window).load(function() {
 	
 					<div class="hs_reservation">
 					<div class="hs_reservation_section hs_reservation_box2">
-						<form name="writeF" id="writeF" method="POST" action="reservationStep3">
+						<form name="writeF" id="writeF" method="POST" action="kakaoPay">
 							<input type="hidden" name="fromdate" value="${ reservation.rmbkChkIn }">
 							<input type="hidden" name="todate" value="${ reservation.rmbkChkOut }"> 
 							<input type="hidden" name="roomCount" value="${reservation.roomCount}"> 
 							<input type="hidden" name="people" value="${reservation.rmbkPeople}">
 							<input type="hidden" name="days" value="${reservation.roomDays}"> 
 							<input type="hidden" name="roomGrade" value="${room.roomGrade}">
-							
+							<input type="hidden" name = "userName" value = "${reservation.userName }">
+							<input type= "hidden" name = "userPh1" value = "${reservation.userPh }">
+							<input type = "hidden" name = "roomBed" value = "${reservation.roomBed}">
+							<input type = "hidden" name = "rmbkContent" value = "${reservation.rmbkOption }">
+							<input type = "hidden" name = "noFeader" value = "${reservation.noFeader}">
+							<input type = "hidden" name = "uncomFort" value = "${reservation.uncomFort}">
+							<input type = "hidden" name = "roomPirce" value = "${room.roomPrice}">
+						
 							<!-- 객실전망 선택 -->
-							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;">
+							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;width:20%">
 							<h3 class="hs_reservation_title">예약 정보</h3>
 								<ul class="hs_reservation_room_select">
 								<li>
@@ -191,32 +271,135 @@ $(window).load(function() {
 									
 								</ul>
 								<br/>
-								<h3 class="hs_reservation_title">총 예약 금액 </h3><strong>KRW ${room.roomPrice }</strong>
+								<h3 class="hs_reservation_title">총 예약 금액 </h3><strong>KRW ${room.roomPrice } * ${reservation.roomDays}</strong>
 								<br/>
 								<br/>
 							</div>
+							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;width:15%" align = center>
+							<h3 class="hs_reservation_title"> 층 선택</h3>
+								<input type = "button" name = "floor" value = "10F" onclick="selectRoom(10);"><br/>
+								<input type = "button" name = "floor" value = "9F"  onclick="selectRoom(9);"><br/>
+								<input type = "button" name = "floor" value = "8F"  onclick="selectRoom(8);"><br/>
+								<input type = "button" name = "floor" value = "7F"  onclick="selectRoom(7);"><br/>
+								<input type = "button" name = "floor" value = "6F"  onclick="selectRoom(6);"><br/>
+								<input type = "button" name = "floor" value = "5F"  onclick="selectRoom(5);"><br/>
+								<input type = "button" name = "floor" value = "4F"  onclick="selectRoom(4);"><br/>
+								<br/>
+							<br/>
+							</div>
 							
-				<div class="hs_reservat" style="padding: 0 20px 0 50px;">
-					
+								
+				<div class="hs_reservat" id = "selectroom" style="padding: 0 20px 0 50px;">
 					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;객실 선택</h3>
-						<div id = "selectRomm" align =center>
+					<div id = "selectRomm" align =center>
+							<br><br><br><br><br><br><br><br><br><br><br>
+						<strong>희망하는 층을 선택하십시오.</strong>
+					</div>
+				</div>			
+				
+				<div class="hs_reservat" id = "room4" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;4F</h3>
+					<div id = "selectRomm" align =center>
 							
-						<label for="male">101</label><input type="radio" id="roomSelect" name="roomSelect" value="101">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" id="roomSelect" name="roomSelect" value="102"><label for="male">102</label><br/><br/>
-						<label for="male">103</label><input type="radio" id="roomSelect" name="roomSelect" value="103">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" id="roomSelect" name="roomSelect" value="104"><label for="male">104</label><br/><br/>
-						
-						<label for="male">105</label><input type="radio" id="roomSelect" name="roomSelect" value="101">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" id="roomSelect" name="roomSelect" value="102"><label for="male">106</label><br/><br/>
-						<label for="male">107</label><input type="radio" id="roomSelect" name="roomSelect" value="103">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" id="roomSelect" name="roomSelect" value="104"><label for="male">108</label><br/><br/>
+						<label for="male">401</label><input type="radio" id="roomSelect" name="roomSelect" value="401">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="402"><label for="male">402</label><br/><br/>
+						<label for="male">403</label><input type="radio" id="roomSelect" name="roomSelect" value="403">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="404"><label for="male">404</label><br/><br/>
+						<label for="male">405</label><input type="radio" id="roomSelect" name="roomSelect" value="405">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="406"><label for="male">406</label><br/><br/>
+						<label for="male">407</label><input type="radio" id="roomSelect" name="roomSelect" value="407">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="408"><label for="male">408</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room5" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;5F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">501</label><input type="radio" id="roomSelect" name="roomSelect" value="501">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="502"><label for="male">502</label><br/><br/>
+						<label for="male">503</label><input type="radio" id="roomSelect" name="roomSelect" value="503">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="504"><label for="male">504</label><br/><br/>
+						<label for="male">505</label><input type="radio" id="roomSelect" name="roomSelect" value="505">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="506"><label for="male">506</label><br/><br/>
+						<label for="male">507</label><input type="radio" id="roomSelect" name="roomSelect" value="507">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="508"><label for="male">508</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room6" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;6F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">601</label><input type="radio" id="roomSelect" name="roomSelect" value="601">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="602"><label for="male">602</label><br/><br/>
+						<label for="male">603</label><input type="radio" id="roomSelect" name="roomSelect" value="603">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="604"><label for="male">604</label><br/><br/>
+						<label for="male">605</label><input type="radio" id="roomSelect" name="roomSelect" value="605">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="606"><label for="male">606</label><br/><br/>
+						<label for="male">607</label><input type="radio" id="roomSelect" name="roomSelect" value="607">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="608"><label for="male">608</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room7" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;7F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">701</label><input type="radio" id="roomSelect" name="roomSelect" value="701">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="702"><label for="male">702</label><br/><br/>
+						<label for="male">703</label><input type="radio" id="roomSelect" name="roomSelect" value="703">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="704"><label for="male">704</label><br/><br/>
+						<label for="male">705</label><input type="radio" id="roomSelect" name="roomSelect" value="705">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="702"><label for="male">706</label><br/><br/>
+						<label for="male">707</label><input type="radio" id="roomSelect" name="roomSelect" value="707">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="704"><label for="male">708</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room8" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;8F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">801</label><input type="radio" id="roomSelect" name="roomSelect" value="801">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="802"><label for="male">802</label><br/><br/>
+						<label for="male">803</label><input type="radio" id="roomSelect" name="roomSelect" value="803">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="804"><label for="male">804</label><br/><br/>
+						<label for="male">805</label><input type="radio" id="roomSelect" name="roomSelect" value="805">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="806"><label for="male">806</label><br/><br/>
+						<label for="male">807</label><input type="radio" id="roomSelect" name="roomSelect" value="807">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="808"><label for="male">808</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room9" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;9F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">901</label><input type="radio" id="roomSelect" name="roomSelect" value="901">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="902"><label for="male">902</label><br/><br/>
+						<label for="male">903</label><input type="radio" id="roomSelect" name="roomSelect" value="903">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="904"><label for="male">904</label><br/><br/>
+						<label for="male">905</label><input type="radio" id="roomSelect" name="roomSelect" value="905">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="902"><label for="male">906</label><br/><br/>
+						<label for="male">907</label><input type="radio" id="roomSelect" name="roomSelect" value="907">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="908"><label for="male">908</label><br/><br/>
+					</div>
+				</div>
+					<div class="hs_reservat" id = "room10" style="padding: 0 20px 0 50px;display : none">
+					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;10F</h3>
+					<div id = "selectRomm" align =center>
+							
+						<label for="male">1001</label><input type="radio" id="roomSelect" name="roomSelect" value="1001">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="1002"><label for="male">1002</label><br/><br/>
+						<label for="male">1003</label><input type="radio" id="roomSelect" name="roomSelect" value="1003">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="1004"><label for="male">1004</label><br/><br/>
+						<label for="male">1005</label><input type="radio" id="roomSelect" name="roomSelect" value="1005">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="1002"><label for="male">1006</label><br/><br/>
+						<label for="male">1007</label><input type="radio" id="roomSelect" name="roomSelect" value="1007">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="roomSelect" name="roomSelect" value="1008"><label for="male">1008</label><br/><br/>
 					</div>
 				</div>
 							
 						
 					<div class="hs_reservation_section hs_reservation_bottom">
 						<div class="hs_reservation_btn_set" id="btnNext">
-							<a href="javascript:writeF.submit();" class="hs_reservation_btn_poin" style="color: #FFFFFF;">예약</a>
+							<a href="javascript:kakaopay()" class="hs_reservation_btn_poin" style="color: #FFFFFF;">예약</a>
 						</div>
 					</div>
 					

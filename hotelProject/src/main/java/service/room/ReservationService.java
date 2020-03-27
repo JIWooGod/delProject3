@@ -56,4 +56,25 @@ public class ReservationService {
 		RoomDTO room = roomRepository.selectRoom(dto);
 		model.addAttribute("room",room);
 	}
+	public void execute4(ReservationCommand reservationCommand,Model model,HttpSession session)
+	{
+		ReservationDTO dto = new ReservationDTO();
+		String userPh = reservationCommand.getUserPh1()+reservationCommand.getUserPh2()+reservationCommand.getUserPh3();
+		dto.setUserName(reservationCommand.getUserName());
+		dto.setUserPh(userPh);
+		dto.setRmbkOption(reservationCommand.getRmbkContent());
+		dto.setRoomView(reservationCommand.getRoomView());
+		dto.setRoomBed(reservationCommand.getRoomBed());
+		dto.setDndMode(reservationCommand.getDndMode());
+		dto.setNoFeader(reservationCommand.getNoFeader());
+		dto.setUncomFort(reservationCommand.getUncomfort());
+		dto.setRmbkPeople(reservationCommand.getPeople());
+		dto.setRmbkChkIn(new Timestamp(reservationCommand.getFromdate().getTime()));
+		dto.setRmbkChkOut(new Timestamp(reservationCommand.getTodate().getTime()));
+		dto.setRoomDays(reservationCommand.getDays());
+		dto.setRoomCount(reservationCommand.getRoomCount());
+		session.setAttribute("reservation",dto);
+		RoomDTO room = roomRepository.selectRoom(dto);
+		model.addAttribute("room",room);
+	}
 }
