@@ -54,10 +54,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="page-breadcrumb">
-                        <h2>Cart<span>.</span></h2>
-                        <a href="#">Home</a>
-                        <a href="#">Dresses</a>
-                        <a class="active" href="#">Night Dresses</a>
+                        <h2>Cart<span>.</span></h2> 
                     </div>
                 </div>
                 <div class="col-lg-8">

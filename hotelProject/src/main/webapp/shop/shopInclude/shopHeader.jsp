@@ -38,7 +38,7 @@
                         <li><a class="active" href="main">Home</a></li>
                         <li><a href="categories">Shop</a>
                             <ul class="sub-menu">
-                                <li><a href="product">Product Page</a></li>
+                                <li><a href="categories">Product Page</a></li>
                                 <li><a href="cart">Shopping Card</a></li>
                                 <li><a href="check-out.html">Check out</a></li>
                             </ul>

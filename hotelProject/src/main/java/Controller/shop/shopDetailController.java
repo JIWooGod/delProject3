@@ -17,7 +17,6 @@ public class shopDetailController {
 	goodsDetailService goodsDetailService;
 	@RequestMapping("/delshop/product")
 	public String goodsDetail(@RequestParam(value = "code")String goodsCode ,Model model, HttpSession session) {
-		System.out.println("goodsDetail : " + goodsCode);
 		goodsDetailService.goodsDetail(model, session, goodsCode);
 		return "shop/product-page";
 	}

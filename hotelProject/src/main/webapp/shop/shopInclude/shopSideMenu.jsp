@@ -72,8 +72,8 @@
         <h2>Categories <span></span></h2>
         <div class="box-content">
           <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
+            <li><a href="categories2?cate=Outer">1</a></li>
+            <li><a href="categories2?cate=Top">Category 2</a></li>
             <li><a href="#">Category 3</a></li>
             <li><a href="#">Category 4</a></li>
             <li class="last"><a href="#">Category 5</a></li>

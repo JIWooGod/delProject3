@@ -2,6 +2,8 @@ package service.shop;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -17,4 +19,9 @@ public class goodsListService {
 		List<shopDTO> list= shopRepository.goodsList();
 		model.addAttribute("goodsList", list);
 	}
+	public void goodsCateList(Model model, HttpSession session, String goodsCategory) {
+		List<shopDTO> list= shopRepository.goodsCateList(goodsCategory);
+		model.addAttribute("goodsCateList", list);
+	}
+	
 }

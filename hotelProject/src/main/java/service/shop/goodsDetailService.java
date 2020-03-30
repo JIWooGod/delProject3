@@ -14,10 +14,12 @@ import repository.shop.ShopRepository;
 public class goodsDetailService {
 	@Autowired
 	private ShopRepository  shopRepository;
+	
 	public void goodsDetail(Model model, HttpSession session, String goodsCode) {
 		shopDTO dto = shopRepository.goodsDetail(goodsCode);
 		session.setAttribute("goodsD", dto);
-		System.out.println("디테일 서비스로 들어옴");
 	}
 
+
+	
 }

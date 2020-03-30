@@ -56,9 +56,12 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="page-breadcrumb">
-                        <h2>All Product<span>.</span></h2>
-                        <a class="active" href="#">Home</a>
-                        <a href="#">All Product</a>              
+                        <c:forEach var="cate" items="${goodsCateList}" varStatus="status" begin="0" end="0">
+                        <h2>${cate.goodsCategory }<span>.</span></h2>
+                        <a class="active" href="main">Home</a>
+                        <a href="categories">Product</a>
+                        <a>${cate.goodsCategory }</a>     
+                        </c:forEach>         
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -97,7 +100,7 @@
                 </div>
             </div>
              <div class="row">
-                <c:forEach var="goods" items="${goodsList }" varStatus="status">
+                <c:forEach var="goods" items="${goodsCateList }" varStatus="status">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-product-item">
                         <figure>

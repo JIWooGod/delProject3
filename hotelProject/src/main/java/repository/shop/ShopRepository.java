@@ -35,4 +35,10 @@ public class ShopRepository {
 		
 	}
 
+	public List<shopDTO> goodsCateList(String goodsCategory) {
+		String statement = namespace + ".goodsCateList";
+		return sqlSession.selectList(statement, goodsCategory);
+		
+	}
+
 }

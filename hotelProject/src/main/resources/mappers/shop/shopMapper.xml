@@ -27,6 +27,10 @@
 	select <include refid="basecolumn" /> from goods
 	</select>
 	
+	<select id="goodsCateList" resultMap="shopmap" parameterType="String">
+	select <include refid="basecolumn" /> from goods where goods_category = #{goodsCategory}
+	</select>
+	
 	<select id="goodsDetail" resultMap="shopmap" parameterType="String" >
 	select <include refid="basecolumn" /> from goods where goods_code = #{goodsCode}
 	</select>
