@@ -13,12 +13,15 @@
 	<typeAliases>
 		<typeAlias type="model.dto.room.RoomDTO" alias="roomdto" />
 		<typeAlias type="model.dto.room.ReservationDTO" alias="reservationdto" /> 
+		<typeAlias type="model.dto.room.PayDTO" alias="paydto" />
+		
 
 		<typeAlias type="model.dto.shop.shopDTO" alias="shopdto" />
 
 		<typeAlias type="model.dto.dining.SeatPlaceDTO" alias="sdto" />
 
 		<typeAlias type="model.dto.dining.MenuDTO" alias="menu" />
+		<typeAlias type="model.dto.dining.RstDTO" alias="rst" />
 
 		<typeAlias type="model.dto.hr.AnswerDTO" alias="ans" />
 		<typeAlias type="model.dto.hr.AttendDTO" alias="attend" />

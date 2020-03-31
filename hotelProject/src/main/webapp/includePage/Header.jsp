@@ -39,7 +39,7 @@
                         <li class='navmenu_ul_ul_li3'><a href='dining4'>보나베띠</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining5'>슈크르 앤 미엘</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='dining6'>더 블루</a></li>
-                        <li class='navmenu_ul_ul_li3'><a href='d1tblList'>좌석관리</a></li>
+                        <li class='navmenu_ul_ul_li3'><a href='tblList?no=1'>좌석관리</a></li>
                         <li class='navmenu_ul_ul_li3'><a href='d1menuList'>메뉴관리</a></li>
                      </ul>
                   </li><li class='navmenu_ul_li4'>
@@ -48,7 +48,11 @@
                   </li><li class='navmenu_ul_li5'>
                      <a href='delshop/main'>Shopping Mall</a>
                      <ul class='navmenu_ul_ul5'><li class='navmenu_ul_ul_li5'><a href='delshop/main'>쇼핑몰</a></li></ul>
-                  </li>         </ul>
+                  </li>
+                  <li class='navmenu_ul_li3'>
+                     <a href='signInForm'>Sign In</a>
+                  </li>
+                  </ul>
                   
       
       </div>

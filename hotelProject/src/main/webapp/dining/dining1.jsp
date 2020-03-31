@@ -26,7 +26,7 @@ $(window).load(function() {
 function dMoreBtn(){
 	$.ajax({
 		type : "POST",
-		url : "dining1_detail",
+		url : "diningDetail?no="+$("#aa").val(),
 		datatype : "html",
 		success : function(data1){
 			$("#div1").html(data1);
@@ -93,7 +93,7 @@ function dMoreBtn(){
 </div>
 
 <div align="center">
-	<button class="dMoreBtn" style="vertical-align:middle" onclick="javascript:dMoreBtn()"><span>더 보기</span></button>
+	<button class="dMoreBtn" style="vertical-align:middle" onclick="javascript:dMoreBtn()" value="1" id="aa"><span>더 보기</span></button>
 </div>
 
 <div id="div1" right="100px"></div>

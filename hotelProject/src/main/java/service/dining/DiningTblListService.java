@@ -8,11 +8,11 @@ import org.springframework.ui.Model;
 import model.dto.dining.SeatPlaceDTO;
 import repository.dining.DiningRepository;
 
-public class DiningReservationService {
+public class DiningTblListService {
 	@Autowired
 	private DiningRepository reservationRepository;
-	public void execute(Model model) {
-		List<SeatPlaceDTO> list = reservationRepository.seatPlace();
+	public void execute(Long rstNo, Model model) {
+		List<SeatPlaceDTO> list = reservationRepository.seatPlace(rstNo);
 		model.addAttribute("seats", list);
 	}
 }

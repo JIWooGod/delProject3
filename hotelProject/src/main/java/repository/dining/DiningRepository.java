@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import model.dto.dining.MenuDTO;
+import model.dto.dining.RstDTO;
 import model.dto.dining.SeatPlaceDTO;
 
 public class DiningRepository {
@@ -13,9 +14,9 @@ public class DiningRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "DiningMapper";
 	
-	public List<SeatPlaceDTO> seatPlace() {
+	public List<SeatPlaceDTO> seatPlace(Long rstNo) {
 		String statement = namespace + ".seatPlace";
-		return sqlSession.selectList(statement);
+		return sqlSession.selectList(statement, rstNo);
 	}
 	
 	public void tblInsert(SeatPlaceDTO dto) {
@@ -28,9 +29,9 @@ public class DiningRepository {
 		sqlSession.insert(statement, dto);
 	}
 
-	public List<MenuDTO> menuSelect() {
+	public List<MenuDTO> menuSelect(Long rstNo) {
 		String statement = namespace + ".menuSelect";
-		return sqlSession.selectList(statement);
+		return sqlSession.selectList(statement, rstNo);
 	}
 
 	public MenuDTO menuOneSelect(Long menuNo) {
@@ -51,6 +52,11 @@ public class DiningRepository {
 	public void d1tblDelete(Long rstTbl) {
 		String statement = namespace + ".tblDelete";
 		sqlSession.delete(statement, rstTbl);
+	}
+
+	public RstDTO selectRst(Long rstNo) {
+		String statement = namespace + ".rstSelect";
+		return sqlSession.selectOne(statement, rstNo);
 	}
 
 	

@@ -7,7 +7,7 @@
 
 	<bean id = "diningRepository" class = "repository.dining.DiningRepository" />
 	
-	<bean id = "diningReservationService" class = "service.dining.DiningReservationService" />
+	<bean id = "diningTblListService" class = "service.dining.DiningTblListService" />
 	<bean id = "tblInsertService" class = "service.dining.TblInsertService" />
 	<bean id = "MenuInsertService" class = "service.dining.MenuInsertService" />
 	<bean id = "menuSelectService" class = "service.dining.MenuSelectService" />
@@ -15,5 +15,6 @@
 	<bean id = "menuUpdateActionService" class = "service.dining.MenuUpdateActionService" />
 	<bean id = "menuDeleteService" class = "service.dining.MenuDeleteService" />
 	<bean id = "tblDeleteService" class = "service.dining.TblDeleteService" />
+	<bean id = "rstDetailService" class = "service.dining.RstDetailService" />
 	
 </beans>

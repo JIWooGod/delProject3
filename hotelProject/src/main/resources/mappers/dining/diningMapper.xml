@@ -7,13 +7,15 @@
 		<id column="rst_no" jdbcType="BIGINT" property="rstNo" />
 		<id column="rst_tbl" jdbcType="BIGINT" property="rstTbl" />
 		<result column="rst_seat" jdbcType="BIGINT" property="rstSeat" />
+		<result column="rst_name" jdbcType="VARCHAR" property="rstName" />
 	</resultMap>
 	
-	<!-- 궁궐 좌석리스트 -->
+	<!-- 좌석관리 좌석리스트 + 레스토랑번호,이름 뽑기 -->
 	<select id="seatPlace" resultMap="seatBaseMap" parameterType="long">
-		SELECT * 
-		FROM SEATPLACE
-		WHERE RST_NO=1 ORDER BY RST_TBL ASC
+		SELECT r.RST_NO, r.RST_NAME, s.RST_TBL, s.RST_SEAT
+		FROM DELUNA.RESTAURANT r, DELUNA.SEATPLACE s
+		WHERE r.RST_NO = s.RST_NO AND s.RST_NO=#{rstNo}
+		GROUP BY r.RST_NO, r.RST_NAME, s.RST_SEAT, s.RST_TBL
 	</select>
 	
 	<insert id="tblInsert" parameterType="sdto">
@@ -66,7 +68,35 @@
 		WHERE RST_NO=1 AND RST_TBL=#{rstTbl}
 	</delete>
 	
+	<!-- 레스토랑 디테일 select -->
+	<resultMap id="rstBaseMap" type="rst">
+		<id property="rstNo" jdbcType="BIGINT" column="RST_NO"/>
+		<result property="rstName" jdbcType="VARCHAR" column="RST_NAME"/>
+		<result property="rstAddr" jdbcType="VARCHAR" column="RST_ADDR"/>
+		<result property="rstTel" jdbcType="VARCHAR" column="RST_TEL"/>
+		<result property="rstEmail" jdbcType="VARCHAR" column="RST_EMAIL"/>
+		<result property="rstImg" jdbcType="VARCHAR" column="RST_IMG"/>
+		<result property="tblCount" jdbcType="BIGINT" column="TBL_COUNT"/>
+	</resultMap>
+
+	<select id="rstSelect" parameterType="long" resultMap="rstBaseMap">
+		SELECT r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL, count(s.RST_TBL) AS tbl_count
+		FROM DELUNA.RESTAURANT r, DELUNA.SEATPLACE s
+		WHERE r.RST_NO = s.RST_NO AND r.RST_NO=#{rstNo}
+		GROUP BY r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL
+	</select>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
 
 
 

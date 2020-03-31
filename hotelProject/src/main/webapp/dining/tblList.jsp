@@ -43,14 +43,18 @@
 
 		<div class='sub_menu'>
 			<div class='box'>
-				<span class='subMENUon'><a href='d1menuList'>궁궐</a></span> <span
-					class='subMENUout'><a href=''>황룡</a></span> <span
-					class='subMENUout'><a href=''>더 델루나</a></span>
+				<span class='subMENUon'><a href='tblList?no=1'>궁궐</a></span> <span
+					class='subMENUout'><a href='tblList?no=2'>황룡</a></span> <span
+					class='subMENUout'><a href='tblList?no=3'>더 델루나</a></span>
 			</div>
 
 			<div class='tl'>
 				<div class='line'></div>
-				<div class='title'>궁궐</div>
+				<div class='title'>
+					<c:forEach items="${ seats }" var="seat" end="0">
+						${ seat.rstName }
+					</c:forEach>
+				</div>
 				<div class='line'></div>
 			</div>
 		</div>
