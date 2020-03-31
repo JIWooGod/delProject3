@@ -9,7 +9,14 @@ public class SubjectCommand {
 	String subjCnt;
 	String subjGroup;
 	Long subjDay;
+	Long subjNum;
 	
+	public Long getSubjNum() {
+		return subjNum;
+	}
+	public void setSubjNum(Long subjNum) {
+		this.subjNum = subjNum;
+	}
 	public Long getSubjDay() {
 		return subjDay;
 	}

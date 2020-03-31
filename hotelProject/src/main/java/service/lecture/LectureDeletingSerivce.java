@@ -19,11 +19,13 @@ public class LectureDeletingSerivce {
 	@Autowired
 	private LectureDetailRepository lectureDetailRepository;
 	
-	public void action(HttpServletRequest request, SubjectDTO dto, Long num) {
+	public void action(HttpServletRequest request, Long num) {
+		SubjectDTO dto = new SubjectDTO();
 		String path = "\\lec\\video\\";
 		String realPath = request.getServletContext().getRealPath(path);
+		System.out.println(realPath);
 		dto.setSubjNo(num);
-		lectureDetailRepository.reposit(dto);
+		dto = lectureDetailRepository.reposit(dto);
 		String store = dto.getSubjStore();
 		if(store!=null) {
 			File file = new File(realPath + "\\" + store);

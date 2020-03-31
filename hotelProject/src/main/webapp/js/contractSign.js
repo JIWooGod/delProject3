@@ -1,9 +1,12 @@
-var unitNum = document.getElementById("unitNum");
-var error = document.getElementById("error");
+var videoUp = document.getElementById("videoUp");
+var video = document.getElementById("video");
 var canvas, context, tool;
+var submit = document.getElementById("submit");
 
 if (window.addEventListener) {
     window.addEventListener('load', InitEvent, false);
+    window.addEventListener('load', wrapAll, false);
+    window.addEventListener('load', aboutVideo, false);
 }
 
 function InitEvent() {
@@ -106,7 +109,7 @@ function ev_canvas(ev) {
 	func(ev);
     }
 }
-
+//다시 그리기를 실행한다.
 function onClear() {
     canvas = document.getElementById('drawCanvas');
     context.save();
@@ -115,24 +118,36 @@ function onClear() {
 	context.restore();
 }
 
-function warp(){
-	location.href='../lecture/list';
-}
-function warp2(){
-	location.href='../lecture/upload';
-}
-function check(){
-	console.log(unitNum.value);
-	if(unitNum.value < 1){
-		error.style.color = "red";
-		error.style.fontSize = "0.8em";
-		error.innerHTML = "1 이상의 숫자를 입력하시오.";
-	}else if(unitNum.value > 10){
-		error.style.color = "red";
-		error.style.fontSize = "0.8em";
-		error.innerHTML - "7 이하의 숫자를 입력하시오.";
+//이동
+function wrapAll(){
+	function warp(){
+		location.href='../lecture';
 	}
+	function warp2(){
+		location.href='../lecture/upload';
+	}
+	cancel.addEventListener("click",warp,false);
 }
 
-cancel.addEventListener("click",warp,false);
-unitNum.addEventListener("blur",check,false);
+//동영상
+function aboutVideo(){
+	function fileUpload(e){
+		var file = e.target.flies;
+		var reader = new FileReader();
+		document.getElementById("videoContent").innerHTML = "<video src='' width='300px' height='auto' id='video' type='video/mp4'>";
+		video.src = e.target.result;
+		reader.readAsDataURL(f);
+	}
+
+	//재생 시간 산출
+	function getTime(){
+		console.log("재생시간 "+videoUp);
+		if(videoUp!=null){
+			var totalTime = Math.floor(Player.currentMedia.duration); // 총 재생시간 추출
+			document.getElementById("fullTime").innerHTML = changeTimeType(totalTime);
+			document.getElementById("subjTime").value = changeTimeType(totalTime);
+		}
+	}
+	videoUp.addEventListener("change",fileUpload,false);
+	//video.addEventListener("change",getTime,false);
+}

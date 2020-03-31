@@ -30,6 +30,6 @@ public class ApplyEmpController {
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
 		applyService.action(request,applyCommand,errors);
-		return "redirect:/personnel";
+		return "redirect:/main";
 	}
 }

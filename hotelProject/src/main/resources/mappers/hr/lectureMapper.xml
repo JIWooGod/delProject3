@@ -56,15 +56,16 @@
 	<update id="modifyLec">
 		update
 			SUBJECT
-		set
+		<trim prefix="set" suffixOverrides=",">
 			SUBJ_NAME = #{subjName},
 			SUBJ_CNT = #{subjCnt},
-			SUBJ_DAY = #{subjDat},
-			<if test="#{subjOrigin}!=null">
+			SUBJ_DAY = #{subjDay},
+			<if test="subjOrigin != null" >
 			SUBJ_ORIGIN = #{subjOrigin},
 			SUBJ_FILESIZE = #{subjFileSize},
 			SUBJ_STORE = #{subjStore}
 			</if>
+		</trim>
 		where
 			SUBJ_NO = #{subjNo}
 	</update>

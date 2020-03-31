@@ -49,7 +49,10 @@
 		</tr>
 		<tr>
 			<td>강의 동영상</td>
-			<td><input type="file" id="videoUp" accept="video/*" name="subjVideo"/></td>
+			<td>
+				<input type="file" id="videoUp" accept="video/*" name="subjVideo" /><br/>
+				<div id="videoContent"></div>
+			</td>
 		</tr>
 		<tr>
 			<td>수강기간</td>

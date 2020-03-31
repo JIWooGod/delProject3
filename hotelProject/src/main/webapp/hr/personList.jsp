@@ -25,21 +25,21 @@
 	</tr>
 	<c:forEach items="${emp }" var="emp">
 	<tr>
-		<td><a href="detail/${emp.empNo }">${emp.empNo}</a></td>
-		<td><a href="detail/${emp.empNo }">${emp.empName }</a></td>
+		<td><a href="./personnel/detail/${emp.empNo }">${emp.empNo}</a></td>
+		<td><a href="./personnel/detail/${emp.empNo }">${emp.empName }</a></td>
 		<td>${emp.empTel }</td>
 		<td>${emp.empEmail }</td>
 		<td>${emp.deptNo }</td>
 		<td id="pass">${emp.passState } 
 		<c:choose>
-			<c:when test="${empty emp.passState }">
-				<button id="applierBtn" onclick="location.href='detail/${emp.empNo }'">지원서 조회</button>
+			<c:when test="${empty emp.passState || emp.passState == '지원대기자' }">
+				<button id="applierBtn" onclick="location.href='./personnel/detail/${emp.empNo }'">지원서 조회</button>
 			</c:when>
 			<c:when test='${emp.passState == "서류합격자" }'>
-				<button id="interviewBtn" onclick="location.href='./interview?num=${emp.empNo }'">면접표 조회</button>
+				<button id="interviewBtn" onclick="location.href='./personnel/interview/${emp.empNo }'">면접보기</button>
 			</c:when>
 			<c:when test='${emp.passState == "면접합격자" }'>
-				<button id="contractBtn" onclick="location.href='./contract?num=${emp.empNo }'">계약서 조회</button>
+				<button id="contractBtn" onclick="location.href='./personnel/contract/${emp.empNo }'">계약하기</button>
 			</c:when>
 		</c:choose>
 		</td>

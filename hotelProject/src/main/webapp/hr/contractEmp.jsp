@@ -21,7 +21,7 @@
 	</tr>
 	<tr>
 		<td>사원번호</td>
-		<td></td>
+		<td>100030</td>
 	</tr>
 	<tr>
 		<td>성명</td>
@@ -29,7 +29,7 @@
 	</tr>
 	<tr>
 		<td>급여</td>
-		<td></td>
+		<td>원</td>
 	</tr>
 	<tr>
 		<td>직급</td>
@@ -47,5 +47,7 @@
 		</td>
 	</tr>
 </table>
+	<button id="submit" onclick="location.href='../personnel/contract/100030'">계약하기</button>
+	<button id="cancel" onclick="location.href='../personnel'">돌아가기</button>
 </body>
 </html>

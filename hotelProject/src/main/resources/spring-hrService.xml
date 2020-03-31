@@ -9,6 +9,8 @@
 	<bean id="empListService" class="service.hr.EmpListService"/>
 	<bean id="empDetailService" class="service.hr.EmpDetailService"/>
 	<bean id="empModifyService" class="service.hr.EmpModifyService"/>
+	<bean id="pass1stEmpService" class="service.hr.Pass1stEmpService"/>
+	<bean id="jobInterviewService" class="service.hr.JobInterviewService"/>
 	
 	<!-- promote service -->
 

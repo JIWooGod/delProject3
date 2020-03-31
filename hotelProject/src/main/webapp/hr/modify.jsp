@@ -10,19 +10,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-
-</style>
+<link rel="stylesheet" href="/hotelProject/css/hoteladmin.css"/>
 </head>
 <body>
 <h2>내 정보 수정</h2>
-<form:form action="modifying" commandName="applyCommand">
+<form:form action="modifying" commandName="applyCommand" method="post">
 <table class="tableForm">
 	<tr>
 		<td>아이디 *</td>
 		<td>
-			<form:input path="id" placeholder="아이디를 입력하시오"/>
-			<form:errors path="id" class="error"/>
+			${applier.empId }
 		</td>
 	</tr>
 	<tr>
@@ -42,8 +39,7 @@
 	<tr>
 		<td>이름 *</td>
 		<td>
-			<form:input path="name" placeholder="이름을 입력하시오"/>
-			<form:errors path="name" class="error"/>
+			${applier.empName }
 		</td>
 	</tr>
 	<tr>
@@ -51,7 +47,7 @@
 		<td>
 			<form:input path="tel" placeholder="전화번호를 입력하시오"/>
 			<form:errors path="tel" class="error"/>
-			<br/>* '-'를 제외한 숫자만 입력하시오.
+			<div id="message">* '-'를 제외한 숫자만 입력하시오.</div>
 		</td>
 	</tr>
 	<tr>
@@ -70,13 +66,7 @@
 	<tr>
 		<td>지원 부서</td>
 		<td>
-			<form:select path="deptNo">
-				<option value="100">인사</option>
-				<option value="110">교육</option>
-				<option value="120">객실관리</option>
-				<option value="130">레스토랑</option>
-				<option value="140">쇼핑몰</option>
-			</form:select>
+			${emp.deptNo }
 		</td>
 	</tr>
 	<tr>
@@ -93,6 +83,6 @@
 <input type="submit" value="수정하기">
 <input type="reset" value="초기화">
 </form:form>
-<button onclick="javascript:location.href='../detail/${emp.empNo}'">취소</button>
+<button onclick="javascript:location.href='../detail/${applier.empNo}'">취소</button>
 </body>
 </html>

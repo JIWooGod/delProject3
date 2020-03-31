@@ -17,8 +17,10 @@ public class FormEmpController {
 	private EmpDetailService empDetailService;
 	
 	@RequestMapping(value="/personnel/modify", method=RequestMethod.GET)
-	public String form(@RequestParam(value="empNo") Long empNo, Model model) {
+	public String form(@RequestParam(value="empNo") Long empNo,Model model,
+			ApplyCommand applyCommand) {
 		empDetailService.action(empNo, model);
+		model.addAttribute("applyCommand",applyCommand);
 		return "hr/modify";
 	}
 }

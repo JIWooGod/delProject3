@@ -126,11 +126,11 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {margin:5px;
 					text-align:center;
-					width:270px;
+					width:100px;
 					height:40px;
 					border:none;
 					color:white;
-					font-size:20px;
+					font-size:15px;
 					font-stretch:ultra-condensed;
 					font-weight:bold;
 					background-color:#935c3c;
@@ -142,7 +142,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover {background-color:#382f29;} 
 textarea {text-align:left;
 		 width:300px; 
-		 height:150px; 
+		 height:100px;
 		 line-height:normal;
 		 vertical-align:top; 
 		 font-family:inherit;
@@ -194,8 +194,7 @@ textarea {text-align:left;
 label {position:absolute;
 		top:1px;
 		left:1px;}
-table {margin:auto;
-	max-width:1000x;
+table {max-width:1000px;
 	height:auto;}
 #content_form th {text-align:right;
 		  		font-family:inherit;
@@ -231,3 +230,10 @@ table {margin:auto;
 			text-align:left;
 			font-size:17px;
 			padding:5px;}
+#invisibleTale{border:none;}
+#invisibleTale td{min-height:25px;
+				min-width: 40px;
+				font-size: 13px;}
+#rightCol{text-align:right;}
+#message{color:#935c3c;
+		font-size:0.8em;}

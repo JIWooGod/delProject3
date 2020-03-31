@@ -71,8 +71,8 @@ function moved(){
 </div>
 <div id="videoView">
 !강의시간 이내로 재생한 후 종료하면 수료되지 않습니다.
-	<video id="videoUp" width="100%" height="auto" controls="controls"
-	ontimeupdate="javascript:moved(this)">
+	<video id="video" width="100%" height="auto" controls="controls"
+	controlsList="nodownload" ontimeupdate="javascript:moved(this)">
 		<source src="/hotelProject/lec/video/${list.subjStore }" type="video/${extension }">
 	</video>
 	<div id="fullTime"></div>

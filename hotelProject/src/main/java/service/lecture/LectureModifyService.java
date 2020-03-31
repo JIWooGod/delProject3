@@ -10,9 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
-import command.hr.SubjectCommand;
 import model.dto.hr.SubjectDTO;
-import repository.lecture.FileGetRepository;
+import repository.lecture.LectureDetailRepository;
 import repository.lecture.LectureModifyRepository;
 
 @Service
@@ -21,29 +20,31 @@ public class LectureModifyService {
 	@Autowired
 	private LectureModifyRepository lectureModifyRepository;
 	@Autowired
-	private FileGetRepository fileGetRepository;
+	private LectureDetailRepository lectureDetailRepository;
 
-	public void action(HttpServletRequest request, SubjectCommand subjectCommand,
-			Model model, Long num) {
-		SubjectDTO dto = new SubjectDTO();
-		dto.setSubjNo(num);
-		dto.setSubjName(subjectCommand.getSubjName());
-		dto.setSubjCnt(subjectCommand.getSubjCnt());
-		dto.setSubjDay(subjectCommand.getSubjDay());
-		if(subjectCommand.getSubjVideo()!=null) {
-			MultipartFile mf = subjectCommand.getSubjVideo();
+	public void action(Long subjNum,
+					   String subjName,
+					   MultipartFile mf,
+					   Long subjDay,
+					   String subjCnt,HttpServletRequest request,Model model) {	
+		String origin = null;
+		String store = null;
+		String size = null;
 		
+		SubjectDTO dto = new SubjectDTO();
+		dto.setSubjNo(subjNum);
+		if(mf!=null) {		
 			String realPath = request.getServletContext().getRealPath(PATH);
-			String origin = mf.getOriginalFilename();
+			origin = mf.getOriginalFilename();
 			String extension = origin.substring(origin.lastIndexOf("."));
-			String store = UUID.randomUUID().toString()+extension;
-			String size = Long.toString(mf.getSize());
-			String past = fileGetRepository.reposit(num);
+			store = UUID.randomUUID().toString()+extension;
+			size = Long.toString(mf.getSize());
+			dto = lectureDetailRepository.reposit(dto);
 			
-			System.out.println("옛날 파일 이름: "+past);
+			System.out.println("옛날 파일 이름: "+dto.getSubjStore());
 			System.out.println("새 파일 이름: "+origin);
 			
-			File file = new File(realPath + "\\" + past);
+			File file = new File(realPath + "\\" + dto.getSubjStore());
 			file.delete();
 			file = new File(realPath + "\\" + store);
 			try {
@@ -52,11 +53,15 @@ public class LectureModifyService {
 				System.out.println("============파일 용량 초과============");
 				e.printStackTrace();
 			}
-			dto.setSubjFileSize(size);
-			dto.setSubjStore(store);
-			dto.setSubjOrigin(origin);
 		}
+		dto.setSubjFileSize(size);
+		dto.setSubjStore(store);
+		dto.setSubjOrigin(origin);
+		dto.setSubjName(subjName);
+		dto.setSubjCnt(subjCnt);
+		dto.setSubjDay(subjDay);
+		
 		lectureModifyRepository.reposit(dto);
-		model.addAttribute("list",dto);
+		model.addAttribute("dto",dto);
 	}
 }

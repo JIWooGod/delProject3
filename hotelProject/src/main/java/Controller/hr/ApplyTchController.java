@@ -30,6 +30,6 @@ public class ApplyTchController {
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
 		apply2Service.action(request,apply2Command,errors);
-		return "redirect:/teacher";
+		return "redirect:/main";
 	}
 }

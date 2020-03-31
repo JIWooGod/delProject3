@@ -85,4 +85,9 @@
 				#{teachPw}, sysdate, 0,
 				#{passState}, #{teachIp})
 	</insert>
+	<update id="passStateUp" parameterType="staff">
+		update EMPLOYEE
+			set PASS_STATE = #{passState}
+		where EMP_NO = #{empNo}
+	</update>
 </mapper>
