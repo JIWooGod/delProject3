@@ -16,6 +16,12 @@
 <script src="./js/jquery.rolling.js"></script>
 <script src="./js/jquery.flexslider.js"></script>
 <script>
+
+
+
+
+
+
 $(window).load(function() {
   $('.flexslider').flexslider({
 	animation: "slide",
@@ -193,7 +199,6 @@ function selectRoom(n){
 						<form name="writeF" id="writeF" method="POST" action="kakaoPay">
 							<input type="hidden" name="fromdate" value="${ reservation.rmbkChkIn }">
 							<input type="hidden" name="todate" value="${ reservation.rmbkChkOut }"> 
-							<input type="hidden" name="roomCount" value="${reservation.roomCount}"> 
 							<input type="hidden" name="people" value="${reservation.rmbkPeople}">
 							<input type="hidden" name="days" value="${reservation.roomDays}"> 
 							<input type="hidden" name="roomGrade" value="${room.roomGrade}">
@@ -202,8 +207,9 @@ function selectRoom(n){
 							<input type = "hidden" name = "roomBed" value = "${reservation.roomBed}">
 							<input type = "hidden" name = "rmbkContent" value = "${reservation.rmbkOption }">
 							<input type = "hidden" name = "noFeader" value = "${reservation.noFeader}">
-							<input type = "hidden" name = "uncomFort" value = "${reservation.uncomFort}">
-							<input type = "hidden" name = "roomPirce" value = "${room.roomPrice}">
+							<input type = "hidden" name = "uncomfort" value = "${reservation.uncomFort}">
+							<input type = "hidden" name = "roomPrice" value = "${room.roomPrice * reservation.roomDays}">
+							<input type = "hidden" name = "dndMode" value = "${reservation.dndMode}">
 						
 							<!-- 객실전망 선택 -->
 							<div class="hs_reservation_left" style="padding: 0 20px 0 50px;width:20%">
@@ -271,7 +277,7 @@ function selectRoom(n){
 									
 								</ul>
 								<br/>
-								<h3 class="hs_reservation_title">총 예약 금액 </h3><strong>KRW ${room.roomPrice } * ${reservation.roomDays}</strong>
+								<h3 class="hs_reservation_title">총 결제 금액 </h3><strong>KRW ${room.roomPrice * reservation.roomDays} </strong>
 								<br/>
 								<br/>
 							</div>
@@ -399,7 +405,7 @@ function selectRoom(n){
 						
 					<div class="hs_reservation_section hs_reservation_bottom">
 						<div class="hs_reservation_btn_set" id="btnNext">
-							<a href="javascript:kakaopay()" class="hs_reservation_btn_poin" style="color: #FFFFFF;">예약</a>
+							<a href="javascript:kakaopay()" class="hs_reservation_btn_poin" style="color: #FFFFFF;">결제하기</a>
 						</div>
 					</div>
 					

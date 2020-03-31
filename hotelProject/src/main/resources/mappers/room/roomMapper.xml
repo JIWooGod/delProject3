@@ -8,6 +8,9 @@
 		rm_no,rm_grade,rm_price,rm_pic,rm_loc,rm_bed,rm_view
 	</sql>
 	
+	<sql id = "basecolumn2">
+		rmbk_no,mem_id,rm_no,rm_grade,pay_no,rmbk_date,rmbk_bed,rmbk_opt,rmbk_dnd,rmbk_peo,rmbk_price,rmbk_chkin,rmbk_chkout,rmbk_realin,rmbk_realout,mem_name,mem_ph,rmbk_uncomfort,rmbk_nofeader
+	</sql>
 	<resultMap type="roomdto" id="roommap">
 		<id column="rm_no" jdbcType="VARCHAR" property="roomNo"/>
 		<result column="rm_grade" jdbcType="VARCHAR" property="roomGrade"/>
@@ -17,14 +20,15 @@
 		<result column="rm_bed" jdbcType="VARCHAR" property="roomBed"/>
 		<result column="rm_view" jdbcType="VARCHAR" property="roomView"/>
 	</resultMap>
-
-
-
-
-
-
 	<insert id="insertRoom" parameterType="roomdto" >
 		insert into room (<include refid="basecolumn"/>) values(#{roomNo},#{roomGrade},#{roomPrice},#{roomPic},#{roomLoc},#{roomBed},#{roomView})
+	</insert>
+	<insert id="insertReservation" parameterType="reservationdto">
+		insert into roombook(<include refid="basecolumn2"/>) values(RMBK_SEQ.NEXTVAL,'qkrwogns',#{roomNo},#{roomGrade},#{payNo},sysdate,#{roomBed},#{rmbkOption},#{dndMode},#{rmbkPeople},#{rmbkPrice},#{rmbkChkIn},#{rmbkChkOut},default,default,#{userName},#{userPh},#{uncomFort},#{noFeader})
+	</insert>
+	
+	<insert id="insertPay" parameterType="paydto">
+		insert into payment(pay_no,pay_price,pay_mtd,pay_date,pay_who)values(#{payNo},#{payPrice},#{payMtd},sysdate,#{payWho})
 	</insert>
 	
 	

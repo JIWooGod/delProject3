@@ -1,5 +1,6 @@
 package Controller.Room;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +36,17 @@ public class ReservationController {
 		return"room/roomSelect";
 	}
 	@RequestMapping("/kakaoPay")
-	public String reservation4(ReservationCommand reservationCommand,Model model,HttpSession session)
+	public String reservation4(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
 	{
-		reservationService.execute4(reservationCommand,model,session);
+		reservationService.execute4(reservationCommand,model,session,request);
 		
 		return"room/kakao";
+	}
+	@RequestMapping("/reservationOk")
+	public String reservation5(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
+	{
+		reservationService.execute5(reservationCommand,model,session,request);
+		return"room/reservationSuccess";
 	}
 	
 

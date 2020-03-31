@@ -10,7 +10,7 @@ public class ReservationDTO implements Serializable {
 	private Integer rmbkNo;
 	private String memId;
 	private Integer roomNo;
-	private Integer roomGrade;
+	private String roomGrade;
 	private Integer payNo;
 	private Timestamp rmbkDate;
 	private String rmbkPeople;
@@ -30,9 +30,16 @@ public class ReservationDTO implements Serializable {
 	private String rmbkOption;
 	private String roomView;
 	private String roomBed;
+	private String roomSelect;
 	
 	
 	
+	public String getRoomSelect() {
+		return roomSelect;
+	}
+	public void setRoomSelect(String roomSelect) {
+		this.roomSelect = roomSelect;
+	}
 	public String getRoomView() {
 		return roomView;
 	}
@@ -105,10 +112,10 @@ public class ReservationDTO implements Serializable {
 	public void setRoomNo(Integer roomNo) {
 		this.roomNo = roomNo;
 	}
-	public Integer getRoomGrade() {
+	public String getRoomGrade() {
 		return roomGrade;
 	}
-	public void setRoomGrade(Integer roomGrade) {
+	public void setRoomGrade(String roomGrade) {
 		this.roomGrade = roomGrade;
 	}
 	public Integer getPayNo() {

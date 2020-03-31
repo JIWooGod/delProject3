@@ -13,7 +13,7 @@
   
      String phone = "1";
     
-     String stotalPrice = "100000";
+     String stotalPrice = (String)request.getAttribute("totalPrice");
      int totalPrice = Integer.parseInt(stotalPrice);
 
  
@@ -74,7 +74,7 @@
                     }
                 });
                 //성공시 이동할 페이지
-               location.href='main' 
+               location.href='reservationOk' 
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
