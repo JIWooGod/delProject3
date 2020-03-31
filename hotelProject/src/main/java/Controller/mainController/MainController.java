@@ -17,4 +17,12 @@ public class MainController {
 	public String aboutTwo() {
 		return "/about/about_2";
 	}
+	@RequestMapping("/manager")
+	public String managerPage() {
+		return "/manager/managerIndex";
+	}
+	@RequestMapping("/blank")
+	public String blankPage() {
+		return "/manager/blank";
+	}
 }
