@@ -130,9 +130,9 @@ function menuDeleteAction(){
         </ul>
           <div class="hs_reservation_section hs_reservation_bottom">
     <div class="hs_reservation_btn_set">
-    <a href="d1menuList" class="hs_reservation_btn_poin" style="color:#FFFFFF;">목록으로</a>
-      <a href="d1menuUpdate?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">수정</a>
-      	<a href="d1menuDelete?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">삭제</a>
+    <a href="mgMenuList" class="hs_reservation_btn_poin" style="color:#FFFFFF;">목록으로</a>
+      <a href="menuUpdate?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">수정</a>
+      	<a href="menuDelete?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">삭제</a>
     </div>
     
   </div>

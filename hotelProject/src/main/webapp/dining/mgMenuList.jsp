@@ -64,9 +64,9 @@
 
 		<div class='sub_menu'>
 		<div class='box'>
-			<span class='subMENUon'><a href='d1menuList'>궁궐</a></span>
-			<span class='subMENUout'><a href=''>황룡</a></span>
-			<span class='subMENUout'><a href=''>더 델루나</a></span>
+			<span class='subMENUon'><a href='mgMenuList?no=1'>궁궐</a></span>
+			<span class='subMENUout'><a href='mgMenuList?no=2'>황룡</a></span>
+			<span class='subMENUout'><a href='mgMenuList?no=3'>더 델루나</a></span>
 		</div>
 
 		<div class='tl'>

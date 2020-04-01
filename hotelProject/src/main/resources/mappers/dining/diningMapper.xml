@@ -40,7 +40,7 @@
 	<select id="menuSelect" resultMap="menuBaseMap" parameterType="long">
 		SELECT *
 		FROM MENU
-		WHERE RST_NO=1 ORDER BY MENU_NO ASC
+		WHERE RST_NO=#{rstNo} ORDER BY MENU_NO ASC
 	</select>
 	
 	<select id="menuOneSelect" resultMap="menuBaseMap" parameterType="long">

@@ -137,10 +137,11 @@ public class DiningController {
 		return "dining/notResNo";
 	}
 
-	@RequestMapping("/d1menuList")
-	public String d1menuList(Model model) {
-		//menuSelectService.execute(model);
-		return "dining/d1menuList";
+	//관리자 메뉴리스트
+	@RequestMapping("/mgMenuList")
+	public String d1menuList(@RequestParam(value="no") Long rstNo, Model model) {
+		menuSelectService.execute(rstNo, model);
+		return "dining/mgMenuList";
 	}
 
 	@RequestMapping("/menuInsert")
@@ -160,7 +161,7 @@ public class DiningController {
 		return "dining/menuDetail";
 	}
 
-	@RequestMapping("/d1menuUpdate")
+	@RequestMapping("/menuUpdate")
 	public String menuUpdateGo(@RequestParam(value="no") Long menuNo, Model model) {
 		menuUpdateService.menuUpdate(menuNo, model);
 		return "dining/menuUpdate";
@@ -169,13 +170,13 @@ public class DiningController {
 	@RequestMapping("/d1menuUpdateAction")
 	public String menuUpdateAction(@RequestParam(value="no") Long menuNo, MenuCommand menuCommand, HttpServletRequest request) {
 		menuUpdateActionService.execute(menuNo, menuCommand, request);
-		return "redirect:/d1menuList";
+		return "redirect:/mgMenuList";
 	}
 
-	@RequestMapping("/d1menuDelete")
+	@RequestMapping("/menuDelete")
 	public String d1menuDelete(@RequestParam(value="no") Long menuNo) {
 		menuDeleteService.execute(menuNo);
-		return "redirect:/d1menuList";
+		return "redirect:/mgMenuList";
 	}
 
 
