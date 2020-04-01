@@ -20,11 +20,35 @@
 		<result column="rm_bed" jdbcType="VARCHAR" property="roomBed"/>
 		<result column="rm_view" jdbcType="VARCHAR" property="roomView"/>
 	</resultMap>
+	
+	<resultMap type="reservationdto" id="reservationmap">
+		<id column="rmbk_no" jdbcType="BIGINT" property="rmbkNo"/>
+		<id column="mem_id" jdbcType="VARCHAR" property="memId"/>
+		<id column="rm_no" jdbcType="BIGINT" property="roomNo"/>
+		<id column="rm_grade" jdbcType="VARCHAR" property="roomGrade"/>
+		<id column="pay_no" jdbcType="BIGINT" property="payNo"/>
+		<result column="rmbk_date" jdbcType="TIMESTAMP" property="rmbkDate"/>
+		<result column="rmbk_bed" jdbcType="VARCHAR" property="roomBed"/>
+		<result column="rmbk_opt" jdbcType="VARCHAR" property="rmbkOption"/>
+		<result column="rmbk_dnd" jdbcType="VARCHAR" property="dndMode"/>
+		<result column="rmbk_peo" jdbcType="BIGINT" property="rmbkPeople"/>
+		<result column="rmbk_price" jdbcType="BIGINT" property="rmbkPrice"/>
+		<result column="rmbk_chkin" jdbcType="TIMESTAMP" property="rmbkChkIn"/>
+		<result column="rmbk_chkout" jdbcType="TIMESTAMP" property="rmbkChkOut"/>
+		<result column="rmbk_realin" jdbcType="TIMESTAMP" property="realIn"/>
+		<result column="rmbk_realout" jdbcType="TIMESTAMP" property="realOut"/>
+		<result column="mem_name" jdbcType="VARCHAR" property="userName"/>
+		<result column="mem_ph" jdbcType="VARCHAR" property="userPh"/>
+		<result column="rmbk_uncomfort" jdbcType="VARCHAR" property="uncomFort"/>
+		<result column="rmbk_nofeader" jdbcType="VARCHAR" property="noFeader"/>			
+
+	</resultMap>
+	
 	<insert id="insertRoom" parameterType="roomdto" >
 		insert into room (<include refid="basecolumn"/>) values(#{roomNo},#{roomGrade},#{roomPrice},#{roomPic},#{roomLoc},#{roomBed},#{roomView})
 	</insert>
 	<insert id="insertReservation" parameterType="reservationdto">
-		insert into roombook(<include refid="basecolumn2"/>) values(RMBK_SEQ.NEXTVAL,'qkrwogns',#{roomNo},#{roomGrade},#{payNo},sysdate,#{roomBed},#{rmbkOption},#{dndMode},#{rmbkPeople},#{rmbkPrice},#{rmbkChkIn},#{rmbkChkOut},default,default,#{userName},#{userPh},#{uncomFort},#{noFeader})
+		insert into roombook(<include refid="basecolumn2"/>) values(RMBK_SEQ.NEXTVAL,#{memId},#{roomNo},#{roomGrade},#{payNo},sysdate,#{roomBed},#{rmbkOption},#{dndMode},#{rmbkPeople},#{rmbkPrice},#{rmbkChkIn},#{rmbkChkOut},default,default,#{userName},#{userPh},#{uncomFort},#{noFeader})
 	</insert>
 	
 	<insert id="insertPay" parameterType="paydto">
@@ -44,6 +68,15 @@
 	<select id="selectRoom" parameterType="reservationdto" resultMap="roommap">
 		select <include refid="basecolumn"/> from room where	
 			 rm_grade = #{roomGrade} and rm_view = #{roomView} and rm_bed = #{roomBed}
+	</select>
+	
+	<select id ="selectReservationOk" parameterType="String" resultMap="reservationmap">
+		select<include refid="basecolumn2"/> from (select * from roombook order by rmbk_date desc)
+		<where>
+			<if test="value != null">
+			 mem_id = #{userId} and rownum = 1
+			</if>
+		</where>
 	</select>
 	
 </mapper>

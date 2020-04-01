@@ -43,9 +43,9 @@ public class ReservationController {
 		return"room/kakao";
 	}
 	@RequestMapping("/reservationOk")
-	public String reservation5(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
+	public String reservation5(@RequestParam("id")String userId ,ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
 	{
-		reservationService.execute5(reservationCommand,model,session,request);
+		reservationService.execute5(userId,reservationCommand,model,session,request);
 		return"room/reservationSuccess";
 	}
 	

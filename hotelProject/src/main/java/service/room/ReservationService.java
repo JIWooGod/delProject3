@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import command.room.ReservationCommand;
+import model.dto.member.AuthInfo;
 import model.dto.pay.PayDTO;
 import model.dto.room.ReservationDTO;
 import model.dto.room.RoomDTO;
@@ -74,7 +75,10 @@ public class ReservationService {
 		
 		roomRepository.insertPay(pay);
 		
+		AuthInfo authInfo = (AuthInfo)session.getAttribute("authInfo");
 		ReservationDTO dto = new ReservationDTO();
+		
+		dto.setMemId(authInfo.getId());
 		dto.setDndMode(reservationCommand.getDndMode());
 		dto.setNoFeader(reservationCommand.getNoFeader());
 		dto.setUncomFort(reservationCommand.getUncomfort());
@@ -93,43 +97,12 @@ public class ReservationService {
 		roomRepository.insertReservation(dto);
 		
 		request.setAttribute("totalPrice",dto.getRmbkPrice());
-		
+		request.setAttribute("userId",authInfo.getId() );
 		
 	}
-	public void execute5(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
+	public void execute5(String userId,ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
 	{
-		
-		PayDTO pay = new PayDTO();
-		SimpleDateFormat  formatter = new SimpleDateFormat("MMddhhmmss");
-		String payNo =  formatter.format(new Date());
-		
-		pay.setPayNo((Integer.parseInt(payNo)));
-		pay.setPayPrice(reservationCommand.getRoomPrice());
-		pay.setPayMtd("kakaoPay");
-		pay.setPayWho("room");
-		
-		roomRepository.insertPay(pay);
-		
-		ReservationDTO dto = new ReservationDTO();
-		dto.setDndMode(reservationCommand.getDndMode());
-		dto.setNoFeader(reservationCommand.getNoFeader());
-		dto.setUncomFort(reservationCommand.getUncomfort());
-		dto.setRmbkChkIn(new Timestamp(reservationCommand.getFromdate().getTime()));
-		dto.setRmbkChkOut(new Timestamp(reservationCommand.getTodate().getTime()));
-		dto.setUserPh(reservationCommand.getUserPh1());
-		dto.setUserName(reservationCommand.getUserName());
-		dto.setRmbkPeople(reservationCommand.getPeople());
-		dto.setRoomGrade(reservationCommand.getRoomGrade());
-		dto.setRoomBed(reservationCommand.getRoomBed());
-		dto.setRoomSelect(reservationCommand.getRoomSelect());
-		dto.setRmbkOption(reservationCommand.getRmbkContent());
-		dto.setRmbkPrice(reservationCommand.getRoomPrice());
-		dto.setPayNo((Integer.parseInt(payNo)));
-		dto.setRoomNo((Integer.parseInt(reservationCommand.getRoomSelect())));
-		roomRepository.insertReservation(dto);
-		
-		request.setAttribute("totalPrice",dto.getRmbkPrice());
-		
-		
+		ReservationDTO dto = roomRepository.selectReservationOk(userId);		
+		model.addAttribute("reservationOk",dto);	
 	}
 }

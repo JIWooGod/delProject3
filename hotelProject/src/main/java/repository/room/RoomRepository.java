@@ -43,5 +43,10 @@ public class RoomRepository {
 		String statement = namespace+".insertReservation";
 		sqlSession.insert(statement,dto);
 	}
+	public ReservationDTO selectReservationOk(String userId)
+	{
+		String statement = namespace+".selectReservationOk";
+		return sqlSession.selectOne(statement,userId);
+	}
 	
 }
