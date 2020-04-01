@@ -5,94 +5,114 @@ import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class MemberDTO implements Serializable{
-	String userId;
-	String userPw;
-	String userName;
-	String userEmail;
-	String userAddr;
-	String userPh;
-	Timestamp userRegist;
-	String joinOk;
-	String ipAddr;
-	Long userNo;
+	String memId;
+	String memPw;
+	String memName;
+	String memEmail;
+	String memAddr;
+	String memTel;
+	Timestamp memRegDt;
+	String joinChk;
+	String memIp;
+	Long memNo;
 	
 	public MemberDTO() {
 		
 	}
+
+	public MemberDTO(String memId, String memPw, String memName, String memEmail, String memAddr, String memTel,
+			Timestamp memRegDt, String joinChk, String memIp, Long memNo) {
+		this.memId = memId;
+		this.memPw = memPw;
+		this.memName = memName;
+		this.memEmail = memEmail;
+		this.memAddr = memAddr;
+		this.memTel = memTel;
+		this.memRegDt = memRegDt;
+		this.joinChk = joinChk;
+		this.memIp = memIp;
+		this.memNo = memNo;
+	}
+
+	public String getMemId() {
+		return memId;
+	}
+
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+
+	public String getMemPw() {
+		return memPw;
+	}
+
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
+	}
+
+	public String getMemName() {
+		return memName;
+	}
+
+	public void setMemName(String memName) {
+		this.memName = memName;
+	}
+
+	public String getMemEmail() {
+		return memEmail;
+	}
+
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
+	}
+
+	public String getMemAddr() {
+		return memAddr;
+	}
+
+	public void setMemAddr(String memAddr) {
+		this.memAddr = memAddr;
+	}
+
+	public String getMemTel() {
+		return memTel;
+	}
+
+	public void setMemTel(String memTel) {
+		this.memTel = memTel;
+	}
+
+	public Timestamp getMemRegDt() {
+		return memRegDt;
+	}
+
+	public void setMemRegDt(Timestamp memRegDt) {
+		this.memRegDt = memRegDt;
+	}
+
+	public String getJoinChk() {
+		return joinChk;
+	}
+
+	public void setJoinChk(String joinChk) {
+		this.joinChk = joinChk;
+	}
+
+	public String getMemIp() {
+		return memIp;
+	}
+
+	public void setMemIp(String memIp) {
+		this.memIp = memIp;
+	}
+
+	public Long getMemNo() {
+		return memNo;
+	}
+
+	public void setMemNo(Long memNo) {
+		this.memNo = memNo;
+	}
 	
-	public MemberDTO(String userId, String userPw, String userName, String userEmail, String userAddr, String userPh,
-			Timestamp userRegist, String joinOk, String ipAddr, Long userNo) {
-		super();
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userName = userName;
-		this.userEmail = userEmail;
-		this.userAddr = userAddr;
-		this.userPh = userPh;
-		this.userRegist = userRegist;
-		this.joinOk = joinOk;
-		this.ipAddr = ipAddr;
-		this.userNo = userNo;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getUserPw() {
-		return userPw;
-	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getUserEmail() {
-		return userEmail;
-	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-	public String getUserAddr() {
-		return userAddr;
-	}
-	public void setUserAddr(String userAddr) {
-		this.userAddr = userAddr;
-	}
-	public String getUserPh() {
-		return userPh;
-	}
-	public void setUserPh(String userPh) {
-		this.userPh = userPh;
-	}
-	public Timestamp getUserRegist() {
-		return userRegist;
-	}
-	public void setUserRegist(Timestamp userRegist) {
-		this.userRegist = userRegist;
-	}
-	public String getJoinOk() {
-		return joinOk;
-	}
-	public void setJoinOk(String joinOk) {
-		this.joinOk = joinOk;
-	}
-	public String getIpAddr() {
-		return ipAddr;
-	}
-	public void setIpAddr(String ipAddr) {
-		this.ipAddr = ipAddr;
-	}
-	public Long getUserNo() {
-		return userNo;
-	}
-	public void setUserNo(Long userNo) {
-		this.userNo = userNo;
-	}
 	
 }

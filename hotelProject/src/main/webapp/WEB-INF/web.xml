@@ -31,6 +31,8 @@
   			classpath:spring-lecController.xml
   			classpath:spring-lecService.xml
 			classpath:spring-lecRepository.xml
+			classpath:spring-memberController.xml
+			classpath:spring-memberBeans.xml
 			
   		</param-value>
   	</init-param>

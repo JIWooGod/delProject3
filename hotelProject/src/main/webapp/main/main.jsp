@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="ko">
 <title>호텔 델루나</title>
@@ -31,7 +33,15 @@ $(window).load(function() {
 </script>
 
 	    <!--상단메뉴시작-->
-		<jsp:include page="../includePage/Header.jsp" flush="true" /> 
+	    <!-- 로그인 안했을때 -->
+	    <c:if test="${ empty authInfo }">
+			<jsp:include page="../includePage/Header.jsp" flush="true" /> 
+		</c:if>
+		
+		<!-- 일반회원 로그인 했을때 -->
+		<c:if test="${ !empty authInfo }">
+			<jsp:include page="../includePage/MemHeader.jsp" flush="true" /> 
+		</c:if>
 		<!--상단메뉴끝-->
 
 
