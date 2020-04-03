@@ -24,12 +24,22 @@ public class ApplyEmpController {
 		model.addAttribute("applyCommand",new ApplyCommand());
 		return "hr/apply";
 	}
-
 	@RequestMapping(value="/personnel/staff/appling", method=RequestMethod.POST)
 	public String empApplying(HttpServletRequest request,ApplyCommand applyCommand,
 			Model model,Errors errors,@RequestParam(value="job") String job) {
 		//new ApplyCommandValidator().validate(applyCommand,errors);	
 		applyService.action(request,applyCommand,errors);
 		return "redirect:/main";
+	}
+	@RequestMapping("/applyMailing")
+	public String mailing(@RequestParam(value="num") String num,
+			@RequestParam(value="reciver") String reciver,
+			@RequestParam(value="empId") String empId) {
+		Integer i = applyService.joinAction(num, reciver, empId);
+		if(i>0) {
+			return "hr/success";
+		}else {
+			return "hr/fail";
+		}
 	}
 }

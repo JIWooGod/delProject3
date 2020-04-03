@@ -74,17 +74,17 @@
 	</tr>
 	</c:if>
 </table>
-<button onclick="location.href='../modify?empNo=${emp.empNo }'">정보수정</button>
+<button onclick="location.href='../modify?empNo=${applier.empNo }'">정보수정</button>
 <button onclick="location.href='/hotelProject/personnel'">메인으로</button>
 <c:choose>
-	<c:when test="${empty applier.passState || emp.passState == '지원대기자'}">
+	<c:when test="${empty applier.passState || applier.passState == '지원대기자'}">
 		<button onclick="javascript:pass1st()">서류합격</button>
 	</c:when>
 	<c:when test='${applier.passState == "서류합격자" }'>
-		<button onclick="javascript:pass2nd()">면접보기</button>
+		<button onclick="location.href='../interview/${applier.empNo}'">면접보기</button>
 	</c:when>
 	<c:when test='${applier.passState == "면접합격자" }'>
-		<button id="contractBtn" onclick="location.href='./contract/${emp.empNo }'">계약하기</button>
+		<button onclick="location.href='./contract/${applier.empNo }'">계약하기</button>
 	</c:when>
 </c:choose>
 

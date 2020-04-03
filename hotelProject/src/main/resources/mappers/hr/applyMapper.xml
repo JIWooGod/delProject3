@@ -14,6 +14,11 @@
 		TEACH_ID, TEACH_PW, TEACH_DATE, JOIN_CHK,
 		PASS_STATE, TEACH_IP
 	</sql>
+	<sql id="jobinterviewColumn">
+		JOBINTV_NO, EMP_NO, JOBINTV_LANG, JOBINTV_SERV,
+		JOBINTV_TASK, JOBINTV_SOCIAL, JOBINTV_SOLVE, JOBINTV_REGDATE,
+		JOBINTV_VIEWER
+	</sql>
 	<resultMap type="model.dto.hr.EmployeeDTO" id="empResult">
 		<id column="EMP_NO" jdbcType="BIGINT" property="empNo"/>
 		<result column="DEPT_NO" jdbcType="BIGINT" property="deptNo"/>
@@ -45,6 +50,17 @@
 		<result column="JOIN_CHK" jdbcType="BIGINT" property="joinChk"/>
 		<result column="PASS_STATE" jdbcType="VARCHAR" property="passState"/>
 		<result column="TEACH_IP" jdbcType="VARCHAR" property="teachIp"/>
+	</resultMap>
+	<resultMap type="injob" id="jobintv">
+		<id column="JOBINTV_NO" jdbcType="BIGINT" property="jobintvNo"/>
+		<id column="EMP_NO" jdbcType="BIGINT" property="empNo"/>
+		<result column="JOBINTV_LANG" jdbcType="BIGINT" property="jobintvLang"/>
+		<result column="JOBINTV_SERV" jdbcType="BIGINT" property="jobintvServ"/>
+		<result column="JOBINTV_TASK" jdbcType="BIGINT" property="jobintvTask"/>
+		<result column="JOBINTV_SOCIAL" jdbcType="BIGINT" property="jobintvSocial"/>
+		<result column="JOBINTV_SOLVE" jdbcType="BIGINT" property="jobintvSolve"/>
+		<result column="JOBINTV_REGDATE" jdbcType="TIMESTAMP" property="jobintvRegdate"/>
+		<result column="JOBINTV_VIEWER" jdbcType="BIGINT" property="jobintvViewer"/>
 	</resultMap>
 	
 	<insert id="applyInsert" parameterType="model.dto.hr.EmployeeDTO">
@@ -90,4 +106,14 @@
 			set PASS_STATE = #{passState}
 		where EMP_NO = #{empNo}
 	</update>
+	<select id="sequence" resultType="string">
+		select num_seq.nextval from dual
+	</select>
+	<insert id="answerInterview" parameterType="injob">
+		insert
+			into JOBINTV (<include refid="jobinterviewColumn"/>)
+		values (#{jobintvNo}, #{empNo}, #{jobintvLang}, #{jobintvServ},
+				#{jobintvTask}, #{jobintvSocial}, #{jobintvSolve}, sysdate,
+				#{jobintvViewer} )
+	</insert>
 </mapper>

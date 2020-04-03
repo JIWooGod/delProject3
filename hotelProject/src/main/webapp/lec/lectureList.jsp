@@ -36,7 +36,7 @@
 		<td>${list.subjTime }</td>
 		<td></td>
 		<td></td>
-		<td><button onclick="location.href='lecture/deleting?num=${list.subjNo}'">삭제</button></td>
+		<td><button onclick="location.href='lecture/teacher/deleting?num=${list.subjNo}'">삭제</button></td>
 	</tr>
 	</c:forEach>
 </table>

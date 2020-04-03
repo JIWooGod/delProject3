@@ -14,7 +14,7 @@ public class LectureDetailController {
 	@Autowired
 	private LectureDetailService lectureDetailService;
 	
-	@RequestMapping("/lecture/{subjNo}")
+	@RequestMapping("/lecture/teacher/{subjNo}")
 	public String detail(@PathVariable(value="subjNo") Long subjNo, Model model) {
 		lectureDetailService.action(subjNo, model);
 		return "lec/lectureView";

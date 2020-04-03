@@ -14,30 +14,40 @@
 </head>
 <body>
 <h2>계약서</h2>
+<form:form action="empContracting" commandName="empContractCommand">
 <table id="tableForm">
 	<tr>
 		<td>계약번호</td>
-		<td></td>
+		<td>
+			${empCtrt.employmentNo }
+			<form:hidden path="paperNo"/>
+		</td>
 	</tr>
 	<tr>
 		<td>사원번호</td>
-		<td>100030</td>
+		<td><form:input path="empNo" value="${applier.empNo }" readonly/></td>
 	</tr>
 	<tr>
 		<td>성명</td>
-		<td></td>
+		<td><form:input path="name" placeholder="성명을 정확히 기입하시오"/></td>
 	</tr>
 	<tr>
 		<td>급여</td>
-		<td>원</td>
+		<td><form:input path="salary" value="${empCtrt.employmentSign }" readonly/>원</td>
 	</tr>
 	<tr>
 		<td>직급</td>
-		<td></td>
+		<td>
+			<form:select path="position">
+				<c:forEach items="listName" var="dtoName" varStatus="a">
+				<form:option value="${a.posit.employmentPosi }"></form:option>
+				</c:forEach>
+			</form:select>
+		</td>
 	</tr>
 	<tr>
 		<td>계약일자</td>
-		<td></td>
+		<td>${empCtrt.employmentDate }</td>
 	</tr>
 	<tr>
 		<td>서명</td>
@@ -47,7 +57,8 @@
 		</td>
 	</tr>
 </table>
-	<button id="submit" onclick="location.href='../personnel/contract/100030'">계약하기</button>
-	<button id="cancel" onclick="location.href='../personnel'">돌아가기</button>
+	<input type="submit" value="계약하기">
+</form:form>
+	<button id="cancel" onclick="location.href='../personnel'">취소</button>
 </body>
 </html>

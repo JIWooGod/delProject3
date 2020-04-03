@@ -69,8 +69,8 @@ $(document).ready(function(){
 	</table>
 	<input type="submit" value="수정하기">
 	<input type="reset" value="초기화">
-	<input type="button" onclick="location.href='../lecture/deleting?num=${list.subjNo}'" value="삭제"/>
-	<input type="button" onclick="location.href='../lecture/${list.subjNo}'" value="취소"/>
+	<input type="button" onclick="location.href='../lecture/teacher/deleting?num=${list.subjNo}'" value="삭제"/>
+	<input type="button" onclick="location.href='../lecture/teacher/${list.subjNo}'" value="취소"/>
 </form>
 </body>
 </html>

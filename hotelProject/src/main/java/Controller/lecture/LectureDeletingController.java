@@ -14,7 +14,7 @@ public class LectureDeletingController {
 	@Autowired
 	private LectureDeletingSerivce lectureDeletingSerivce;
 	
-	@RequestMapping("lecture/deleting")
+	@RequestMapping("lecture/teacher/deleting")
 	public String delete(@RequestParam(value="num") Long num,
 			HttpServletRequest request) {
 		lectureDeletingSerivce.action(request, num);

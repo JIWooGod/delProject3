@@ -16,5 +16,6 @@
 	<bean class="Controller.lecture.LecStudentController"/>
 	
 	<!-- exam controller -->
+	<bean class="Controller.lecture.TestQestController"/>
 	
 </beans>

@@ -44,4 +44,9 @@ public class ApplyService {
 
 		applyRepository.applyPut(dto);
 	}
+
+	public Integer joinAction(String num, String reciver, String empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

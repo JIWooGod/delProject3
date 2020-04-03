@@ -18,7 +18,7 @@ public class LectureModifyingController {
 	@Autowired
 	private LectureModifyService lectureModifyService;
 	
-	@RequestMapping(value="/lecture/modifying", method=RequestMethod.POST)
+	@RequestMapping(value="/lecture/teacher/modifying", method=RequestMethod.POST)
 	public String modifying(Model model,HttpServletRequest request,
 			@RequestParam("subjNum") Long subjNum,
 			@RequestParam("subjName") String subjName,

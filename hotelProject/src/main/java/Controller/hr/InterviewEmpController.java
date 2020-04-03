@@ -25,6 +25,6 @@ public class InterviewEmpController {
 	@RequestMapping(value="/personnel/interview/interviewer", method=RequestMethod.POST)
 	public String interviewer(@RequestParam(value="empNo") Long empNo,Model model) {
 		empDetailService.action(empNo, model);
-		return "hr/interviewEmp";
+		return "hr/result";
 	}
 }

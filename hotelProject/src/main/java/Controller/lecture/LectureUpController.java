@@ -17,7 +17,7 @@ public class LectureUpController {
 	@Autowired
 	private LectureUploadingService lectureUploadingService;
 	
-	@RequestMapping(value="/lecture/upload", method=RequestMethod.GET)
+	@RequestMapping(value="/lecture/teahcer/upload", method=RequestMethod.GET)
 	public String upload(Model model) {
 		model.addAttribute("subjectCommand", new SubjectCommand());
 		return "lec/lectureUp";

@@ -16,8 +16,8 @@ public class EmpDetailService {
 		EmployeeDTO dto = new EmployeeDTO();
 		dto.setEmpNo(empNo);
 		dto = empDetailRepository.reposit(dto);
-		if(dto.getPassState()=="정규사원") {
-			model.addAttribute("emp",dto);	
+		if(dto.getPassState().equals("정규사원")) {
+			model.addAttribute("emp",dto);
 		}
 		model.addAttribute("applier",dto);
 	}

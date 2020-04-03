@@ -15,7 +15,7 @@ public class LectureModifyController {
 	@Autowired
 	private LectureDetailService lectureDetailService;
 	
-	@RequestMapping(value="/lecture/modify", method = RequestMethod.GET)
+	@RequestMapping(value="/lecture/teacher/modify", method = RequestMethod.GET)
 	public String update(@RequestParam(value="num") Long num, Model model) {
 		lectureDetailService.action(num, model);
 		return "lec/lectureModify";

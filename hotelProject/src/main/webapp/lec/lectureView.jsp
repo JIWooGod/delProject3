@@ -87,8 +87,9 @@ function moved(){
 	<input type="hidden" name="mineLoc" id="mineLoc"/>
 </form>
 </div>
-<button onclick="location.href='../lecture/modify?num=${list.subjNo }'">강의내용 수정</button>
-<button onclick="location.href='../lecture/deleting?num=${list.subjNo }'">강의 삭제하기</button>
+<button onclick="loaction.href='#'">시험보기</button>
+<button onclick="location.href='../lecture/teacher/modify?num=${list.subjNo }'">강의내용 수정</button>
+<button onclick="location.href='../lecture/teacher/deleting?num=${list.subjNo }'">강의 삭제하기</button>
 <button onclick="location.href='../lecture'">강좌목록</button>
 </body>
 </html>

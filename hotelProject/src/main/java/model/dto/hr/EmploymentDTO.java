@@ -8,10 +8,17 @@ public class EmploymentDTO implements Serializable {
 	Long employmentNo;
 	Long empNo;
 	String employmentSign;
-	Long employmentSal;
-	String employmentPosi;
 	Timestamp employmentDate;
+	String positNo;
 	
+	JobPositionDTO posit = new JobPositionDTO();
+	
+	public JobPositionDTO getPosit() {
+		return posit;
+	}
+	public void setPosit(JobPositionDTO posit) {
+		this.posit = posit;
+	}
 	public Long getEmploymentNo() {
 		return employmentNo;
 	}
@@ -30,17 +37,11 @@ public class EmploymentDTO implements Serializable {
 	public void setEmploymentSign(String employmentSign) {
 		this.employmentSign = employmentSign;
 	}
-	public Long getEmploymentSal() {
-		return employmentSal;
+	public String getPositNo() {
+		return positNo;
 	}
-	public void setEmploymentSal(Long employmentSal) {
-		this.employmentSal = employmentSal;
-	}
-	public String getEmploymentPosi() {
-		return employmentPosi;
-	}
-	public void setEmploymentPosi(String employmentPosi) {
-		this.employmentPosi = employmentPosi;
+	public void setPositNo(String positNo) {
+		this.positNo = positNo;
 	}
 	public Timestamp getEmploymentDate() {
 		return employmentDate;
