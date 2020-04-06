@@ -4,6 +4,7 @@ package service.room;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -58,8 +59,13 @@ public class ReservationService {
 		dto.setRoomDays(reservationCommand.getDays());
 		dto.setRoomCount(reservationCommand.getRoomCount());
 		session.setAttribute("reservation",dto);
+		
+		System.out.println(reservationCommand.getRoomView());
+		System.out.println(reservationCommand.getRoomBed());
 		RoomDTO room = roomRepository.selectRoom(dto);
 		model.addAttribute("room",room);
+		List<RoomDTO> rooms = roomRepository.selectRooms(dto);
+		model.addAttribute("rooms",rooms);
 	}
 	public void execute4(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
 	{

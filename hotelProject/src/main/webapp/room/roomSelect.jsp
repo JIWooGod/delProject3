@@ -303,6 +303,7 @@ function selectRoom(n){
 					</div>
 				</div>			
 				
+				<div>
 				<div class="hs_reservat" id = "room4" style="padding: 0 20px 0 50px;display : none">
 					<h3 class="hs_reservation_title">&nbsp;&nbsp;&nbsp;4F</h3>
 					<div id = "selectRomm" align =center>
@@ -400,6 +401,7 @@ function selectRoom(n){
 						<label for="male">1007</label><input type="radio" id="roomSelect" name="roomSelect" value="1007">&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="radio" id="roomSelect" name="roomSelect" value="1008"><label for="male">1008</label><br/><br/>
 					</div>
+				</div>
 				</div>
 							
 						

@@ -1,5 +1,7 @@
 package repository.room;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,6 +33,11 @@ public class RoomRepository {
 	{
 		String statement = namespace+".selectRoom";
 		return sqlSession.selectOne(statement,dto);
+	}
+	public List<RoomDTO> selectRooms(ReservationDTO dto)
+	{
+		String statement = namespace+".selectRoom";
+		return sqlSession.selectList(statement,dto);
 	}
 	
 	public void insertPay(PayDTO dto)
