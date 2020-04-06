@@ -18,9 +18,10 @@ public class MenuUpdateActionService {
 	@Autowired
 	private DiningRepository diningRepository;
 	
-	public void execute(Long menuNo, MenuCommand menuCommand, HttpServletRequest request) {
+	public void execute(Long menuNo, Long rstNo, MenuCommand menuCommand, HttpServletRequest request) {
 		MenuDTO dto = new MenuDTO();
 		dto.setMenuNo(menuNo);
+		dto.setRstNo(rstNo);
 		dto.setMenuName(menuCommand.getMenuName());
 		dto.setMenuPrice(menuCommand.getMenuPrice());
 		dto.setMenuCnt(menuCommand.getMenuCnt());

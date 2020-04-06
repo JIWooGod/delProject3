@@ -15,7 +15,8 @@ import service.dining.MenuDeleteService;
 import service.dining.MenuInsertService;
 import service.dining.MenuSelectService;
 import service.dining.MenuUpdateActionService;
-import service.dining.MenuUpdateService;
+import service.dining.MgMenuSelectService;
+import service.dining.MenuDetailService;
 import service.dining.RstDetailService;
 import service.dining.TblDeleteService;
 import service.dining.TblInsertService;
@@ -33,9 +34,12 @@ public class DiningController {
 
 	@Autowired
 	private MenuSelectService menuSelectService;
+	
+	@Autowired
+	private MgMenuSelectService mgMenuSelectService;
 
 	@Autowired
-	private MenuUpdateService menuUpdateService;
+	private MenuDetailService menuDetailService;
 
 	@Autowired
 	private MenuUpdateActionService menuUpdateActionService;
@@ -139,8 +143,8 @@ public class DiningController {
 
 	//관리자 메뉴리스트
 	@RequestMapping("/mgMenuList")
-	public String d1menuList(@RequestParam(value="no") Long rstNo, Model model) {
-		menuSelectService.execute(rstNo, model);
+	public String d1menuList(Model model) {
+		mgMenuSelectService.execute(model);
 		return "dining/mgMenuList";
 	}
 
@@ -150,32 +154,38 @@ public class DiningController {
 	}
 
 	@RequestMapping("/menuInsertAction")
-	public String menuInsertAction(MenuCommand menuCommand, HttpServletRequest request) {
-		menuInsertService.execute(menuCommand, request);
+	public String menuInsertAction(MenuCommand menuCommand, HttpServletRequest request, Model model) {
+		String result = menuInsertService.execute(menuCommand, request, model);
+		//사진 등록안함
+		if(result == "0") {
+			return "dining/menuInsert";
+		}
 		return "/main/main";
 	}
 
+	//메뉴 디테일
 	@RequestMapping("/menuDetail")
-	public String menuUpdate(@RequestParam(value="no") Long menuNo, Model model) {
-		menuUpdateService.menuUpdate(menuNo, model);
+	public String menuUpdate(@RequestParam(value="mno") Long menuNo, @RequestParam(value="rno") Long rstNo, Model model) {
+		menuDetailService.menuOneSelect(menuNo, rstNo, model);
 		return "dining/menuDetail";
 	}
 
+	//메뉴 수정버튼 (디테일이랑 서비스 같음 -> onselect)
 	@RequestMapping("/menuUpdate")
-	public String menuUpdateGo(@RequestParam(value="no") Long menuNo, Model model) {
-		menuUpdateService.menuUpdate(menuNo, model);
+	public String menuUpdateGo(@RequestParam(value="mno") Long menuNo, @RequestParam(value="rno") Long rstNo, Model model) {
+		menuDetailService.menuOneSelect(menuNo, rstNo, model);
 		return "dining/menuUpdate";
 	}
 
-	@RequestMapping("/d1menuUpdateAction")
-	public String menuUpdateAction(@RequestParam(value="no") Long menuNo, MenuCommand menuCommand, HttpServletRequest request) {
-		menuUpdateActionService.execute(menuNo, menuCommand, request);
+	@RequestMapping("/menuUpdateAction")
+	public String menuUpdateAction(@RequestParam(value="mno") Long menuNo, @RequestParam(value="rno") Long rstNo,  MenuCommand menuCommand, HttpServletRequest request) {
+		menuUpdateActionService.execute(menuNo, rstNo, menuCommand, request);
 		return "redirect:/mgMenuList";
 	}
 
 	@RequestMapping("/menuDelete")
-	public String d1menuDelete(@RequestParam(value="no") Long menuNo) {
-		menuDeleteService.execute(menuNo);
+	public String d1menuDelete(@RequestParam(value="mno") Long menuNo, @RequestParam(value="rno") Long rstNo) {
+		menuDeleteService.execute(menuNo, rstNo);
 		return "redirect:/mgMenuList";
 	}
 

@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="dining/diningcss/style2.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="./dining/diningcss/dining.css">
 <link rel="stylesheet" href="js/rolling.css" media="screen">
 <link rel="stylesheet" href="css/slide.css" media="screen">
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/jquery.rolling.js"></script>
 <script src="js/jquery.flexslider.js"></script>
-<script>
+<script type="text/javascript">
 $(window).load(function() {
   $('.flexslider').flexslider({
 	animation: "slide",
@@ -21,11 +22,12 @@ $(window).load(function() {
 	slideshowSpeed :4000
   });
 });
+
 </script>
-<body>
+
 <!--상단메뉴시작-->
-<jsp:include page="../includePage/Header.jsp" flush="true" /> 
-<!--상단메뉴끝-->
+		<jsp:include page="../includePage/Header.jsp" flush="true" /> 
+		<!--상단메뉴끝-->
 
 <div id='content_wrapper'>
 	
@@ -33,7 +35,7 @@ $(window).load(function() {
 		<li class='slide5'>&nbsp;</li>
 	</div>
 
-	<div class='sub_menu1'>
+	<div class='sub_menu'>
 		<div class='box'>
 			<span class='subMENUout'><a href='dining1'>궁궐</a></span>
 			<span class='subMENUout'><a href='dining2'>황룡</a></span>
@@ -56,13 +58,8 @@ $(window).load(function() {
 <div class='sub_room'>
 	<!--객실미리보기시작-->
 	<div id="main_bn">
-		<div class="flexslider">
-			<ul class="slides bn_img">
-			<li><img src='img/1901.jpg'></li>
-			<li><img src='img/1902.jpg'></li>
-			<li><img src='img/1903.jpg'></li>
-			<li><img src='img/1904.jpg'></li>
-			</ul>
+		<div class="flexslider" align="center">
+			<img alt="" src="dining/img/dining4detail.png">
 		</div>
 	</div>
 	<!--객실미리보기끝-->
@@ -78,6 +75,7 @@ $(window).load(function() {
 	</div>
 
 </div>
+
 <div class='line_height30'></div>
 	<div class='line_height50'></div>
 		</div>

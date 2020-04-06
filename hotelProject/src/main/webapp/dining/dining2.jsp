@@ -7,12 +7,13 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="./dining/diningcss/dining.css">
 <link rel="stylesheet" href="js/rolling.css" media="screen">
 <link rel="stylesheet" href="css/slide.css" media="screen">
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/jquery.rolling.js"></script>
 <script src="js/jquery.flexslider.js"></script>
-<script>
+<script type="text/javascript">
 $(window).load(function() {
   $('.flexslider').flexslider({
 	animation: "slide",
@@ -21,8 +22,20 @@ $(window).load(function() {
 	slideshowSpeed :4000
   });
 });
+
+function dMoreBtn(){
+	$.ajax({
+		type : "POST",
+		url : "diningDetail?no="+$("#aa").val(),
+		datatype : "html",
+		success : function(data1){
+			$("#div1").html(data1);
+		}
+	});
+}
+
 </script>
-<body>
+
 <!--상단메뉴시작-->
 		<jsp:include page="../includePage/Header.jsp" flush="true" /> 
 		<!--상단메뉴끝-->
@@ -33,7 +46,7 @@ $(window).load(function() {
 		<li class='slide5'>&nbsp;</li>
 	</div>
 
-	<div class='sub_menu1'>
+	<div class='sub_menu'>
 		<div class='box'>
 			<span class='subMENUout'><a href='dining1'>궁궐</a></span>
 			<span class='subMENUon'><a href='dining2'>황룡</a></span>
@@ -58,10 +71,10 @@ $(window).load(function() {
 	<div id="main_bn">
 		<div class="flexslider">
 			<ul class="slides bn_img">
-			<li><img src='img/1901.jpg'></li>
-			<li><img src='img/1902.jpg'></li>
-			<li><img src='img/1903.jpg'></li>
-			<li><img src='img/1904.jpg'></li>
+			<li><img src='dining/img/1910.jpg'></li>
+			<li><img src='dining/img/1911.jpg'></li>
+			<li><img src='dining/img/1912.jpg'></li>
+			<li><img src='dining/img/1913.jpg'></li>
 			</ul>
 		</div>
 	</div>
@@ -78,6 +91,13 @@ $(window).load(function() {
 	</div>
 
 </div>
+
+<div align="center">
+	<button class="dMoreBtn" style="vertical-align:middle" onclick="javascript:dMoreBtn()" value="2" id="aa"><span>더 보기</span></button>
+</div>
+
+<div id="div1" right="100px"></div>
+
 <div class='line_height30'></div>
 	<div class='line_height50'></div>
 		</div>

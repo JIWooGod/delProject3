@@ -35,31 +35,52 @@
 		<result column="MENU_PRICE" jdbcType="BIGINT" property="menuPrice" />
 		<result column="MENU_CNT" jdbcType="VARCHAR" property="menuCnt" />
 		<result column="MENU_IMG" jdbcType="VARCHAR" property="menuImg" />
+		<result column="RST_NAME" jdbcType="VARCHAR" property="rstName" />
 	</resultMap>
 	
+	<!-- 메뉴판리스트 -->
 	<select id="menuSelect" resultMap="menuBaseMap" parameterType="long">
-		SELECT *
-		FROM MENU
-		WHERE RST_NO=#{rstNo} ORDER BY MENU_NO ASC
+		SELECT m.RST_NO, r.RST_NAME, m.MENU_NO, m.MENU_NAME, m.MENU_PRICE, m.MENU_CNT, m.MENU_IMG
+		FROM DELUNA.MENU m, DELUNA.RESTAURANT r
+		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=#{rstNo}
 	</select>
 	
+	<!-- 메뉴디테일, 수정페이지에서의 디테일 oneSelect -->
 	<select id="menuOneSelect" resultMap="menuBaseMap" parameterType="long">
-		SELECT *
-		FROM MENU
-		WHERE RST_NO=1 AND MENU_NO=#{menuNo}
+		SELECT m.RST_NO, r.RST_NAME, m.MENU_NO, m.MENU_NAME, m.MENU_PRICE, m.MENU_CNT, m.MENU_IMG
+		FROM DELUNA.MENU m, DELUNA.RESTAURANT r
+		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=#{rstNo} and m.MENU_NO=#{menuNo}
 	</select>
 	
-	<!-- 1번 레스토랑 메뉴 수정 -->
+	<select id="mgmenu1" resultMap="menuBaseMap" parameterType="long">
+		SELECT m.RST_NO, r.RST_NAME, m.MENU_NO, m.MENU_NAME, m.MENU_PRICE, m.MENU_CNT, m.MENU_IMG
+		FROM DELUNA.MENU m, DELUNA.RESTAURANT r
+		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=1
+	</select>
+	
+	<select id="mgmenu2" resultMap="menuBaseMap" parameterType="long">
+		SELECT m.RST_NO, r.RST_NAME, m.MENU_NO, m.MENU_NAME, m.MENU_PRICE, m.MENU_CNT, m.MENU_IMG
+		FROM DELUNA.MENU m, DELUNA.RESTAURANT r
+		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=2
+	</select>
+	
+	<select id="mgmenu3" resultMap="menuBaseMap" parameterType="long">
+		SELECT m.RST_NO, r.RST_NAME, m.MENU_NO, m.MENU_NAME, m.MENU_PRICE, m.MENU_CNT, m.MENU_IMG
+		FROM DELUNA.MENU m, DELUNA.RESTAURANT r
+		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=3
+	</select>
+	
+	<!-- 레스토랑 메뉴 수정 -->
 	<update id="menuUpdate" parameterType="menu">
 		UPDATE MENU
 		SET MENU_NAME=#{menuName}, MENU_PRICE=#{menuPrice}, MENU_CNT=#{menuCnt}, MENU_IMG=#{menuImg}
-		WHERE RST_NO=1 AND MENU_NO=#{menuNo}
+		WHERE RST_NO=#{rstNo} AND MENU_NO=#{menuNo}
 	</update>
 	
-	<delete id="menuDelete">
+	<delete id="menuDelete" parameterType="menu">
 		DELETE
 		FROM MENU
-		WHERE MENU_NO=#{menuNo} AND RST_NO=1
+		WHERE MENU_NO=#{menuNo} AND RST_NO=#{rstNo}
 	</delete>
 	
 	<delete id="tblDelete">
@@ -80,10 +101,10 @@
 	</resultMap>
 
 	<select id="rstSelect" parameterType="long" resultMap="rstBaseMap">
-		SELECT r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL, count(s.RST_TBL) AS tbl_count
+		SELECT r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL, r.RST_EMAIL, r.RST_IMG, count(s.RST_TBL) AS tbl_count
 		FROM DELUNA.RESTAURANT r, DELUNA.SEATPLACE s
 		WHERE r.RST_NO = s.RST_NO AND r.RST_NO=#{rstNo}
-		GROUP BY r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL
+		GROUP BY r.RST_NO, r.RST_NAME, r.RST_ADDR, r.RST_TEL, r.RST_EMAIL, r.RST_IMG
 	</select>
 	
 </mapper>

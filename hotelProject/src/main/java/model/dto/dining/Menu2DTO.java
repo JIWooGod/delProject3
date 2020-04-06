@@ -3,7 +3,7 @@ package model.dto.dining;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class MenuDTO implements Serializable {
+public class Menu2DTO implements Serializable {
 	Long menuNo;
 	Long rstNo;
 	String menuName;
@@ -12,12 +12,12 @@ public class MenuDTO implements Serializable {
 	String menuImg;
 	String rstName;
 	
-	public MenuDTO() {
+	public Menu2DTO() {
 		
 	}
 
 	
-	public MenuDTO(Long menuNo, Long rstNo, String menuName, Long menuPrice, String menuCnt, String menuImg,
+	public Menu2DTO(Long menuNo, Long rstNo, String menuName, Long menuPrice, String menuCnt, String menuImg,
 			String rstName) {
 		this.menuNo = menuNo;
 		this.rstNo = rstNo;

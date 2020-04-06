@@ -38,7 +38,7 @@
 <body>
 
 	<div align="center">
-		<img alt="" src="dining/img/dining1detail.png">
+		<img alt="" src="dining/img/${ rst.rstImg }.png">
 	</div>
 
 
@@ -57,7 +57,7 @@
 					</div>
 					<div class='tel'>
 						<span>예약 및 이용문의</span><br> 예약상담시간 : 09:00 ~ 19:00<br>
-						전화번호 : ${ rst.rstTel }<br> 이메일 : wltjq367@gmail.com
+						전화번호 : ${ rst.rstTel }<br> 이메일 : ${ rst.rstEmail }
 					</div>
 				</div>
 				<div class='line_height40'></div>

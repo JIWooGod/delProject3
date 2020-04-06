@@ -52,6 +52,7 @@
 	function menuInsert() {
 		location.href="menuInsert";
 	}
+	
 </script>
 <body>
 	<jsp:include page="../includePage/Header.jsp" flush="true" />
@@ -64,14 +65,15 @@
 
 		<div class='sub_menu'>
 		<div class='box'>
-			<span class='subMENUon'><a href='mgMenuList?no=1'>궁궐</a></span>
-			<span class='subMENUout'><a href='mgMenuList?no=2'>황룡</a></span>
-			<span class='subMENUout'><a href='mgMenuList?no=3'>더 델루나</a></span>
+		<!-- 상단메뉴 지우고 밑에 궁궐 황룡 델루나 메뉴리스트 뽑기 세로로 3줄 -->
+		
 		</div>
 
 		<div class='tl'>
 			<div class='line'></div>
-			<div class='title'>궁궐</div>
+			<div class='title'>
+				메뉴관리
+			</div>
 			<div class='line'></div>
 		</div>
 	</div>
@@ -89,15 +91,64 @@
 					<div class="hs_reservation_section hs_reservation_box1">
 						<div class="hs_reservation_left2"></div>
 						<div class="hs_reservation_right2">
-						<strong style="font-size: 20px;">메뉴</strong><br /><br />
+						<strong style="font-size: 20px;">궁궐</strong><br /><br />
 							<ul class="hs_reservation_litt2">
-								<c:forEach items="${ menus }" var="menu">
-									<li>
-										<span style="width: 60px;">
-											<a href="menuDetail?no=${ menu.menuNo }" style="color: #8f8f8f;">${ menu.menuName }</a>
-										</span>
-									</li>
-								</c:forEach>
+								<c:if test="${ !empty gwoong }">
+									<c:forEach items="${ gwoong }" var="g">
+										<li>
+											<span style="width: 60px;">
+												<a href="menuDetail?mno=${ g.menuNo }&rno=${ g.rstNo }" style="color: #8f8f8f;">
+													${ g.menuName }
+												</a>
+											</span>
+										</li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${ empty gwoong }">
+									비어있습니다.
+								</c:if>
+							</ul>
+							<div>
+							</div>
+						</div>
+						<div class="hs_reservation_right2">
+						<strong style="font-size: 20px;">황룡</strong><br /><br />
+							<ul class="hs_reservation_litt2">
+								<c:if test="${ !empty dragon }">
+									<c:forEach items="${ dragon }" var="d">
+										<li>
+											<span style="width: 60px;">
+												<a href="menuDetail?mno=${ d.menuNo }&rno=${ d.rstNo }" style="color: #8f8f8f;">
+													${ d.menuName }
+												</a>
+											</span>
+										</li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${ empty dragon }">
+									비어있습니다.
+								</c:if>
+							</ul>
+							<div>
+							</div>
+						</div>
+						<div class="hs_reservation_right2">
+						<strong style="font-size: 20px;">더 델루나</strong><br /><br />
+							<ul class="hs_reservation_litt2">
+								<c:if test="${ !empty deluna }">
+									<c:forEach items="${ deluna }" var="del">
+										<li>
+											<span style="width: 60px;">
+												<a href="menuDetail?mno=${ del.menuNo }&rno=${ del.rstNo }" style="color: #8f8f8f;">
+													${ del.menuName }
+												</a>
+											</span>
+										</li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${ empty deluna }">
+									비어있습니다.
+								</c:if>
 							</ul>
 							<div>
 								<div class="hs_reservation_btn_set">

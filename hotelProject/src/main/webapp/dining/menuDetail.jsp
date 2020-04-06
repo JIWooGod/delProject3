@@ -108,8 +108,8 @@ function menuDeleteAction(){
       <div class="hs_reservation_right">
         <ul class="hs_reservation_litt">
           <li>
-            <strong style="width: 600px;">레스토랑 번호</strong>
-            ${ menus.rstNo }
+            <strong style="width: 600px;">레스토랑</strong>
+            ${ menus.rstName }
           </li>
           <li>
             <strong style="width: 600px;">메뉴 번호</strong>
@@ -131,8 +131,8 @@ function menuDeleteAction(){
           <div class="hs_reservation_section hs_reservation_bottom">
     <div class="hs_reservation_btn_set">
     <a href="mgMenuList" class="hs_reservation_btn_poin" style="color:#FFFFFF;">목록으로</a>
-      <a href="menuUpdate?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">수정</a>
-      	<a href="menuDelete?no=${ menus.menuNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">삭제</a>
+      <a href="menuUpdate?mno=${ menus.menuNo }&rno=${ menus.rstNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">수정</a>
+      	<a href="menuDelete?mno=${ menus.menuNo }&rno=${ menus.rstNo }" class="hs_reservation_btn_poin" style="color:#FFFFFF;">삭제</a>
     </div>
     
   </div>

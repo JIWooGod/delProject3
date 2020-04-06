@@ -383,7 +383,7 @@ ul,li {list-style:none}
 
 .hs_reservation_box1{}
 .hs_reservation_box1 .hs_reservation_left2{float:left;width:550px;}
-.hs_reservation_box1 .hs_reservation_right2{float:left;padding-left:30px;width:419px;min-height:260px}
+.hs_reservation_box1 .hs_reservation_right2{float:left;padding-left:30px;width:360px;min-height:260px}
 
 .hs_reservation_box1 .hs_reservation_left{zoom:1;}
 .hs_reservation_box1 .hs_reservation_left:after{content:'';display:block;clear:both;}

@@ -47,7 +47,7 @@
 							<li class='navmenu_ul_ul_li3'><a href='dining5'>슈크르 앤 미엘</a></li>
 							<li class='navmenu_ul_ul_li3'><a href='dining6'>더 블루</a></li>
 							<li class='navmenu_ul_ul_li3'><a href='tblList?no=1'>좌석관리</a></li>
-							<li class='navmenu_ul_ul_li3'><a href='mgMenuList?no=1'>메뉴관리</a></li>
+							<li class='navmenu_ul_ul_li3'><a href='mgMenuList'>메뉴관리</a></li>
 						</ul></li>
 					<li class='navmenu_ul_li4'><a href='./reservation_1.html'>RESERVATION</a>
 						<ul class='navmenu_ul_ul4'>
