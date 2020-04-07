@@ -36,7 +36,7 @@ public class RoomRepository {
 	}
 	public List<RoomDTO> selectRooms(ReservationDTO dto)
 	{
-		String statement = namespace+".selectRoom";
+		String statement = namespace+".selectRooms";
 		return sqlSession.selectList(statement,dto);
 	}
 	

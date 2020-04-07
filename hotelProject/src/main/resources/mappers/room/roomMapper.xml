@@ -70,6 +70,11 @@
 			 rm_grade = #{roomGrade} and rm_view = #{roomView} and rm_bed = #{roomBed}
 	</select>
 	
+	<select id="selectRooms" parameterType="reservationdto" resultMap="roommap">
+		select <include refid="basecolumn"/> from room order by rm_no asc
+			 
+	</select>
+	
 	<select id ="selectReservationOk" parameterType="String" resultMap="reservationmap">
 		select<include refid="basecolumn2"/> from (select * from roombook order by rmbk_date desc)
 		<where>

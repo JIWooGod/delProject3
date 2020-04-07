@@ -5,7 +5,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class RoomDTO implements Serializable
 {
-	private Integer roomNo;
+	private String roomNo;
 	private String roomGrade;
 	private Integer roomPrice;
 	private String roomView;
@@ -17,7 +17,7 @@ public class RoomDTO implements Serializable
 	
 	
 	
-	public RoomDTO(Integer roomNo, String roomGrade, Integer roomPrice, String roomView, String roomLoc, String roomBed,
+	public RoomDTO(String roomNo, String roomGrade, Integer roomPrice, String roomView, String roomLoc, String roomBed,
 			String roomPic) {
 		this.roomNo = roomNo;
 		this.roomGrade = roomGrade;
@@ -30,10 +30,10 @@ public class RoomDTO implements Serializable
 
 
 
-	public Integer getRoomNo() {
+	public String getRoomNo() {
 		return roomNo;
 	}
-	public void setRoomNo(Integer roomNo) {
+	public void setRoomNo(String roomNo) {
 		this.roomNo = roomNo;
 	}
 	public String getRoomGrade() {

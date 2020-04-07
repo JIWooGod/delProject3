@@ -48,6 +48,12 @@ public class ReservationController {
 		reservationService.execute5(userId,reservationCommand,model,session,request);
 		return"room/reservationSuccess";
 	}
+	@RequestMapping("/ajaxRoom" )
+	public String reservation6(@RequestParam("n")String roomLoc,Model model)
+	{
+		reservationService.ajaxExecute(model,roomLoc);
+		return"room/ajaxRoom";
+	}
 	
 
 }

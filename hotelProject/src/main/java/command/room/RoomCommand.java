@@ -3,7 +3,7 @@ package command.room;
 import org.springframework.web.multipart.MultipartFile;
 
 public class RoomCommand {
-	private Integer roomNo;
+	private String roomNo;
 	private String roomGrade;
 	private Integer roomPrice;
 	private String roomView;
@@ -12,11 +12,11 @@ public class RoomCommand {
 	
 	MultipartFile [] roomPic;
 
-	public Integer getRoomNo() {
+	public String getRoomNo() {
 		return roomNo;
 	}
 
-	public void setRoomNo(Integer roomNo) {
+	public void setRoomNo(String roomNo) {
 		this.roomNo = roomNo;
 	}
 

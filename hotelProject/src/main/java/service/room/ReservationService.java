@@ -60,13 +60,19 @@ public class ReservationService {
 		dto.setRoomCount(reservationCommand.getRoomCount());
 		session.setAttribute("reservation",dto);
 		
-		System.out.println(reservationCommand.getRoomView());
-		System.out.println(reservationCommand.getRoomBed());
 		RoomDTO room = roomRepository.selectRoom(dto);
 		model.addAttribute("room",room);
-		List<RoomDTO> rooms = roomRepository.selectRooms(dto);
+		
+	}
+	public void ajaxExecute(Model model,String roomLoc) {
+		List<RoomDTO> rooms = roomRepository.selectRooms(null);
+		System.out.println(rooms.size());
+		String ho= "1404";
+		model.addAttribute("ho", ho);
+		model.addAttribute("roomLoc", roomLoc);
 		model.addAttribute("rooms",rooms);
 	}
+	
 	public void execute4(ReservationCommand reservationCommand,Model model,HttpSession session,HttpServletRequest request)
 	{
 		
