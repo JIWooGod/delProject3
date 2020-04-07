@@ -47,12 +47,6 @@
 		});
 	});
 	
-	//	온마우스 이미지 미리보기
-
-	function menuInsert() {
-		location.href="menuInsert";
-	}
-	
 </script>
 <body>
 	<jsp:include page="../includePage/Header.jsp" flush="true" />
@@ -88,7 +82,7 @@
 			<div class='sub_reservation'>
 				<div class='line_box'></div>
 				<div class="hs_reservation">
-					<div class="hs_reservation_section hs_reservation_box1">
+					<div class="hs_reservation_section hs_reservation_box1" align="center">
 						<div class="hs_reservation_left2"></div>
 						<div class="hs_reservation_right2">
 						<strong style="font-size: 20px;">궁궐</strong><br /><br />
@@ -103,9 +97,11 @@
 											</span>
 										</li>
 									</c:forEach>
+									<a href="menuInsert?rno=1" style="font-size: 30px;">+</a>
 								</c:if>
 								<c:if test="${ empty gwoong }">
-									비어있습니다.
+									비어있습니다.<br />
+									<a href="menuInsert?rno=1" style="font-size: 30px;">+</a>
 								</c:if>
 							</ul>
 							<div>
@@ -124,9 +120,11 @@
 											</span>
 										</li>
 									</c:forEach>
+									<a href="menuInsert?rno=2" style="font-size: 30px;">+</a>
 								</c:if>
 								<c:if test="${ empty dragon }">
-									비어있습니다.
+									비어있습니다.<br />
+									<a href="menuInsert?rno=2" style="font-size: 30px;">+</a>
 								</c:if>
 							</ul>
 							<div>
@@ -145,16 +143,14 @@
 											</span>
 										</li>
 									</c:forEach>
+									<a href="menuInsert?rno=3" style="font-size: 30px;">+</a>
 								</c:if>
 								<c:if test="${ empty deluna }">
-									비어있습니다.
+									비어있습니다.<br />
+									<a href="menuInsert?rno=3" style="font-size: 30px;">+</a>
 								</c:if>
 							</ul>
 							<div>
-								<div class="hs_reservation_btn_set">
-									<a href="javascript:menuInsert();"
-										class="hs_reservation_btn_poin" style="color: #FFFFFF; margin-top: 10px;">메뉴등록</a>
-								</div>
 							</div>
 						</div>
 					</div>

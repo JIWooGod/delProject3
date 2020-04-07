@@ -48,7 +48,32 @@
 	});
 
 	function menuInsert() {
-		menuFrm.submit();
+		var i = 0;
+		if($("#imgInput").val() == ""){
+			alert("사진을 등록해주세요.");
+			return false;
+		}
+		if($("#menuNo").val() == "") {
+			document.getElementById("span2").innerHTML = "필수 항목 입니다.";
+			i += 1;
+		}
+		if($("#menuName").val() == "") {
+			document.getElementById("span3").innerHTML = "필수 항목 입니다.";
+			i += 1;
+		}
+		if($("#menuPrice").val() == "") {
+			document.getElementById("span4").innerHTML = "필수 항목 입니다.";
+			i += 1;
+		}
+		if($("#menuCnt").val() == "") {
+			document.getElementById("span5").innerHTML = "필수 항목 입니다.";
+			i += 1;
+		}
+		if(i <= 0){
+			menuFrm.submit();
+		}else{
+			return false;
+		}
 	}
 </script>
 <body>
@@ -95,24 +120,16 @@
 				</script>
 				<div class="hs_reservation">
 					<div class="hs_reservation_section hs_reservation_box1">
-						<form action="menuInsertAction" method="POST" id="menuFrm"
+						<form action="menuInsertAction?rno=${ rst.rstNo }" method="POST" id="menuFrm"
 							name="menuFrm" enctype="multipart/form-data">
 							<div class="hs_reservation_left">
 
 								<h3 class="hs_reservation_title">
-									레스토랑
-									<!-- 레스토랑번호, 메뉴이름, 메뉴가격, 메뉴설명, 메뉴사진 -->
-									<select id="resSel" name="resSel">
-										<option value="0">선택하세요</option>
-										<option value=1>궁궐</option>
-										<option value=2>황룡</option>
-										<option value=3>더 델루나</option>
-									</select>
-									<div id="div1"></div>
+									레스토랑 - ${ rst.rstName }
 								</h3>
 
 								<h3 class="hs_reservation_title">
-									메뉴사진 <input type='file' id="imgInput" name="menuImg" />
+									메뉴사진 <input type='file' id="imgInput" name="menuImg" value="${ noPic.menuImg }" />
 									<div id="div2">
 										<img id="image_section" src="#" alt=""
 											style="width: 500px; height: 500px" />
@@ -122,19 +139,16 @@
 							<div class="hs_reservation_right">
 								<ul class="hs_reservation_litt">
 									<li><strong style="width: 600px;">레스토랑 번호</strong> <input
-										type="text" id="rstNo" name="rstNo" readonly>
-									<div style="color: red; font-size: 12px;">왼쪽 메뉴에서 레스토랑을
-											선택하세요</div></li>
-									<li><strong style="width: 600px;">메뉴 번호</strong> <input
-										type="text" id="" name="menuNo"></li>
+										type="text" id="rstNo" name="rstNo" value="${ rst.rstNo }" readonly>
+									</li>
 									<li><strong style="width: 600px;">메뉴이름</strong> <input
-										type="text" id="" name="menuName"></li>
+										type="text" id="menuName" name="menuName"><span id="span3" style="font-size: 12px; color: red;"></span></li>
 									<li><strong style="width: 600px;">메뉴가격</strong> <input
-										type="text" id="" name="menuPrice"
-										onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+										type="text" id="menuPrice" name="menuPrice"
+										onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"><span id="span4" style="font-size: 12px; color: red;"></span>
 									</li>
 									<li><strong style="width: 600px;">메뉴설명</strong> <textarea
-											style="resize: none;" cols="40" rows="5" name="menuCnt"></textarea>
+											style="resize: none;" cols="40" rows="5" id="menuCnt" name="menuCnt"></textarea><span id="span5" style="font-size: 12px; color: red;"></span>
 									</li>
 								</ul>
 								<div class="hs_reservation_section hs_reservation_bottom">

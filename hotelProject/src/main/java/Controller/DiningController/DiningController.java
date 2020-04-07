@@ -149,20 +149,21 @@ public class DiningController {
 	}
 
 	@RequestMapping("/menuInsert")
-	public String menuInsert() {
+	public String menuInsert(@RequestParam(value="rno") Long rstNo, Model model) {
+		rstDetailService.execute(rstNo, model);
 		return "dining/menuInsert";
 	}
 
 	@RequestMapping("/menuInsertAction")
-	public String menuInsertAction(MenuCommand menuCommand, HttpServletRequest request, Model model) {
-		String result = menuInsertService.execute(menuCommand, request, model);
+	public String menuInsertAction(@RequestParam(value="rno") Long rstNo ,MenuCommand menuCommand, HttpServletRequest request, Model model) {
+		String result = menuInsertService.execute(rstNo, menuCommand, request, model);
 		//사진 등록안함
 		if(result == "0") {
 			return "dining/menuInsert";
 		}
-		return "/main/main";
+		return "redirect:/mgMenuList";
 	}
-
+	
 	//메뉴 디테일
 	@RequestMapping("/menuDetail")
 	public String menuUpdate(@RequestParam(value="mno") Long menuNo, @RequestParam(value="rno") Long rstNo, Model model) {

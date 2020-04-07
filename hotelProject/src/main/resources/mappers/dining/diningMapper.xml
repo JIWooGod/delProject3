@@ -23,9 +23,19 @@
 		VALUES(#{rstNo}, #{rstTbl}, #{rstSeat})
 	</insert>
 	
-	<insert id="menuInsert" parameterType="menu">
+	<insert id="menu1Insert" parameterType="menu">
 		INSERT INTO MENU(MENU_NO, RST_NO, MENU_NAME, MENU_PRICE, MENU_CNT, MENU_IMG)
-		VALUES(#{menuNo}, #{rstNo}, #{menuName}, #{menuPrice}, #{menuCnt}, #{menuImg})
+		VALUES(MENU1NO_SEQ.NEXTVAL, #{rstNo}, #{menuName}, #{menuPrice}, #{menuCnt}, #{menuImg})
+	</insert>
+	
+	<insert id="menu2Insert" parameterType="menu">
+		INSERT INTO MENU(MENU_NO, RST_NO, MENU_NAME, MENU_PRICE, MENU_CNT, MENU_IMG)
+		VALUES(MENU2NO_SEQ.NEXTVAL, #{rstNo}, #{menuName}, #{menuPrice}, #{menuCnt}, #{menuImg})
+	</insert>
+	
+	<insert id="menu3Insert" parameterType="menu">
+		INSERT INTO MENU(MENU_NO, RST_NO, MENU_NAME, MENU_PRICE, MENU_CNT, MENU_IMG)
+		VALUES(MENU3NO_SEQ.NEXTVAL, #{rstNo}, #{menuName}, #{menuPrice}, #{menuCnt}, #{menuImg})
 	</insert>
 	
 	<resultMap type="menu" id="menuBaseMap">
@@ -70,10 +80,17 @@
 		WHERE m.RST_NO = r.RST_NO AND m.RST_NO=3
 	</select>
 	
-	<!-- 레스토랑 메뉴 수정 -->
+	<!-- 레스토랑 메뉴 수정(새사진파일 선택) -->
 	<update id="menuUpdate" parameterType="menu">
 		UPDATE MENU
 		SET MENU_NAME=#{menuName}, MENU_PRICE=#{menuPrice}, MENU_CNT=#{menuCnt}, MENU_IMG=#{menuImg}
+		WHERE RST_NO=#{rstNo} AND MENU_NO=#{menuNo}
+	</update>
+	
+	<!-- 레스토랑 메뉴 수정(새 사진파일 선택안함) -->
+	<update id="noPicMenuUpdate" parameterType="menu">
+		UPDATE MENU
+		SET MENU_NAME=#{menuName}, MENU_PRICE=#{menuPrice}, MENU_CNT=#{menuCnt}
 		WHERE RST_NO=#{rstNo} AND MENU_NO=#{menuNo}
 	</update>
 	

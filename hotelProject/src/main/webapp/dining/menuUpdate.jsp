@@ -116,10 +116,8 @@
 											style="width: 200px; height: 200px; margin: 10px">
 									</c:if>
 								</c:forTokens>
-								<br />
-								<br />
-								<br /> 수정할 이미지<img id="image_section" src="#" alt=""
-									style="width: 200px; height: 200px; margin: 10px" />
+								<br /> <br /> <br /> 수정할 이미지<img id="image_section" src="#"
+									alt="" style="width: 200px; height: 200px; margin: 10px" />
 							</div>
 
 							<div class="hs_reservation_right">
@@ -146,9 +144,9 @@
 								</ul>
 								<div class="hs_reservation_section hs_reservation_bottom">
 									<div class="hs_reservation_btn_set">
-										<a href="mgMenuList"
-											class="hs_reservation_btn_poin" style="color: #FFFFFF;">목록으로</a>
-										<a href="javascript:menuUpdateAction();"
+										<a href="mgMenuList" class="hs_reservation_btn_poin"
+											style="color: #FFFFFF;">목록으로</a> <a
+											href="javascript:menuUpdateAction();"
 											class="hs_reservation_btn_poin" style="color: #FFFFFF;">완료</a>
 									</div>
 

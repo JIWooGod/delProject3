@@ -26,8 +26,18 @@ public class DiningRepository {
 		sqlSession.insert(statement, dto);
 	}
 
-	public void menuInsert(MenuDTO dto) {
-		String statement = namespace + ".menuInsert";
+	public void menu1Insert(MenuDTO dto) {
+		String statement = namespace + ".menu1Insert";
+		sqlSession.insert(statement, dto);
+	}
+	
+	public void menu2Insert(MenuDTO dto) {
+		String statement = namespace + ".menu2Insert";
+		sqlSession.insert(statement, dto);
+	}
+	
+	public void menu3Insert(MenuDTO dto) {
+		String statement = namespace + ".menu3Insert";
 		sqlSession.insert(statement, dto);
 	}
 
@@ -42,8 +52,14 @@ public class DiningRepository {
 		return sqlSession.selectOne(statement, dto);
 	}
 
+	//메뉴 수정(새파일 선택)
 	public void menuUpdate(MenuDTO dto) {
 		String statement = namespace + ".menuUpdate";
+		sqlSession.update(statement, dto);
+	}
+	//메뉴 수정(파일선택X)
+	public void noPicMenuUpdate(MenuDTO dto) {
+		String statement = namespace + ".noPicMenuUpdate";
 		sqlSession.update(statement, dto);
 	}
 
