@@ -75,11 +75,22 @@
 		select <include refid="empBaseColumn"/>
 			from EMPLOYEE
 	</select>
+		<select id="selectTchList" resultMap="tchResult">
+		select <include refid="teacherBaseColumn"/>
+			from TEACHER
+	</select>
 	<select id="detailView" parameterType="model.dto.hr.EmployeeDTO" resultMap="empResult">
 		select <include refid="empBaseColumn"/>
 			from EMPLOYEE
 		<where>
 			EMP_NO = #{empNo}
+		</where>
+	</select>
+	<select id="detailView2" parameterType="model.dto.hr.TeacherDTO" resultMap="tchResult">
+		select <include refid="teacherBaseColumn"/>
+			from TEACHER
+		<where>
+			TEACH_NO = #{teachNo}
 		</where>
 	</select>
 	<update id="empModify" parameterType="model.dto.hr.EmployeeDTO">
@@ -91,6 +102,16 @@
 				EMP_CERTI = #{empCerti},
 				EMP_CARR = #{empCarr},
 				EMP_PW = #{empPw}
+	</update>
+	<update id="tchModify" parameterType="model.dto.hr.TeacherDTO">
+		update TEACHER
+			set TEACH_NAME = #{teachName},
+				TEACH_TEL = #{teachTel},
+				TEACH_EMAIL = #{teachEmail},
+				TEACH_ADDR = #{teachAddr},
+				TEACH_CERTI = #{teachCerti},
+				TEACH_CARR = #{teachCarr},
+				TEACH_PW = #{teachPw}
 	</update>
 	<insert id="applyInsert2" parameterType="model.dto.hr.TeacherDTO">
 		insert
@@ -105,6 +126,11 @@
 		update EMPLOYEE
 			set PASS_STATE = #{passState}
 		where EMP_NO = #{empNo}
+	</update>
+		<update id="passStateUp2" parameterType="model.dto.hr.TeacherDTO">
+		update TEACHER
+			set PASS_STATE = #{passState}
+		where TEACH_NO = #{teachNo}
 	</update>
 	<select id="sequence" resultType="string">
 		select num_seq.nextval from dual

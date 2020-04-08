@@ -17,4 +17,7 @@
 	<!-- teacher service -->
 	<bean id="apply2Service" class="service.hr.Apply2Service"/>
 	<bean id="tchModifyService" class="service.hr.TchModifyService"/>
+	<bean id="tchListService" class="service.hr.TchListService"/>
+	<bean id="tchDetailService" class="service.hr.TchDetailService"/>
+	<bean id="pass1stTchService" class="service.hr.Pass1stTchService"/>
 </beans> 

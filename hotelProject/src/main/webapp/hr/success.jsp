@@ -8,10 +8,10 @@
 </head>
 
 <body>
-<h3>가입 확인 메일</h3>
-<p>
-아래 링크를 클릭해 가입을 완료하십시오.<br/>
-<a href="#">#</a>
+<h3>가입을 축하합니다!</h3>
+<p style="text-align:center">
+가입을 축하합니다.<br/>
+<a style="text-align:center" href="/hotelProject/main"><b>메인페이지로</b></a>
 </p>
 </body>
 </html>

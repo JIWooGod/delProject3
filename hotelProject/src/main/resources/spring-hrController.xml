@@ -15,9 +15,14 @@
 	   <bean class="Controller.hr.ContractEmpController"/>
 	   <bean class="Controller.hr.Pass1stEmpController"/>
 	   <bean class="Controller.hr.InterviewingEmpController"/>
+	   <bean class="Controller.hr.MailingEmpController"/>
 	   
 	   <!-- promote controller -->
 	   
 	   <!-- teacher controller -->
 	   <bean class="Controller.hr.ApplyTchController"/>
+	   <bean class="Controller.hr.DetailTchController"/>
+	   <bean class="Controller.hr.ModifyTchController"/>
+	   <bean class="Controller.hr.Pass1stTchController"/>
+	   <bean class="Controller.hr.FormTchController"/>
 </beans>

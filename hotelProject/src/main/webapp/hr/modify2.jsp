@@ -68,18 +68,6 @@
 		</td>
 	</tr>
 	<tr>
-		<td>담당 과목</td>
-		<td>
-			<form:select path="subjNo">
-				<option value="100">인사</option>
-				<option value="110">교육</option>
-				<option value="120">객실관리</option>
-				<option value="130">레스토랑</option>
-				<option value="140">쇼핑몰</option>
-			</form:select>
-		</td>
-	</tr>
-	<tr>
 		<td>자격증</td>
 		<td>
 			<form:textarea path="certi" placeholder="강사 자격증을 입력하시오"/>
@@ -100,6 +88,6 @@
 <input type="submit" value="수정하기">
 <input type="reset" value="초기화">
 </form:form>
-<button onclick="javascript:location.href='../detail/${emp.empNo}'">취소</button>
+<button onclick="javascript:location.href='../detail/${tch.teachNo}'">취소</button>
 </body>
 </html>

@@ -15,8 +15,8 @@ a {color:grey;}
 <body>
 <h3>이미 가입되어 있습니다.</h3>
 <p>
-아래 링크를 클릭해 아이디를 찾고 재로그인하십시오.<br/>
-<a href="#">#</a>
+이미 가입되어 있으므로 로그인하시오.<br/>
+<a style="text-align:center" href="/hotelProject/main"><b>메인페이지로</b></a>
 </p>
 </body>
 </html>

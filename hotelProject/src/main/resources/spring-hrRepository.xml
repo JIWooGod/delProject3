@@ -15,4 +15,8 @@
 	<!-- promote repository -->
 	
 	<!-- teacher repository -->
+	<bean id="tchListRepository" class="repository.hr.TchListRepository"/>
+	<bean id="tchDetailRepository" class="repository.hr.TchDetailRepository"/>
+	<bean id="tchModifyRepository" class="repository.hr.TchModifyRepository"/>
+	<bean id="passTchRepository" class="repository.hr.PassTchRepository"/>
 </beans>

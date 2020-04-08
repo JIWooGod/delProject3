@@ -67,18 +67,6 @@
 		</td>
 	</tr>
 	<tr>
-		<td>지원 과목</td>
-		<td>
-			<input type="hidden" name="job" value="teacher"/>
-			<!-- foreach문으로 강의명만큼 가져오기 -->
-			<form:select path="subjNo">
-				<option value="300">영어</option>
-				<option value="310">응대기술</option>
-				<option value="320">상황대처</option>
-			</form:select>
-		</td>
-	</tr>
-	<tr>
 		<td>자격증</td>
 		<td>
 			<form:textarea path="certi" placeholder="강사 자격증을 입력하시오"/>

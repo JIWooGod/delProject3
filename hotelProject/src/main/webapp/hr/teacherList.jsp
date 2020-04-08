@@ -19,28 +19,26 @@
 		<th>강사명</th>
 		<th>연락처</th>
 		<th>이메일</th>
-		<th>과목</th>
 		<th>채용상태</th>
 		<th>입사일</th>
 	</tr>
-	<c:forEach items="${emp }" var="emp">
+	<c:forEach items="${tch }" var="tch">
 	<tr>
-		<td><a href="detail/${emp.empNo }">${emp.empNo}</a></td>
-		<td><a href="detail/${emp.empNo }">${emp.empName }</a></td>
-		<td>${emp.empTel }</td>
-		<td>${emp.empEmail }</td>
-		<td>${emp.deptNo }</td>
-		<td id="pass">${emp.passState } 
+		<td><a href="teacher/detail/${tch.teachNo }">${tch.teachNo}</a></td>
+		<td><a href="teacher/detail/${tch.teachNo }">${tch.teachName }</a></td>
+		<td>${tch.teachTel }</td>
+		<td>${tch.teachEmail }</td>
+		<td id="pass">${tch.passState } 
 		<c:choose>
-			<c:when test='${empty emp.passState == "서류합격자" }'>
+			<c:when test='${empty tch.passState == "서류합격자" }'>
 				<button id="interviewBtn" onclick="location.href='#'">면접표</button>
 			</c:when>
-			<c:when test='${emp.passState == "면접합격자" }'>
+			<c:when test='${tch.passState == "면접합격자" }'>
 				<button id="contractBtn">계약서</button>
 			</c:when>
 		</c:choose>
 		</td>
-		<td>${emp.empDate }</td>
+		<td>${tch.teachDate }</td>
 	</tr>
 	</c:forEach>
 </table>

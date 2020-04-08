@@ -16,12 +16,12 @@
 </head>
 <body>
 <h2>직원 채용 신청</h2>
-<form:form action="appling" commandName="applyCommand">
+<form:form action="appling" id="frm" commandName="applyCommand">
 <table class="tableForm">
 	<tr>
 		<td>아이디 *</td>
 		<td>
-			<form:input path="id" placeholder="아이디를 입력하시오"/>
+			<form:input path="id" id="id" placeholder="아이디를 입력하시오"/>
 			<form:errors path="id" class="error"/>
 		</td>
 	</tr>
@@ -56,7 +56,7 @@
 	<tr>
 		<td>이메일 *</td>
 		<td>
-			<form:input path="email" placeholder="이메일을 입력하시오"/>
+			<form:input path="email" id="email" placeholder="이메일을 입력하시오"/>
 			<form:errors path="email" class="error"/>
 		</td>
 	</tr>
@@ -90,7 +90,7 @@
 		<td><form:textarea path="career" placeholder="경력사항을 자세히 입력하시오"/></td>
 	</tr>
 </table>
-<input type="submit" value="지원하기">
+<input type="submit" id="send" value="지원하기">
 <input type="reset" value="초기화">
 </form:form>
 <button onclick="location.href='../personnel'">취소</button>

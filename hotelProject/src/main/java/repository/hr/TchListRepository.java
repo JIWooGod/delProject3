@@ -6,16 +6,17 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.dto.hr.EmployeeDTO;
+import model.dto.hr.TeacherDTO;
 
 @Repository
-public class EmpListRepository {
+public class TchListRepository {
 	private String namespace = "applyMapper";
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<EmployeeDTO> listView() {
-		String statement = namespace + ".selectEmpList";
+	public List<TeacherDTO> listView() {
+		String statement = namespace + ".selectTchList";
 		return sqlSession.selectList(statement);
 	}
+
 }

@@ -1,21 +1,19 @@
 package repository.hr;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import model.dto.hr.EmployeeDTO;
+import model.dto.hr.TeacherDTO;
 
 @Repository
-public class EmpListRepository {
+public class TchModifyRepository {
 	private String namespace = "applyMapper";
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<EmployeeDTO> listView() {
-		String statement = namespace + ".selectEmpList";
-		return sqlSession.selectList(statement);
+	public Integer reposit(TeacherDTO dto) {
+		String statement = namespace + ".tchModify";
+		return sqlSession.update(statement,dto);
 	}
 }
