@@ -15,8 +15,9 @@
 		<typeAlias type="model.dto.room.ReservationDTO" alias="reservationdto" /> 
 		<typeAlias type="model.dto.pay.PayDTO" alias="paydto" />
 		
-
+		
 		<typeAlias type="model.dto.shop.shopDTO" alias="shopdto" />
+		<typeAlias type="model.dto.shop.cartDTO" alias="cartdto" />
 
 		<typeAlias type="model.dto.dining.SeatPlaceDTO" alias="sdto" />
 
